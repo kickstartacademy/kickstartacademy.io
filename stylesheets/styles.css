@@ -532,7 +532,7 @@ body {
   padding: 0px 0 20px 0px;
   margin: 0px;
   font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #252525;
+  color: #002b36;
   font-weight: normal;
   background: #f0f0f0;
   background-attachment: fixed !important;
@@ -545,7 +545,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #483949;
+  color: #073642;
   margin: 0 0 10px;
   font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -576,7 +576,7 @@ h3 {
   line-height: 24px;
   font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: normal;
-  color: #333;
+  color: #002b36;
 }
 
 a {
@@ -590,7 +590,7 @@ a:hover {
 
 a small {
   font-size: 11px;
-  color: #666;
+  color: #657b83;
   margin-top: -0.6em;
   display: block;
 }
@@ -624,7 +624,6 @@ blockquote {
 
 code {
   font-family: "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-  color: #efefef;
   font-size: 13px;
   margin: 0 4px;
   padding: 4px 6px;
@@ -654,7 +653,6 @@ pre {
   overflow-y: hidden;
 }
 pre code {
-  color: #efefef;
   text-shadow: 0px 1px 0px #000;
   margin: 0;
   padding: 0;
@@ -669,7 +667,6 @@ th {
   text-align: left;
   padding: 5px 10px;
   border-bottom: 1px solid #434343;
-  color: #b6b6b6;
   font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: normal;
 }
@@ -689,7 +686,6 @@ hr {
 }
 
 dt {
-  color: #F0E7D5;
   font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: normal;
 }
@@ -800,7 +796,7 @@ section #title h1 {
   line-height: 48px;
 }
 section #title p {
-  color: #483949;
+  color: #073642;
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 18px;
@@ -810,7 +806,7 @@ section #title .credits {
   font-size: 16px;
   font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  color: 483949;
+  color: #073642;
   margin-top: -10px;
 }
 section #title .credits.left {
@@ -818,6 +814,21 @@ section #title .credits.left {
 }
 section #title .credits.right {
   float: right;
+}
+
+#slides .slides_container {
+  display: block;
+  padding: 1em 0em;
+  font-size: 1.75em;
+  width: 650px;
+  height: 100px;
+}
+
+#slides .slides_container div {
+  width: 650px;
+  height: 100px;
+  font-style: italic;
+  color: #073642;
 }
 
 @media print, screen and (max-width: 720px) {
