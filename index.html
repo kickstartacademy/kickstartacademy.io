@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="javascripts/respond.js"></script>
+    <script src="javascripts/jquery.scrollTo-1.4.2-min.js"></script>
     <script src="javascripts/slides.min.jquery.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -37,9 +38,16 @@
           <p class='present'>Matt Wynne and Chris Parsons present</p>
           <h1>BDD Kickstart</h1>
           <p>Four days of workshops to get you up and running with <strong>Behaviour-Driven Development</strong>, <strong>Cucumber</strong> and <strong>Ruby</strong></p>
+          <p><strong>July 16th - 19th 2012, Central London, UK</strong></p>
           <hr/>
-          <span class='credits left'><strong>July 16th - 19th 2012, Central London, UK</strong></span>
-          <span class='credits right'><a href='http://bdd.eventbrite.co.uk/'><strong>Register now</strong></a></span>
+          <p class='credits'>
+        <strong>
+              <a href='http://bdd.eventbrite.co.uk/'>Tickets and pricing</a> |
+              <a href='#' onclick="$.scrollTo('#schedule', 'fast'); return false">Course schedule</a> |
+              <a href='#' onclick="$.scrollTo('#subscribe', 'fast'); return false">Subscribe for updates</a> |
+              <a href='mailto:hello@bddkickstart.com'>Contact us</a>
+            </strong>
+            </p>
         </div>
 
 <div id='slides'>
@@ -61,12 +69,24 @@
 
 <p>After training hundreds of people at the BBC in Behaviour Driven Development principles, and seeing huge success, for the first time <strong>Matt Wynne</strong> (author of <a href='http://pragprog.com/book/hwcuc/the-cucumber-book'>The Cucumber Book</a>) and <strong>Chris Parsons</strong> (well regarded speaker and trainer) are opening up their Ruby and Cucumber training courses to the wider public.</p>
 
+<h2><a href='http://bdd.eventbrite.co.uk/'><strong>See available tickets</strong></a></h2><br/>
+
 <p>Come and equip your team to <em>really</em> succeed with BDD, without just paying lip-service to the ideas. We'll take developers and product owners through several days of intense hands-on workshops, and teach them to avoid the misunderstanding and gotchas teams so often fall into.</p>
 
-<h3><a href='http://bdd.eventbrite.co.uk/'><strong>See available tickets</strong></a></h3>
-<br/>
+<p>If you have any questions about the course, <a href='mailto:hello@bddkickstart.com'><strong>get in touch with us</strong></a>.</p>
 
-<h2>Course schedule</h2>
+<h2 id='subscribe'>Get the latest</h2>
+
+<p>To receive updates, including the latest news, promotional codes and discounts, enter your email address here:</p>
+
+<form action="http://thinkcodelearn.createsend.com/t/r/s/yhtrfu/" method="post" id="subForm">
+<input type="text" name="cm-yhtrfu-yhtrfu" id="yhtrfu-yhtrfu" />
+<input type="submit" value="Subscribe" />
+</form>
+
+<p>We'll just use your address in the context of the BDD Kickstart courses, and we won't give it to anyone else.</p>
+
+<h2 id='schedule'>Course schedule</h2>
 
 <h3>Day 0: Just enough Ruby</h3>
 
@@ -130,7 +150,7 @@ Project Managers, Testers, Developers, User Experience specialists and everyone 
 
 <h2>Pricing and Location</h2>
 
-<p>Pricing will be <strong>£450 + VAT per day</strong>, with discounts if you book multiple days. The <a href='http://bdd.eventbrite.co.uk'>booking page</a> contains details of the combinations that we feel best suit different types of people.</p>
+<p>Pricing will be <strong>£450 + VAT per day</strong>, with discounts if you book multiple days. See the <a href='http://bdd.eventbrite.co.uk'>booking page</a> for more information</p>
 
 <p>The course will be held in Central London, and therefore will be easy to get to with good transport links.</p>
 
@@ -140,9 +160,14 @@ Project Managers, Testers, Developers, User Experience specialists and everyone 
 
 <p><img src="http://farm2.static.flickr.com/1174/530582428_36f804b317_m.jpg" alt="Picture of Matt"></p>
 
-<p><strong>Chris Parsons</strong> is an itinerant agilist, programmer, writer and trainer. He consults in technical architecture and agile management, and trains and speaks at conferences in the USA and Europe on Ruby, Cucumber, being agile, code quality and programmer education. To keep his hand in, he also works on high profile web applications such as <a href='http://epetitions.direct.gov.uk'>this one</a>.</p>
+<p><strong>Chris Parsons</strong> is an itinerant agilist, programmer, writer and trainer. He consults in technical architecture and agile management, and trains and speaks internationally on Ruby, Cucumber, being agile, code quality and programmer education. To keep his hand in, he also works on high profile web applications such as <a href='http://epetitions.direct.gov.uk'>this one</a>.</p>
 
 <p><img src="images/chris_big.png" width='228' height='228' alt="Picture of Chris"></p>
+
+<h2>If you have further questions...</h2>
+
+Contact us at <a href='mailto:hello@bddkickstart.com'>hello@bddkickstart.com</a>.
+
       </section>
 
     </div>

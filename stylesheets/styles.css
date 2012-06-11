@@ -376,7 +376,7 @@ figure {
  * Corrects margin displayed oddly in IE6/7
  */
 form {
-  margin: 0;
+  margin: 0 0 20px 0;
 }
 
 /*
@@ -783,7 +783,7 @@ section {
 section #title {
   border: 0;
   outline: none;
-  margin: 0 0 50px 0;
+  margin: 0 0 0px 0;
   padding: 0 0 5px 0;
 }
 section #title h1 {
@@ -812,6 +812,7 @@ section #title .credits {
   font-weight: normal;
   color: #073642;
   margin-top: -10px;
+  width: 100%;
 }
 section #title .credits.left {
   float: left;
