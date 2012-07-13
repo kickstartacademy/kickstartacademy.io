@@ -34,22 +34,23 @@
     <div class="wrapper">
 
       <section>
-        <div id="title">
-          <p class='present'><strong>Matt Wynne</strong> and <strong>Chris Parsons</strong> present</p>
-          <h1>BDD Kickstart</h1>
-          <p>Four days of workshops to get you up and running with <strong>Behaviour-Driven Development</strong>, <strong>Cucumber</strong> and <strong>Ruby</strong></p>
-          <p><strong><span style='color:#dc322f'>NEW DATES:</span> October 8th - 11th 2012</strong></p>
-          <p><strong>8-9 Northumberland Street, London, WC2N 5DA, UK</strong></p>
-          <hr/>
-          <p class='credits'>
+      <div id="title">
+        <p class='present'><strong>Matt Wynne</strong> and <strong>Chris Parsons</strong> present</p>
+        <h1>BDD Kickstart</h1>
+        <p>Four days of workshops to get you up and running with <strong>Behaviour-Driven Development</strong>, <strong>Cucumber</strong> and <strong>Ruby</strong></p>
+        <p><strong><span style='color:#dc322f'>NEW DATES:</span> October 8th - 11th 2012</strong></p>
+        <p><strong>8-9 Northumberland Street, London, WC2N 5DA, UK</strong></p>
+        <hr/>
+        <p class='credits'>
         <strong>
+          <a href='#' onclick="$.scrollTo('#who', 'fast'); return false">Is it for me?</a> |
           <a href="http://www.eventbrite.co.uk/event/3754836818">Tickets and pricing</a> |
-              <a href='#' onclick="$.scrollTo('#schedule', 'fast'); return false">Course schedule</a> |
-              <a href='#' onclick="$.scrollTo('#subscribe', 'fast'); return false">Subscribe for updates</a> |
-              <a href='mailto:hello@bddkickstart.com'>Contact us</a>
-            </strong>
-            </p>
-        </div>
+          <a href='#' onclick="$.scrollTo('#schedule', 'fast'); return false">Schedule</a> |
+          <a href='#' onclick="$.scrollTo('#subscribe', 'fast'); return false">Subscribe for updates</a> |
+          <a href='mailto:hello@bddkickstart.com'>Contact</a>
+        </strong>
+        </p>
+      </div>
 
 <div id='slides'>
   <div class='slides_container'>
@@ -76,6 +77,15 @@
 
 <p>If you have any questions about the course, <a href='mailto:hello@bddkickstart.com'><strong>get in touch with us</strong></a>.</p>
 
+
+<h2 id='who'>Is this for me?</h2>
+
+<p>If you're a <strong>keen developer but not necessily very experienced in Ruby</strong>, you should consider the <a href="http://bdd.eventbrite.co.uk">full four day course</a>. We'll take you through the basics of Ruby, the reasons behind doing development this way, how to use Cucumber properly (saving you time in the long run) and some neat advanced tricks.</p>
+
+<p>if you're a <strong>developer with Ruby experience</strong>, you might want to skip the first day and come along to <a href='#' onclick="$.scrollTo('#day2', 'fast'); return false">day 2</a>, <a href='#' onclick="$.scrollTo('#day3', 'fast'); return false">day 3</a> or <a href='#' onclick="$.scrollTo('#day4', 'fast'); return false">day 4</a>.</p>
+
+<p>If you are a <strong>Product Owner, Business Analyst, Project Manager or UX specialist</strong>, come along to just <a href='#' onclick="$.scrollTo('#day2', 'fast'); return false">day 2</a> and understand why BDD is designed for you guys in the first place!</p>
+
 <h2 id='subscribe'>Get the latest</h2>
 
 <p>To receive updates, including the latest news, promotional codes and discounts, enter your email address here:</p>
@@ -89,7 +99,7 @@
 
 <h2 id='schedule'>Course schedule</h2>
 
-<h3>Day 1: Just enough Ruby</h3>
+<h3 id='day1'>Day 1: Just enough Ruby</h3>
 
 <p>A ruby course specifically designed for programmers from other languages, to teach you the basics. If you've not done much Ruby before, then this day is for you. We'll get you up to speed fast on the basics that you'll need to know to comfortably use Cucumber effectively.</p>
 
@@ -104,7 +114,7 @@
 
 <p>The day is very hands on, and you'll also receive an introduction to Test Driven Development (TDD).</p>
 
-<h3>Day 2: BDD for the whole team</h3>
+<h3 id='day2'>Day 2: BDD for the whole team</h3>
 
 <p>This dayʼs workshop is aimed at the whole team: Product Owners, Business Analysts,
 Project Managers, Testers, Developers, User Experience specialists and everyone inbetween. The aim is to build awareness of and enthusiasm for BDD, with a chance to practice the core collaboration tools that make BDD work.</p>
@@ -122,7 +132,7 @@ Project Managers, Testers, Developers, User Experience specialists and everyone 
   <li>Writing readable Cucumber features</li>
 </ul>
 
-<h3>Day 3: BDD with Cucumber</h3>
+<h3 id='day3'>Day 3: BDD with Cucumber</h3>
 
 <p>By the end of the day, you'll know what Cucumber is (and isn't), how to set it up and how it's best used. We'll take you through the different levels of behaviour in any application and how to properly capture your team's conversation in your features.</p>
 
@@ -137,7 +147,7 @@ Project Managers, Testers, Developers, User Experience specialists and everyone 
 
 <p>The day is full of practical hands-on exercises and group working.</p>
 
-<h3>Day 4: Advanced BDD</h3>
+<h3 id='day4'>Day 4: Advanced BDD</h3>
 
 <p>BDD can sound easy in the safe environment of a training room, but what about when you get back to the real world? This day will prepare you for some of the heartaches we've seen people endure as they learn to love BDD.</p>
 
