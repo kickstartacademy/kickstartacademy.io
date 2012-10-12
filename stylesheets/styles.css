@@ -603,7 +603,7 @@ strong {
 }
 
 .wrapper {
-  max-width: 650px;
+  max-width: 800px;
   margin: 0 auto;
   position: relative;
   padding: 0 20px;
@@ -703,7 +703,7 @@ dt {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
 }
 #header nav {
-  max-width: 650px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 10px;
   background: blue;
@@ -775,7 +775,7 @@ dt {
 }
 
 section {
-  max-width: 650px;
+  max-width: 800px;
   padding: 30px 0px 50px 0px;
   margin: 20px 0;
   margin-top: 70px;
@@ -825,12 +825,12 @@ section #title .credits.right {
   display: block;
   padding: 1em 0em;
   font-size: 1.75em;
-  width: 650px;
+  width: 800px;
   height: 100px;
 }
 
 #slides .slides_container div {
-  width: 650px;
+  width: 800px;
   height: 100px;
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
