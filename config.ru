@@ -5,7 +5,7 @@ get '/' do
   erb :index
 end
 
-get '/thanks' do
+get '/thanks.html' do
   erb :thanks
 end
 
