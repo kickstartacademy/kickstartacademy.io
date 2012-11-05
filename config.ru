@@ -1,8 +1,6 @@
 require 'bundler/setup'
 require 'sinatra'
 
-Bundler.require :default, Sinatra::Application.environment
-
 get '/' do
   erb :index
 end
