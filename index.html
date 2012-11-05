@@ -1,206 +1,394 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang='en'>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>BDD kickstart</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <script src="javascripts/jquery.scrollTo-1.4.2-min.js"></script>
-    <script src="javascripts/slides.min.jquery.js"></script>
+    <meta charset='utf-8' />
+    <!-- %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"} -->
+    <title></title>
+    <meta content='width=device-width' name='viewport' />
     <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script>
     <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-431118-15']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
+    <link href='favicon.ico' rel='shortcut icon' />
+<link href='images/apple-touch-icon-144-precomposed.png' rel='apple-touch-icon-precomposed' sizes='144x144' />
+<link href='images/apple-touch-icon-114-precomposed.png' rel='apple-touch-icon-precomposed' sizes='114x114' />
+<link href='images/apple-touch-icon-72-precomposed.png' rel='apple-touch-icon-precomposed' sizes='72x72' />
+<link href='images/apple-touch-icon-57-precomposed.png' rel='apple-touch-icon-precomposed' />
+    <link href="stylesheets/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/responsive.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/font-awesome.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/theme.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/fonts.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
-  <body>
-    <div class="wrapper">
-
-      <section>
-      <div id="title">
-        <div style="overflow:auto;width:100%">
-          <img src="/images/logo.png" style="float:left">
-          <div>
-            <h1 style="font-size:6em;">BDD Kickstart</h1>
-            <p>A series of workshops to get you up and running with <strong>Behaviour-Driven Development</strong> and <strong>Cucumber</strong></p>
+  <body class='theme-pattern-lightmesh'>
+    <!-- Page Header -->
+    <header id='masthead'>
+      <nav class='navbar navbar-fixed-top'>
+        <div class='navbar-inner'>
+          <div class='container'>
+            <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+              <span class='icon-bar'></span>
+              <span class='icon-bar'></span>
+              <span class='icon-bar'></span>
+            </a>
+            <h1 class='brand'>
+              <a href='index.html'>
+                BDD Kickstart
+                <img src="images/logo.png" width="40px"></img>
+              </a>
+            </h1>
+            <div class='nav-collapse'>
+              <ul class='nav pull-right'>
+                <li class='active'><a href="index.html">Home</a></li>
+                <li class='dropdown'>
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Features</a>
+                  <ul class='dropdown-menu'>
+                    <li>
+                      <a href="about.html">About Us Page</a>
+                    </li>
+                    <li>
+                      <a href="services.html">Services page</a>
+                    </li>
+                    <li>
+                      <a href="faq.html">FAQ page</a>
+                    </li>
+                      <a href="pricing.html">Pricing</a>
+                    </li>
+                    <li>
+                      <a href="testimonials.html">Testimonials</a>
+                    </li>
+                    <li>
+                      <a href="404.html">404 page</a>
+                    </li>
+                    <li>
+                      <a href="post.html">Single post</a>
+                    </li>
+                    <li>
+                      <a href="sidebar-right.html">Right sidebar</a>
+                    </li>
+                    <li>
+                      <a href="sidebar-left.html">Left sidebar</a>
+                    </li>
+                    <li>
+                      <a href="fullwidth.html">Full width</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class=''><a href="blog.html">Blog</a></li>
+                <li class='dropdown'>
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolio</a>
+                  <ul class='dropdown-menu'>
+                    <li>
+                      <a href="portfolio-3col.html">Three Columns</a>
+                    </li>
+                    <li>
+                      <a href="portfolio-4col.html">Four Columns</a>
+                    </li>
+                    <li>
+                      <a href="portfolio-featured.html">Featured Item</a>
+                    </li>
+                    <li>
+                      <a href="portfolio-item.html">Single Item</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class=''><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
           </div>
         </div>
-        <p class="clear:left">
-          <strong>
-            <span style='color:#dc322f'>NEW DATES:</span> December 4th - 6th 2012
-          </strong>, London, UK
-        </p>
-        <p>
-          <a href="https://twitter.com/BDDKickstart" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @BDDKickstart</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </p>
-        <hr/>
-        <p class='credits'>
-          <strong>
-            <a href='#' onclick="$.scrollTo('#who', 'fast'); return false">BDD Kickstart</a> |
-            <a href="http://www.eventbrite.co.uk/event/3754836818" target="_blank">Tickets</a> |
-            <a href='#' onclick="$.scrollTo('#latest-news', 'fast'); return false">Latest news</a> |
-            <a href='#' onclick="$.scrollTo('#about', 'fast'); return false">About</a> |
-            <a href='mailto:hello@bddkickstart.com'>Contact</a>
-          </strong>
-        </p>
+      </nav>
+    </header>
+    <!-- Main Content -->
+    <div id='content' role='main'>
+      <section class='section alt' id='promo'>
+  <div class='container'>
+    <div class='carousel slide' id='myCarousel'>
+      <!-- Carousel items -->
+      <div class='carousel-inner'>
+        <div class='active item'>
+          <div class='row-fluid'>
+            <div class='span7'>
+              <div class='hero-unit'>
+                <h1>A Masterclass in Behaviour-Driven Development.</h1>
+                <p>Get a flying start with BDD, the collaborative process that's changing the face of software development.</p>
+              </div>
+            </div>
+            <div class='span5'>
+              <br/>
+              <br/>
+              <img alt='imac' class='pull-right' src='images/hero-shot-students.jpeg' />
+            </div>
+          </div>
+          <div class='row-fluid'>
+            <div class='span4'>
+              <div class='well'>
+                <h3>
+                  Strategy & consulting
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                </p>
+              </div>
+            </div>
+            <div class='span4'>
+              <div class='well'>
+                <h3>
+                  Web design
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                </p>
+              </div>
+            </div>
+            <div class='span4'>
+              <div class='well'>
+                <h3>
+                  Content Strategy
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class='row-fluid'>
+            <div class='span7'>
+              <div class='hero-unit'>
+                <h1>The ultimate inspiration is the deadline.</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+            </div>
+            <div class='span5'>
+              <img alt='imac' class='pull-right' src='images/assets/iphone.png' />
+            </div>
+          </div>
+        </div>
+        <div class='item'>
+          <div class='row-fluid'>
+            <div class='hero-unit pull-center'>
+              <h1>To say a grid is limiting is to say that language is limiting, or typography is limiting.</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div style='font-size:1.25em'>
-        <p>
-          Imagine a software team where everyone understood exactly what they needed to do.</p>
-        <p>
-          Imagine being able to release to production several times a day, confident that the code was fully tested and defect-free.
-        </p>
-
-        <p>BDD (Behaviour-Driven Development) is quietly revolutionising software development by focussing on what's fundamental: communication between people. Teams who use the tecniques from BDD to collaborate around executable specifications are having amazing results: Less defects, less missed deadlines, and happier customers.
-        </p>
-
-        <p>
-          You can enjoy these benefits too, because we're going to teach you how.
-        </p>
-
-        <p>
-          Learn BDD and Cucumber in a hands-on practical workshop from two of the world’s leading practitioners.
-        </p>
+      <!-- Carousel nav -->
+      <a class='carousel-control left' data-slide='prev' href='#myCarousel'>&lsaquo;</a>
+      <a class='carousel-control right' data-slide='next' href='#myCarousel'>&rsaquo;</a>
     </div>
-
-      <hr/>
-      <h2 id='kickstart'>BDD Kickstart: Fundamentals + Applied (3 days)</h2>
-
-      <p><strong>Following BDD Kickstart, you will:</strong></p>
-      <ul>
-        <li>Have everything you need to get on the right track with BDD and Cucumber</li>
-        <li>Be able to turn ideas into quality products faster</li>
-        <li>More quickly be able to solve issues communicating requirements within your team</li>
-        <li>Be ready to practice BDD in the real world</li>
-        <li>Take Agile to the next level</li>
-        <li>Gain 30 years of experience distilled into 3 days</li>
+  </div>
+</section>
+<section class='section'>
+  <div class='container'>
+    <div class='page-header'>
+      <h1>
+        Who are we?
+        <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</small>
+      </h1>
+    </div>
+    <ul class='thumbnails bordered thumbnail-list'>
+      <li class='span4'>
+        <a href='about.html'>
+          <figure class='thumbnail-figure'>
+            <img alt='' src='images/assets/people1-600x400.jpeg'>
+              <figcaption class='thumbnail-title'>
+                <h3>
+                  <span>Betty Doe</span>
+                </h3>
+                <p>
+                  <span>Managing director</span>
+                </p>
+              </figcaption>
+            </img>
+          </figure>
+        </a>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        </p>
+      </li>
+      <li class='span4'>
+        <a href='about.html'>
+          <figure class='thumbnail-figure'>
+            <img alt='' src='images/assets/people6-600x400.jpeg'>
+              <figcaption class='thumbnail-title'>
+                <h3>
+                  <span>Mary Doe</span>
+                </h3>
+                <p>
+                  <span>Assistant director</span>
+                </p>
+              </figcaption>
+            </img>
+          </figure>
+        </a>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        </p>
+      </li>
+      <li class='span4'>
+        <a href='about.html'>
+          <figure class='thumbnail-figure'>
+            <img alt='' src='images/assets/people9-600x400.jpeg'>
+              <figcaption class='thumbnail-title'>
+                <h3>
+                  <span>Sue Doe</span>
+                </h3>
+                <p>
+                  <span>SEO manager</span>
+                </p>
+              </figcaption>
+            </img>
+          </figure>
+        </a>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class='section alt'>
+  <div class='container'>
+    <div class='page-header'>
+      <h1>
+        What we do?
+        <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</small>
+      </h1>
+    </div>
+    <div class='row-fluid'>
+      <ul class='thumbnails bordered pull-center'>
+        <li class='span3'>
+          <h3>
+            <i class='icon-beaker huge-icon'></i>
+            <span class='blocked'>Web Applications</span>
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+          </p>
+        </li>
+        <li class='span3'>
+          <h3>
+            <i class='icon-bullhorn huge-icon'></i>
+            <span class='blocked'>Mobile Design</span>
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+          </p>
+        </li>
+        <li class='span3'>
+          <h3>
+            <i class='icon-signal huge-icon'></i>
+            <span class='blocked'>Facebook ads</span>
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+          </p>
+        </li>
+        <li class='span3'>
+          <h3>
+            <i class='icon-magnet huge-icon'></i>
+            <span class='blocked'>Branding & indentity</span>
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+          </p>
+        </li>
       </ul>
-
-      <h2><a href='http://bdd.eventbrite.co.uk'>BUY BDD KICKSTART</a></h2>
-
-      <p>The full BDD Kickstart experience will give your team everything they need to know to get them working well with BDD and cucumber. We’ll cover the theory of effective requirements writing, efficient communication, (etc) as well as give you the practical tools to work with Cucumber effectively, and prevent the creation of a large maintenance burden to the project.</p>
-
-      <p>By the end of this very practical workshop, you'll know what Cucumber is (and isn't), how to set it up and how it's best used. We'll take you through the different levels of behaviour in any application and how to properly capture your team's conversation in your written features.</p>
-
-      <p>For a more detailed course outline, see the individual modules.</p>
-
-      <h3>Testimonials</h3>
-
-      <p>Coming soon.</p>
-
-      <hr/>
-      <h2 id='fundamentals'>BDD Fundamentals (1 day)</h2>
-
-      <p><strong>Following BDD Fundamentals you will:</strong></p>
-
-      <ul>
-        <li>Understand the principles behind BDD</li>
-        <li>Use examples to explore and discover requirements</li>
-        <li>Be able to turn ideas into quality products faster</li>
-        <li>Transform your whole team into domain experts</li>
-      </ul>
-
-      <h2><a href='http://bdd.eventbrite.co.uk'>BUY BDD FUNDAMENTALS</a></h2>
-
-      Topics covered:
-      <ul>
-        <li>What is BDD?</li>
-        <li>How does BDD fit with agile?</li>
-        <li>Specification with examples</li>
-        <li>The importance of a ubiquitous language</li>
-        <li>The three amigos</li>
-        <li>Cucumber demo</li>
-        <li>Gherkin syntax</li>
-        <li>Writing readable Cucumber features</li>
-      </ul>
-
-      <hr/>
-      <h2>BDD Applied (2 days)</h2>
-
-      <p><strong>Following BDD Applied you will:</strong></p>
-
-      <ul>
-        <li>Gain confidence in knowing when and how to use Cucumber</li>
-        <li>Learn how to use tests to drive the direction of your coding tasks</li>
-        <li>Know the most efficient way to implement your tests</li>
-        <li>Understand how to structure Cucumber test suites so they don’t become a maintenance burden</li>
-        <li>Be able to strike the right balance between acceptance and unit tests</li>
-        <li>Be more confident in adding tests to untested legacy code</li>
-      </ul>
-
-      <h2><a href='http://bdd.eventbrite.co.uk'>BUY BDD APPLIED</a></h3>
-
-      Topics covered:
-      <ul>
-        <li>The lie of the land: the simplest possible cucumber project</li>
-        <li>Adding features: the basic BDD cycle</li>
-        <li>Writing features right: layers of abstraction</li>
-        <li>Refactoring existing features: tools and tips</li>
-        <li>How to identify and resolve flickering scenarios</li>
-        <li>Learning from brittle scenarios</li>
-        <li>What slow test suites are telling you</li>
-        <li>What to do when your customer won't read your features</li>
-      </ul>
-
-        <hr/>
-        <h2 id='latest-news'>Get the latest</h2>
-
-        <p>To receive updates, including the latest news, promotional codes and discounts, enter your email address here:</p>
-
-        <form action="http://thinkcodelearn.createsend.com/t/r/s/yhtrfu/" method="post" id="subForm">
-          <input type="text" name="cm-yhtrfu-yhtrfu" id="yhtrfu-yhtrfu" />
-          <input type="submit" value="Subscribe" />
-        </form>
-
-        <p>We'll just use your address in the context of the BDD Kickstart courses, and we won't give it to anyone else.</p>
-
-        <h2>Location</h2>
-
-        <p>The course will be held near Charing Cross Station in Central London, and therefore will be easy to get to with good transport links.</p>
-
-        <hr/>
-        <h2 id='about'>About Chris and Matt</h2>
-
-        <p><img src="http://farm2.static.flickr.com/1174/530582428_36f804b317_m.jpg" alt="Picture of Matt"></p>
-
-        <p><strong>Matt Wynne</strong> is one of the world's leading BDD practitioners. A programmer, coach, trainer and popular international speaker, he's the author of <a href="http://pragprog.com/books/hwcuc">The Cucumber Book</a> and was invited to join the Cucumber core team in 2009.</p>
-
-        <p>Matt has worked with large organisations like the BBC. He also wrote and runs Relishapp.com and is the official host for RSpec’s documentation.  He conceived, organised and ran Bootstrapd, a non-profit conference for bootstrapped startups.</p>
-
-        <p><a href='http://lanyrd.com/profiles/mattwynne'>Matt has spoken</a> at Agile 2009, XP day London, Agile Cambridge, Scottish Ruby Conference, Gotham Ruby Conference, QCon NYC, Software Practice Advancement, Software Craftsmanship UK, and Turku Agile day.</p>
-
-        <p><img src="images/chris_big.png" width='228' height='228' alt="Picture of Chris"></p>
-
-        <p><strong>Chris Parsons</strong> is an itinerant agilist, programmer, writer and trainer. He consults in technical architecture and agile management and was the owner of the highly respected Ruby shop, Eden Development, which led the way in applying the BDD process to client projects. More recently, Chris designed the hosting infrastructure and was one of  the leading developers on <a href='http://epetitions.direct.gov.uk'>e-petitions</a>, a high profile web application that was written using BDD techniques and had 17 million visits in its first year. His clients have included large organisations such as the BBC and GOV.UK, the new UK government portal launched in October 2012, as well as a number of startups.</p>
-
-        <p>Chris trains and <a href='http://lanyrd.com/profiles/chrismdp'>speaks</a> internationally on Ruby, Cucumber, being agile, code quality and programmer education at conferences including Rubyconf, the Scottish Ruby Conference, and Software Craftsmanship North America and Software Craftsmanship UK.</p>
-
-        <h2>If you have further questions...</h2>
-
-        Contact us at <a href='mailto:hello@bddkickstart.com'>hello@bddkickstart.com</a>.
-
-        </section>
-
+    </div>
+  </div>
+</section>
+    </div>
+    <!-- Page Footer -->
+    <footer class='section' id='footer' role='contentinfo'>
+      <div class='container'>
+        <div class='row-fluid'>
+          <div class='span4'>
+            <h3>Contact us</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </p>
+            <ul class='icons'>
+              <li>
+                <i class='icon-envelope'></i>
+                <a href='mailto:dave@davegandy.com'>John Doe</a>
+              </li>
+              <li>
+                <i class='icon-twitter'></i>
+                <a href='http://twitter.com/oxygenna/' target='_blank'>@FortAweso_me</a>
+              </li>
+              <li>
+                <i class='icon-facebook'></i>
+                <a href='http://kyruus.com' target='_blank'>oxygenna</a>
+              </li>
+            </ul>
+          </div>
+          <div class='span4'>
+            <h3>Recent news</h3>
+            <ul class='icons'>
+              <li>
+                <p><i class='icon-twitter'></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  <small>
+                    by
+                    <a href='#'>oxygenna.com</a>
+                  </small>
+                </p>
+              </li>
+              <li>
+                <p><i class='icon-twitter'></i>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                  <small>
+                    by
+                    <a href='#'>oxygenna.com</a>
+                  </small>
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class='span4'>
+            <h3>Latest posts</h3>
+            <ul class='unstyled'>
+              <li>
+                <h4>
+                  <a href='#'>A responsive business theme</a>
+                </h4>
+                <p>
+                  <small>November 12, 2012</small>
+                </p>
+              </li>
+              <li>
+                <h4>
+                  <a href='#'>Designed for big and small screens</a>
+                </h4>
+                <p>
+                  <small>August 23, 2012</small>
+                </p>
+              </li>
+              <li>
+                <h4>
+                  <a href='#'>Based on bootstrap framework</a>
+                </h4>
+                <p>
+                  <small>July 22, 2011</small>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
-
-    </body>
-  </html>
+    </footer>
+  </body>
+  <script src="javascripts/jquery.min.js" type="text/javascript"></script>
+  <script src="javascripts/bootstrap.js" type="text/javascript"></script>
+  <script src="javascripts/script.js" type="text/javascript"></script>
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID. mathiasbynens.be/notes/async-analytics-snippet -->
+  <script type='text/javascript'>
+    //<![CDATA[
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    //]]>
+  </script>
+</html>
