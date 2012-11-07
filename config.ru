@@ -1,6 +1,11 @@
 require 'bundler/setup'
 require 'sinatra'
 
+helpers do
+  def active(page)
+  end
+end
+
 get '/' do
   erb :index
 end
