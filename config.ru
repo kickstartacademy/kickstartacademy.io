@@ -33,6 +33,10 @@ get '/details' do
   erb :details
 end
 
+get '/dates' do
+  erb :dates
+end
+
 get '/thanks.html' do
   erb :thanks
 end

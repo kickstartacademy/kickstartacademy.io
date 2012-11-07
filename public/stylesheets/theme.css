@@ -742,13 +742,13 @@ figure {
 
 /* MAP AREA */
 /* -------- */
-#map {
+.map {
   height: 500px;
   margin: -30px -20px;
   position: relative;
   z-index: 0;
 }
-#map img {
+.map img {
   max-width: none;
 }
 

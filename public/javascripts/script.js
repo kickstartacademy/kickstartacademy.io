@@ -53,9 +53,10 @@ function mapInit() {
             ]
             }
         ],
+
         // put your locations lat and long here
-        lat = 51.607,
-        lng = -0.12248,
+        lat = 51.5252611, 
+        lng = -0.1274098,
 
         // Create a new StyledMapType object, passing it the array of styles,
         // as well as the name to be displayed on the map type control.
@@ -72,14 +73,14 @@ function mapInit() {
                 mapTypeIds: [google.maps.MapTypeId.ROADMAP]
             }
         },
-        map = new google.maps.Map(document.getElementById('map'),
+        map = new google.maps.Map(document.getElementById('london-map'),
             mapOptions),
-        charlotte = new google.maps.LatLng( lat, lng ),
+        venue = new google.maps.LatLng( lat, lng ),
 
         marker = new google.maps.Marker({
-                                        position: charlotte,
+                                        position: venue,
                                         map: map,
-                                        title: "Hello World!"
+                                        title: "Mary Ward House"
                                     });
 
 

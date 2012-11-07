@@ -63,7 +63,9 @@
       <a href="/dates#london"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/images/buy.png" alt="Buy now"></a>
       </nav>
     </header>
-    <%= yield %>
+    <div id='content' role='main'>
+      <%= yield %>
+    </div>
     <!-- Page Footer -->
     <footer class='section' id='footer' role='contentinfo'>
       <div class='container'>
@@ -137,6 +139,13 @@
   <script src="javascripts/jquery.min.js" type="text/javascript"></script>
   <script src="javascripts/bootstrap.js" type="text/javascript"></script>
   <script src="javascripts/script.js" type="text/javascript"></script>
+  <script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
+  <script type='text/javascript'>
+    //<![CDATA[
+      // Call the google map
+      mapInit();
+    //]]>
+  </script>
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
