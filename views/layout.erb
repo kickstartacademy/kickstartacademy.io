@@ -94,22 +94,16 @@
           <div class='span4'>
             <h3>Recent news</h3>
             <ul class='icons'>
+              <% tweets.each do |tweet| %>
               <li>
-                <p><i class='icon-twitter'></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                <p><i class='icon-twitter'></i><%= markup_tweet(tweet.text) %>
                   <small>
                     by
-                    <a href='#'>oxygenna.com</a>
+                    <a href='http://twitter.com/<%= tweet.from_user %>'>@<%= tweet.from_user %></a>
                   </small>
                 </p>
               </li>
-              <li>
-                <p><i class='icon-twitter'></i>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                  <small>
-                    by
-                    <a href='#'>oxygenna.com</a>
-                  </small>
-                </p>
-              </li>
+              <% end %>
             </ul>
           </div>
           <div class='span4'>
