@@ -4619,7 +4619,7 @@ a.label:hover, a.badge:hover {
   border-radius: 6px;
 }
 .hero-unit h1 {
-  margin-bottom: 0;
+  margin-bottom: 15px;
   font-size: 60px;
   line-height: 1;
   color: inherit;
@@ -4628,7 +4628,6 @@ a.label:hover, a.badge:hover {
 .hero-unit p {
   font-size: 18px;
   font-weight: 200;
-  line-height: 36px;
   color: inherit;
 }
 
