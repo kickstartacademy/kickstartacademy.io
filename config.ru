@@ -29,15 +29,13 @@ get '/' do
   erb :index
 end
 
-get '/details' do
-  erb :details
+[:about, :details, :dates].each do |page|
+  get "/#{page}" do
+    erb page
+  end
 end
 
-get '/dates' do
-  erb :dates
-end
-
-get '/thanks.html' do
+get '/thanks*' do
   erb :thanks
 end
 
