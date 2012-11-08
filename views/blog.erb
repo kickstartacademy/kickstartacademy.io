@@ -13,7 +13,8 @@
       <div class="span9">
         <% blog_articles.entries.each do |article| %>
           <article>
-            <header>
+            <header style='position: relative'>
+              <a class='anchor' name='<%= slugify(article.id) %>'></a>
               <h1><%= article.title %> <small>by <%= article.author %></small></h1>
               <p>Published <abbr class='timeago' title='<%= article.published.iso8601 %>'><%= friendly_date(article.published) %></abbr></p>
             </header>

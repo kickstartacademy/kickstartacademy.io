@@ -54,6 +54,10 @@ helpers do
   def friendly_date(date)
     date.strftime("%a %d %b %Y %H:%M")
   end
+
+  def slugify(id)
+    id.gsub(/\W/, '-')
+  end
 end
 
 set :static_cache_control, [:public, max_age: 1800]

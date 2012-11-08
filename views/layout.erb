@@ -105,33 +105,20 @@
             <a href="https://twitter.com/BDDKickstart">more...</a>
           </div>
           <div class='span4'>
-            <!-- h3>Latest posts</h3>
-          <ul class='unstyled'>
-            <li>
-              <h4>
-                <a href='#'>A responsive business theme</a>
-              </h4>
-              <p>
-                <small>November 12, 2012</small>
-              </p>
-            </li>
-            <li>
-              <h4>
-                <a href='#'>Designed for big and small screens</a>
-              </h4>
-              <p>
-                <small>August 23, 2012</small>
-              </p>
-            </li>
-            <li>
-              <h4>
-                <a href='#'>Based on bootstrap framework</a>
-              </h4>
-              <p>
-                <small>July 22, 2011</small>
-              </p>
-            </li>
-            </ul -->
+            <h3>Latest posts</h3>
+            <ul class='icons'>
+              <% blog_articles[0, 5].each do |article| %>
+                <li>
+                  <p><i class='icon-file'></i>
+                    <a href='/blog#<%= slugify(article.id) %>'><%= article.title %></a>
+                    <small>
+                      <abbr class='timeago' title='<%= article.published.iso8601 %>'><%= friendly_date(article.published) %></abbr>
+                    </small>
+                  </p>
+                </li>
+              <% end %>
+            </ul>
+            <a href="/blog">more...</a>
           </div>
         </div>
       </div>

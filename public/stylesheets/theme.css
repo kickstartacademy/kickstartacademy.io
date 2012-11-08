@@ -648,6 +648,12 @@ figure {
 
 /* BLOG PAGES */
 /* ---------- */
+
+.anchor {
+  position: absolute;
+  top: -100px; /* Used to position the anchor to avoid the fixed header */
+}
+
 .blog-post {
   padding-bottom: 24px;
 }
