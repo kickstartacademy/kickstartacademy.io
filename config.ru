@@ -42,6 +42,8 @@ helpers do
       'http://chrismdp.com/tag/cucumber/atom.xml',
       'http://chrismdp.com/tag/bddkickstart/atom.xml',
       'http://chrismdp.com/tag/bdd/atom.xml',
+      'http://blog.mattwynne.net/tag/cucumber/atom',
+      'http://blog.mattwynne.net/tag/bdd/atom',
     ].map do |url|
       feed = Feedzirra::Feed.fetch_and_parse(url).entries
     end.flatten.uniq(&:id).sort do |a,b|
