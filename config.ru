@@ -72,8 +72,4 @@ end
   end
 end
 
-get '/thanks*' do
-  erb :thanks
-end
-
 run Sinatra::Application
