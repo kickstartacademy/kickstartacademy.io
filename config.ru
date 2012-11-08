@@ -3,6 +3,18 @@ require 'sinatra'
 require 'twitter'
 require 'feedzirra'
 
+require 'dalli'
+require 'rack-cache'
+
+# Defined in ENV on Heroku. To try locally, start memcached and uncomment:
+# ENV["MEMCACHE_SERVERS"] = "localhost"
+if memcache_servers = ENV["MEMCACHE_SERVERS"]
+  use Rack::Cache,
+    verbose: true,
+    metastore:   "memcached://#{memcache_servers}",
+    entitystore: "memcached://#{memcache_servers}"
+end
+
 Twitter.configure do |config|
   config.consumer_key = '5sD8eQtceH3dFX53KAmBrg'
   config.consumer_secret = 'Bs4maTs0neLCs1Hm7LnjooOmkQITLLDahclCzQINW74'
@@ -42,17 +54,22 @@ helpers do
   end
 end
 
+set :static_cache_control, [:public, max_age: 900]
+
 get '/' do
+  cache_control :public, max_age: 1800  # 30 mins
   erb :index
 end
 
 [:about, :details, :dates, :blog].each do |page|
   get "/#{page}" do
+    cache_control :public, max_age: 1800  # 30 mins
     erb page
   end
 end
 
 get '/thanks*' do
+  cache_control :public, max_age: 1800  # 30 mins
   erb :thanks
 end
 
