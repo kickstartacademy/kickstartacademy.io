@@ -54,7 +54,7 @@ helpers do
   end
 end
 
-set :static_cache_control, [:public, max_age: 900]
+set :static_cache_control, [:public, max_age: 1800]
 
 get '/' do
   cache_control :public, max_age: 1800  # 30 mins
