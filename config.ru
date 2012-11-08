@@ -58,20 +58,21 @@ end
 
 set :static_cache_control, [:public, max_age: 1800]
 
-get '/' do
+before do
   cache_control :public, max_age: 1800  # 30 mins
+end
+
+get '/' do
   erb :index
 end
 
-[:about, :details, :dates, :blog].each do |page|
+[:about, :details, :dates, :blog, :thanks].each do |page|
   get "/#{page}" do
-    cache_control :public, max_age: 1800  # 30 mins
     erb page
   end
 end
 
 get '/thanks*' do
-  cache_control :public, max_age: 1800  # 30 mins
   erb :thanks
 end
 
