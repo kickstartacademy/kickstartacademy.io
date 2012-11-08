@@ -1,0 +1,39 @@
+<section class="section alt">
+  <div class="container">
+    <div class="hero-unit">
+      <h1>Blog</h1>
+      <p>The very latest thinking from us on BDD.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="content" role="main">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span9">
+        <% blog_articles.entries.each do |article| %>
+          <article>
+            <header>
+              <h1><%= article.title %> <small>by <%= article.author %></small></h1>
+              <p>Published <abbr class='timeago' title='<%= article.published.iso8601 %>'><%= friendly_date(article.published) %></abbr></p>
+            </header>
+            <div class='content'><%= article.content %></div>
+            <footer>
+              This article was originally published <a href="<%= article.url %>">here</a>.
+            </footer>
+          </article>
+          <hr/>
+        <% end %>
+      </div>
+      <aside class="span3 sidebar">
+        <div class="hero-unit">
+          <p>Sign up for the BDD Kickstart newsletter</p>
+          <form action="http://thinkcodelearn.createsend.com/t/r/s/yhtrfu/" method="post" class="form-vertical">
+            <input type="text" name="cm-yhtrfu-yhtrfu" id="yhtrfu-yhtrfu" placeholder="Email"/>
+            <button type="submit" class="btn btn-primary">Sign me up</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

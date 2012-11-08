@@ -6,13 +6,13 @@
     <title></title>
     <meta content='width=device-width' name='viewport' />
     <!--[if lt IE 9]>
-      <script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script>
+    <script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script>
     <![endif]-->
     <link href='favicon.ico' rel='shortcut icon' />
-<link href='images/apple-touch-icon-144-precomposed.png' rel='apple-touch-icon-precomposed' sizes='144x144' />
-<link href='images/apple-touch-icon-114-precomposed.png' rel='apple-touch-icon-precomposed' sizes='114x114' />
-<link href='images/apple-touch-icon-72-precomposed.png' rel='apple-touch-icon-precomposed' sizes='72x72' />
-<link href='images/apple-touch-icon-57-precomposed.png' rel='apple-touch-icon-precomposed' />
+    <link href='images/apple-touch-icon-144-precomposed.png' rel='apple-touch-icon-precomposed' sizes='144x144' />
+    <link href='images/apple-touch-icon-114-precomposed.png' rel='apple-touch-icon-precomposed' sizes='114x114' />
+    <link href='images/apple-touch-icon-72-precomposed.png' rel='apple-touch-icon-precomposed' sizes='72x72' />
+    <link href='images/apple-touch-icon-57-precomposed.png' rel='apple-touch-icon-precomposed' />
     <link href="stylesheets/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="stylesheets/responsive.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="stylesheets/font-awesome.css" media="screen" rel="stylesheet" type="text/css" />
@@ -39,7 +39,7 @@
             <div class='nav-collapse'>
               <ul class='nav pull-right'>
                 <li class='<%= active(:home) %>'><a href="/">Home</a></li>
-                <!-- li class=''><a href="/blog">Blog</a></li -->
+                <li class='<%= active(:blog) %>'><a href="/blog">Blog</a></li>
                 <li class=''><a href="/details">Course Details</a></li>
                 <li class='<%= active(:dates) %> dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dates</a>
@@ -61,7 +61,7 @@
             </div>
           </div>
         </div>
-      <a href="/dates#london"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/images/buy.png" alt="Buy now"></a>
+        <a href="/dates#london"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/images/buy.png" alt="Buy now"></a>
       </nav>
     </header>
     <div id='content' role='main'>
@@ -92,45 +92,45 @@
             <h3>Recent news</h3>
             <ul class='icons'>
               <% tweets.each do |tweet| %>
-              <li>
-                <p><i class='icon-twitter'></i><%= markup_tweet(tweet.text) %>
-                  <small>
-                    by
-                    <a href='http://twitter.com/<%= tweet.from_user %>'>@<%= tweet.from_user %></a>
-                  </small>
-                </p>
-              </li>
+                <li>
+                  <p><i class='icon-twitter'></i><%= markup_tweet(tweet.text) %>
+                    <small>
+                      by
+                      <a href='http://twitter.com/<%= tweet.from_user %>'>@<%= tweet.from_user %></a>
+                    </small>
+                  </p>
+                </li>
               <% end %>
             </ul>
             <a href="https://twitter.com/BDDKickstart">more...</a>
           </div>
           <div class='span4'>
             <!-- h3>Latest posts</h3>
-            <ul class='unstyled'>
-              <li>
-                <h4>
-                  <a href='#'>A responsive business theme</a>
-                </h4>
-                <p>
-                  <small>November 12, 2012</small>
-                </p>
-              </li>
-              <li>
-                <h4>
-                  <a href='#'>Designed for big and small screens</a>
-                </h4>
-                <p>
-                  <small>August 23, 2012</small>
-                </p>
-              </li>
-              <li>
-                <h4>
-                  <a href='#'>Based on bootstrap framework</a>
-                </h4>
-                <p>
-                  <small>July 22, 2011</small>
-                </p>
-              </li>
+          <ul class='unstyled'>
+            <li>
+              <h4>
+                <a href='#'>A responsive business theme</a>
+              </h4>
+              <p>
+                <small>November 12, 2012</small>
+              </p>
+            </li>
+            <li>
+              <h4>
+                <a href='#'>Designed for big and small screens</a>
+              </h4>
+              <p>
+                <small>August 23, 2012</small>
+              </p>
+            </li>
+            <li>
+              <h4>
+                <a href='#'>Based on bootstrap framework</a>
+              </h4>
+              <p>
+                <small>July 22, 2011</small>
+              </p>
+            </li>
             </ul -->
           </div>
         </div>
@@ -143,9 +143,9 @@
   <script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
   <script type='text/javascript'>
     //<![CDATA[
-      // Call the google map
-      mapInit();
-    //]]>
+    // Call the google map
+  mapInit();
+  //]]>
   </script>
   <script type="text/javascript">
 
@@ -154,10 +154,16 @@
     _gaq.push(['_trackPageview']);
 
     (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
 
-  </script>
-</html>
+   </script>
+   <script type="text/javascript" src="javascripts/jquery.timeago.js"></script>
+   <script>
+     jQuery(document).ready(function() {
+       jQuery("abbr.timeago").timeago();
+     });
+   </script>
+ </html>
