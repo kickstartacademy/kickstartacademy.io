@@ -55,8 +55,8 @@ function mapInit() {
         ],
 
         // put your locations lat and long here
-        lat = 51.5252611, 
-        lng = -0.1274098,
+        lat = 51.5211159,
+        lng = -0.0778345,
 
         // Create a new StyledMapType object, passing it the array of styles,
         // as well as the name to be displayed on the map type control.
