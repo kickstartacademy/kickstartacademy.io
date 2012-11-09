@@ -27,6 +27,7 @@ helpers do
   end
 
   def tweets
+    return [] unless ENV['RACK_ENV'] == 'production'
     Twitter.user_timeline('bddkickstart', count: 3) rescue []
   end
 
@@ -38,17 +39,22 @@ helpers do
   end
 
   def blog_articles
+    blog_urls.map do |url|
+      feed = Feedzirra::Feed.fetch_and_parse(url).entries
+    end.flatten.uniq(&:id).sort do |a,b|
+      b.published <=> a.published
+    end
+  end
+
+  def blog_urls
+    return [] unless ENV['RACK_ENV'] == 'production'
     [
       'http://chrismdp.com/tag/cucumber/atom.xml',
       'http://chrismdp.com/tag/bddkickstart/atom.xml',
       'http://chrismdp.com/tag/bdd/atom.xml',
       'http://blog.mattwynne.net/tag/cucumber/atom',
       'http://blog.mattwynne.net/tag/bdd/atom',
-    ].map do |url|
-      feed = Feedzirra::Feed.fetch_and_parse(url).entries
-    end.flatten.uniq(&:id).sort do |a,b|
-      b.published <=> a.published
-    end
+    ]
   end
 
   def friendly_date(date)
