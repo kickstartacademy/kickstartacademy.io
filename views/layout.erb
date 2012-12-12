@@ -55,12 +55,12 @@
                   </ul>
                 </li>
                 <li class=''><a href="/about">About us</a></li>
-                <li class='active'><a href="/dates#london">Book now</a></li>
+                <li class='active'><a href="/dates">Book now</a></li>
               </ul>
             </div>
           </div>
         </div>
-        <a href="/dates#london"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/images/buy.png" alt="Buy now"></a>
+        <a href="/dates"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/images/buy.png" alt="Buy now"></a>
       </nav>
     </header>
     <div id='content' role='main'>
@@ -130,7 +130,11 @@
   <script type='text/javascript'>
     //<![CDATA[
     // Call the google map
-  mapInit();
+    <% events.each do |event| %>
+      <% event.with_venue do |venue| %>
+        mapInit('<%= venue.name %>', '<%= event.id %>', <%= venue.lat %>, <%= venue.lng %>);
+      <% end %>
+    <% end %>
   //]]>
   </script>
   <script type="text/javascript">

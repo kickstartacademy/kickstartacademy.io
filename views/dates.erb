@@ -22,17 +22,18 @@
           <div class="row-fluid">
             <div class="span12">
               <h2>Venue</h2>
-              <% if event.venue? %>
-                <h3><%= event.venue_name %></h3>
-                <p><%= event.venue_address %></p>
-              <% else %>
+              <% unless event.venue? %>
                 <p>Venue to be confirmed.</p>
+              <% end %>
+              <% event.with_venue do |venue| %>
+                <h3><%= venue.name %></h3>
+                <p><%= venue.address %></p>
               <% end %>
             </div>
           </div>
         </div>
       </section>
-      <% if event.venue? %>
+      <% event.with_venue do %>
         <section class='section' style='overflow:hidden' id='promo'>
           <div class='map-top-shadow'></div>
           <div class='map' id='<%= event.id %>-map'></div>

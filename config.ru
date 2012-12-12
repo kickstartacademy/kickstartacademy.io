@@ -65,7 +65,7 @@ helpers do
     id.gsub(/\W/, '-')
   end
 
-  Event = Struct.new(:title, :date, :eventbrite_id, :venue_name, :venue_address) do
+  Event = Struct.new(:title, :date, :eventbrite_id, :venue) do
     def id
       title.downcase
     end
@@ -75,13 +75,20 @@ helpers do
     end
 
     def venue?
-      venue_name && venue_address
+      !!venue
+    end
+
+    def with_venue
+      yield venue if venue?
     end
   end
 
+  Venue = Struct.new(:name, :address, :lat, :lng)
+
   def events
     [
-      Event.new('Brussels', '6-8 Feb 2012', 5029886526),
+      Event.new('Brussels',  '6-8 Feb 2012', 5029886526, 
+        Venue.new('BetaGroup Coworking', '4 rue des Pères Blancs, 1040 Etterbeek, Brussels, Belgium', 50.8267944, 4.4002839)),
       Event.new('Barcelona', '11-13 Sept 2012')
     ]
   end

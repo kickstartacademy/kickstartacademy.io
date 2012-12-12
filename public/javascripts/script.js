@@ -31,7 +31,7 @@ function carouselInit() {
 
 
 // Function to style the map in the contact page, change lat and lng vars to create your own map
-function mapInit() {
+function mapInit(title, id, lat, lng) {
     // Create an array of styles.
     var styles =   [
         {
@@ -54,10 +54,6 @@ function mapInit() {
             }
         ],
 
-        // put your locations lat and long here
-        lat = 51.5211159,
-        lng = -0.0778345,
-
         // Create a new StyledMapType object, passing it the array of styles,
         // as well as the name to be displayed on the map type control.
         styledMap = new google.maps.StyledMapType(styles,
@@ -73,14 +69,14 @@ function mapInit() {
                 mapTypeIds: [google.maps.MapTypeId.ROADMAP]
             }
         },
-        map = new google.maps.Map(document.getElementById('london-map'),
+        map = new google.maps.Map(document.getElementById(id + '-map'),
             mapOptions),
         venue = new google.maps.LatLng( lat, lng ),
 
         marker = new google.maps.Marker({
                                         position: venue,
                                         map: map,
-                                        title: "Mary Ward House"
+                                        title: title,
                                     });
 
 
