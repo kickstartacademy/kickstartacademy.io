@@ -44,15 +44,14 @@
                 <li class='<%= active(:dates) %> dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dates</a>
                   <ul class='dropdown-menu'>
-                    <li>
-                      <a href="/dates#london">London 4-6 December 2012</a>
-                    </li>
-                    <li>
-                      <a href="/dates#brussels">Brussels 5-7 Feb 2013</a>
-                    </li>
-                    <li>
-                      <a href="/dates#barca">Barcelona 11-13 September 2013</a>
-                    </li>
+                    <% events.each do |event| %>
+                      <li>
+                        <a href="/dates#<%= event.id %>">
+                          <%= event.title %>
+                          <%= event.date %>
+                        </a>
+                      </li>
+                    <% end %>
                   </ul>
                 </li>
                 <li class=''><a href="/about">About us</a></li>

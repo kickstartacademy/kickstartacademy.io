@@ -64,6 +64,27 @@ helpers do
   def slugify(id)
     id.gsub(/\W/, '-')
   end
+
+  Event = Struct.new(:title, :date, :eventbrite_id, :venue_name, :venue_address) do
+    def id
+      title.downcase
+    end
+
+    def tickets?
+      !!eventbrite_id
+    end
+
+    def venue?
+      venue_name && venue_address
+    end
+  end
+
+  def events
+    [
+      Event.new('Brussels', '6-8 Feb 2012', 5029886526),
+      Event.new('Barcelona', '11-13 Sept 2012')
+    ]
+  end
 end
 
 set :static_cache_control, [:public, max_age: 1800]
