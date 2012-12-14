@@ -89,7 +89,8 @@ helpers do
     [
       Event.new('Brussels',  '6-8 Feb 2013', 5029886526, 
         Venue.new('BetaGroup Coworking', '4 rue des Pères Blancs, 1040 Etterbeek, Brussels, Belgium', 50.8267944, 4.4002839)),
-      Event.new('Barcelona', '11-13 Sept 2013')
+      Event.new('Edinburgh', '11-13 March 2012'),
+      Event.new('Barcelona', '11-13 Sept 2013'),
     ]
   end
 end
