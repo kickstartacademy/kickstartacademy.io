@@ -47,9 +47,13 @@ helpers do
   end
 
   def blog_entries(url)
-    feed = Feedzirra::Feed.fetch_and_parse(url)
-    return [] if feed == 0 # this is what Feedzirra gives us if the request timed out
-    feed.entries
+    Timeout.timeout(3) do
+      feed = Feedzirra::Feed.fetch_and_parse(url)
+      return [] if feed == 0 # this is what Feedzirra gives us if the request timed out
+      feed.entries
+    end
+  rescue TimeoutError
+    []
   end
 
   def blog_urls
