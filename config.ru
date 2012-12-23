@@ -40,10 +40,16 @@ helpers do
 
   def blog_articles
     blog_urls.map do |url|
-      feed = Feedzirra::Feed.fetch_and_parse(url).entries
+      blog_entries(url)
     end.flatten.uniq(&:id).sort do |a,b|
       b.published <=> a.published
     end
+  end
+
+  def blog_entries(url)
+    feed = Feedzirra::Feed.fetch_and_parse(url)
+    return [] if feed == 0 # this is what Feedzirra gives us if the request timed out
+    feed.entries
   end
 
   def blog_urls
