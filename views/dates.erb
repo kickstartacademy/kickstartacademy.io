@@ -10,7 +10,7 @@
       <div class="container">
         <div class="page-header">
           <h1><%= event.title %>
-            <small><%= event.full_date %></small>
+            <small><%= course_date_range(event.full_date) %></small>
           </h1>
         </div>
         <% if event.tickets? %>

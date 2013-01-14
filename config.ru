@@ -6,6 +6,8 @@ require 'feedzirra'
 require 'dalli'
 require 'rack-cache'
 
+require File.dirname(__FILE__) + '/lib/event'
+
 # Defined in ENV on Heroku. To try locally, start memcached and uncomment:
 # ENV["MEMCACHE_SERVERS"] = "localhost"
 if memcache_servers = ENV["MEMCACHE_SERVERS"]
@@ -68,52 +70,28 @@ helpers do
   end
 
   def friendly_date(date)
-    date.strftime("%a %d %b %Y %H:%M")
+    date.strftime("%a %-d %b %Y %H:%M")
+  end
+
+  def course_date(date)
+    date.strftime("%-d %B %Y")
+  end
+
+  def course_date_range(dates)
+    dates.first.strftime("%-d") + '-' + dates.last.strftime("%-d %B %Y")
   end
 
   def slugify(id)
     id.gsub(/\W/, '-')
   end
 
-  Event = Struct.new(:title, :date, :eventbrite_id, :venue) do
-    def id
-      title.downcase
-    end
-
-    def tickets?
-      !!eventbrite_id
-    end
-
-    def venue?
-      !!venue
-    end
-
-    def full_date
-      date
-    end
-
-    def fundamentals_date
-      date
-    end
-
-    def applied_date
-      date
-    end
-
-    def with_venue
-      yield venue if venue?
-    end
-  end
-
-  Venue = Struct.new(:name, :address, :lat, :lng)
-
   def events
     [
-      Event.new('Brussels',  '4-6 Feb 2013', 5029886526,
+      Event.new('Brussels',  Time.parse('4 Feb 2013'), 5029886526,
         Venue.new('BetaGroup Coworking', '4 rue des Pères Blancs, 1040 Etterbeek, Brussels, Belgium', 50.8267944, 4.4002839)),
-      Event.new('Edinburgh', '11-13 March 2013', 5217922948,
+      Event.new('Edinburgh', Time.parse('11 Mar 2013'), 5217922948,
         Venue.new('Edinburgh Training and Conference Venue', "16 St. Mary's Street, Edinburgh EH1 1SU", 55.950378, -3.183602)),
-      Event.new('Barcelona', '11-13 Sept 2013'),
+      Event.new('Barcelona', Time.parse('11 Sep 2013')),
     ]
   end
 end

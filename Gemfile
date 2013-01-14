@@ -8,5 +8,7 @@ gem "rack-cache"
 
 group :development do
   gem "shotgun"
+  gem "rspec"
+  gem "activesupport"
 end
 

@@ -48,7 +48,7 @@
                       <li>
                         <a href="/dates#<%= event.id %>">
                           <%= event.title %>
-                          <%= event.full_date %>
+                          <%= course_date_range(event.full_date) %>
                         </a>
                       </li>
                     <% end %>
