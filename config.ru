@@ -45,7 +45,7 @@ helpers do
       blog_entries(url)
     end.flatten.uniq(&:id).sort do |a,b|
       b.published <=> a.published
-    end
+    end[0..15]
   end
 
   def blog_entries(url)
