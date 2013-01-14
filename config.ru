@@ -15,6 +15,9 @@ if memcache_servers = ENV["MEMCACHE_SERVERS"]
     verbose: true,
     metastore:   "memcached://#{memcache_servers}",
     entitystore: "memcached://#{memcache_servers}"
+
+  # Flush the cache
+  Dalli::Client.new.flush
 end
 
 Twitter.configure do |config|
