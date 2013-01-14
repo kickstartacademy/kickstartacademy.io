@@ -1,51 +1,52 @@
-  <section class='section alt'>
+<section class='section alt'>
+  <div class="container">
+    <div class="hero-unit">
+      <h1>When can we start?</h1>
+    </div>
+  </div>
+</section>
+<% events.each do |event| %>
+  <section class='section'>
+    <a class='anchor' name='<%= event.id %>'></a>
     <div class="container">
-      <div class="hero-unit">
-        <h1>When can we start?</h1>
+      <div class="page-header">
+        <h1><%= event.title %>
+          <small><%= course_date_range(event.full_date) %></small>
+        </h1>
+      </div>
+      <% if event.tickets? %>
+        <div class="row-fluid">
+          <h2>Tickets</h2>
+          <iframe src="http://www.eventbrite.co.uk/tickets-external?eid=<%= event.eventbrite_id %>&ref=etckt&v=2" frameborder="0" height="440" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
+        </div>
+      <% end %>
+      <div class="row-fluid">
+        <div class="span12">
+          <h2>Venue</h2>
+          <% unless event.venue? %>
+            <p>Venue to be confirmed.</p>
+          <% end %>
+          <% event.with_venue do |venue| %>
+            <h3><%= venue.name %></h3>
+            <p><%= venue.address %></p>
+          <% end %>
+        </div>
       </div>
     </div>
   </section>
-  <% events.each do |event| %>
-    <section class='section' id='<%= event.id %>'>
-      <div class="container">
-        <div class="page-header">
-          <h1><%= event.title %>
-            <small><%= course_date_range(event.full_date) %></small>
-          </h1>
-        </div>
-        <% if event.tickets? %>
-          <div class="row-fluid">
-            <h2>Tickets</h2>
-            <iframe src="http://www.eventbrite.co.uk/tickets-external?eid=<%= event.eventbrite_id %>&ref=etckt&v=2" frameborder="0" height="440" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
-          </div>
-        <% end %>
-          <div class="row-fluid">
-            <div class="span12">
-              <h2>Venue</h2>
-              <% unless event.venue? %>
-                <p>Venue to be confirmed.</p>
-              <% end %>
-              <% event.with_venue do |venue| %>
-                <h3><%= venue.name %></h3>
-                <p><%= venue.address %></p>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </section>
-      <% event.with_venue do %>
-        <section class='section' style='overflow:hidden' id='promo'>
-          <div class='map-top-shadow'></div>
-          <div class='map' id='<%= event.id %>-map'></div>
-          <div class='map-bottom-shadow'></div>
-        </section>
-      <% end %>
-    <% end %>
-    <section class='section alt'>
-      <div class="container">
-        <div class="hero-unit">
-          <p>Don't see your city here? <a href="/#contact-us">contact us</a> about organising a BDD Kickstart near you.</p>
-        </div>
-      </div>
+  <% event.with_venue do %>
+    <section class='section' style='overflow:hidden' id='promo'>
+      <div class='map-top-shadow'></div>
+      <div class='map' id='<%= event.id %>-map'></div>
+      <div class='map-bottom-shadow'></div>
     </section>
+  <% end %>
+<% end %>
+<section class='section alt'>
+  <div class="container">
+    <div class="hero-unit">
+      <p>Don't see your city here? <a href="/#contact-us">contact us</a> about organising a BDD Kickstart near you.</p>
+    </div>
+  </div>
+</section>
   </div>
