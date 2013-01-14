@@ -88,6 +88,18 @@ helpers do
       !!venue
     end
 
+    def full_date
+      date
+    end
+
+    def fundamentals_date
+      date
+    end
+
+    def applied_date
+      date
+    end
+
     def with_venue
       yield venue if venue?
     end
