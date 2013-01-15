@@ -110,7 +110,7 @@ get '/' do
   erb :index
 end
 
-[:about, :details, :dates, :blog, :thanks, :'in-house-courses'].each do |page|
+[:about, :details, :dates, :blog, :thanks, :'in-house-courses', :coaching].each do |page|
   get "/#{page}" do
     erb page
   end
