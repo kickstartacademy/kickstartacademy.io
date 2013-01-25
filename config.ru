@@ -53,6 +53,7 @@ helpers do
 
   def blog_entries(url)
     Timeout.timeout(3) do
+      Feedzirra::Feed.add_common_feed_entry_element('posterous:firstName', as: 'author')
       feed = Feedzirra::Feed.fetch_and_parse(url)
       return [] if feed == 0 # this is what Feedzirra gives us if the request timed out
       feed.entries
@@ -69,6 +70,7 @@ helpers do
       'http://chrismdp.com/tag/bdd/atom.xml',
       'http://blog.mattwynne.net/tag/cucumber/atom',
       'http://blog.mattwynne.net/tag/bdd/atom',
+      'http://claysnow.co.uk/rss.xml?tag=bdd'
     ]
   end
 

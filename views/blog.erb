@@ -18,7 +18,7 @@
               <h1><%= article.title %> <small>by <%= article.author %></small></h1>
               <p>Published <abbr class='timeago' title='<%= article.published.iso8601 %>'><%= friendly_date(article.published) %></abbr></p>
             </header>
-            <div class='content'><%= article.content %></div>
+            <div class='content'><%= article.content || article.summary %></div>
             <footer>
               This article was originally published <a href="<%= article.url %>">here</a>.
             </footer>
