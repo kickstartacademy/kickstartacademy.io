@@ -118,4 +118,8 @@ end
   end
 end
 
+get '/in-house-training' do
+  redirect '/in-house-courses'
+end
+
 run Sinatra::Application
