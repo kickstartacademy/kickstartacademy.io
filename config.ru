@@ -92,8 +92,6 @@ helpers do
 
   def events
     [
-      Event.new('Brussels',  Time.parse('4 Feb 2013'), 5029886526,
-        Venue.new('BetaGroup Coworking', '4 rue des Pères Blancs, 1040 Etterbeek, Brussels, Belgium', 50.8267944, 4.4002839)),
       Event.new('Edinburgh', Time.parse('11 Mar 2013'), 5217922948,
         Venue.new('Edinburgh Training and Conference Venue', "16 St. Mary's Street, Edinburgh EH1 1SU", 55.950378, -3.183602)),
       Event.new('London', Time.parse('8 Apr 2013'), 5231034164),
