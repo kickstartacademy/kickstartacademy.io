@@ -92,9 +92,7 @@ helpers do
 
   def events
     [
-      Event.new('Edinburgh', Time.parse('11 Mar 2013'), 5217922948,
-        Venue.new('Edinburgh Training and Conference Venue', "16 St. Mary's Street, Edinburgh EH1 1SU", 55.950378, -3.183602)),
-      Event.new('London', Time.parse('22 May 2013')),
+      Event.new('London', Time.parse('22 May 2013'), 5231034164),
       Event.new('Barcelona', Time.parse('11 Sep 2013')),
     ]
   end
