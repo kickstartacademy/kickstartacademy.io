@@ -55,7 +55,7 @@ helpers do
     Timeout.timeout(3) do
       Feedzirra::Feed.add_common_feed_entry_element('posterous:firstName', as: 'author')
       feed = Feedzirra::Feed.fetch_and_parse(url)
-      return [] if feed == 0 # this is what Feedzirra gives us if the request timed out
+      return [] if feed == 0 || feed == 404 # this is what Feedzirra gives us if the request timed out
       feed.entries
     end
   rescue TimeoutError
