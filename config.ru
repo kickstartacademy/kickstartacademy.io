@@ -70,7 +70,6 @@ helpers do
       'http://chrismdp.com/tag/bdd/atom.xml',
       'http://blog.mattwynne.net/tag/cucumber/atom',
       'http://blog.mattwynne.net/tag/bdd/atom',
-      'http://claysnow.co.uk/?feed=rss2'
     ]
   end
 
