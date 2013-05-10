@@ -7,6 +7,7 @@ require 'dalli'
 require 'rack-cache'
 
 require File.dirname(__FILE__) + '/lib/event'
+require File.dirname(__FILE__) + '/lib/subject'
 
 # Defined in ENV on Heroku. To try locally, start memcached and uncomment:
 # ENV["MEMCACHE_SERVERS"] = "localhost"
@@ -95,6 +96,18 @@ helpers do
       Event.new('London', Time.parse('22 May 2013'), 5231034164),
       Event.new('Barcelona', Time.parse('11 Sep 2013')),
     ]
+  end
+
+  def subject
+    # Define training subject locally to get the right website
+    subject = {
+      'bdd' => Subject.new("BDD Kickstart", "BDD", "Behaviour-driven Development", [
+                           Promo.new("A masterclass in Behaviour-driven Development.", "Get a flying start with BDD, the collaborative process that's changing the face of software development.", Image.new("images/hero-shot-students.jpeg", "students")),
+                           Promo.new("Less time hunting bugs<br/>More time shipping features", "Learn to catch bugs before they've even been written, giving you more time to focus on building software that matters."),
+                           Promo.new("Learn from the experts.", "With 2 books and over 30 years' in software development, Matt and Chris have a wealth of experience to share with you.", Image.new("images/hero-shot-book.jpeg", "book")),
+    ]
+                          ),
+    }[ENV['TRAINING_SUBJECT'] || 'bdd']
   end
 end
 
