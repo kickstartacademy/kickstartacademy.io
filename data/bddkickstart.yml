@@ -1,0 +1,24 @@
+--- !ruby/struct:Subject
+course_title: BDD Kickstart
+short_name: BDD
+long_name: Behaviour-driven Development
+promos:
+- !ruby/struct:Promo
+  heading: A masterclass in Behaviour-driven Development.
+  strapline: Get a flying start with BDD, the collaborative process that's changing
+    the face of software development.
+  image: !ruby/struct:Image
+    url: images/hero-shot-students.jpeg
+    alt_text: students
+- !ruby/struct:Promo
+  heading: Less time hunting bugs<br/>More time shipping features
+  strapline: Learn to catch bugs before they've even been written, giving you more
+    time to focus on building software that matters.
+  image:
+- !ruby/struct:Promo
+  heading: Learn from the experts.
+  strapline: With 2 books and over 30 years' in software development, Matt and Chris
+    have a wealth of experience to share with you.
+  image: !ruby/struct:Image
+    url: images/hero-shot-book.jpeg
+    alt_text: book

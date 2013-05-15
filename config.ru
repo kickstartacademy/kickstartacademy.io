@@ -5,6 +5,7 @@ require 'feedzirra'
 
 require 'dalli'
 require 'rack-cache'
+require 'yaml'
 
 require File.dirname(__FILE__) + '/lib/event'
 require File.dirname(__FILE__) + '/lib/subject'
@@ -99,19 +100,12 @@ helpers do
   end
 
   def subject
+    chosen_subject = ENV['TRAINING_SUBJECT'] || 'bdd'
     # Define training subject locally to get the right website
     subject = {
-      'bdd' => Subject.new("BDD Kickstart", "BDD", "Behaviour-driven Development", [
-                           Promo.new("A masterclass in Behaviour-driven Development.", "Get a flying start with BDD, the collaborative process that's changing the face of software development.", Image.new("images/hero-shot-students.jpeg", "students")),
-                           Promo.new("Less time hunting bugs<br/>More time shipping features", "Learn to catch bugs before they've even been written, giving you more time to focus on building software that matters."),
-                           Promo.new("Learn from the experts.", "With 2 books and over 30 years' in software development, Matt and Chris have a wealth of experience to share with you.", Image.new("images/hero-shot-book.jpeg", "book")),
-    ]),
-      'cd' => Subject.new("CD Kickstart", "Continuous Delivery", "Continuous Delivery", [
-                           Promo.new("A masterclass in Continuous Delivery.", "Get a flying start with Continuous Delivery, the shipping process that's changing the face of agile software development.", Image.new("images/hero-shot-students.jpeg", "students")),
-                           Promo.new("Less time hunting bugs<br/>More time shipping features", "Learn to catch bugs before they've even been written, giving you more time to focus on building software that matters."),
-                           Promo.new("Learn from the experts.", "With 2 books and over 30 years experience in software development, we have a wealth of experience to share with you."),
-    ]),
-    }[ENV['TRAINING_SUBJECT'] || 'bdd']
+      'bdd' => YAML.load(File.read('data/bddkickstart.yml')),
+      'cd'  => YAML.load(File.read('data/cdkickstart.yml')),
+    }[chosen_subject]
   end
 end
 

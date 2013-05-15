@@ -1,0 +1,22 @@
+--- !ruby/struct:Subject
+course_title: CD Kickstart
+short_name: Continuous Delivery
+long_name: Continuous Delivery
+promos:
+- !ruby/struct:Promo
+  heading: A masterclass in Continuous Delivery.
+  strapline: Get a flying start with Continuous Delivery, the shipping process that's
+    changing the face of agile software development.
+  image: !ruby/struct:Image
+    url: images/hero-shot-students.jpeg
+    alt_text: students
+- !ruby/struct:Promo
+  heading: Less time hunting bugs<br/>More time shipping features
+  strapline: Learn to catch bugs before they've even been written, giving you more
+    time to focus on building software that matters.
+  image:
+- !ruby/struct:Promo
+  heading: Learn from the experts.
+  strapline: With 2 books and over 30 years experience in software development, we
+    have a wealth of experience to share with you.
+  image:
