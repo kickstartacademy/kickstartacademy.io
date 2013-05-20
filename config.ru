@@ -119,7 +119,15 @@ get '/' do
   erb :index
 end
 
-[:about, :details, :dates, :blog, :thanks, :'in-house-courses', :coaching].each do |page|
+get '/details' do
+  if (ENV['TRAINING_SUBJECT'] == 'cd')
+    erb :cd_details
+  else
+    erb :bdd_details
+  end
+end
+
+[:about, :dates, :blog, :thanks, :'in-house-courses', :coaching].each do |page|
   get "/#{page}" do
     erb page
   end
