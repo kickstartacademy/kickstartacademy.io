@@ -92,20 +92,27 @@ helpers do
     id.gsub(/\W/, '-')
   end
 
+  def course_type
+    # Define training subject locally to get the right website
+    chosen_subject = ENV['TRAINING_SUBJECT'] || 'bdd'
+  end
+
   def events
-    [
+    { :bdd => [
       Event.new('London', Time.parse('22 May 2013'), 5231034164, Venue.new("Unboxed Consulting", "17 Blossom St, London, E1 6PL", 51.521288,-0.07804)),
       Event.new('Barcelona', Time.parse('11 Sep 2013')),
-    ]
+    ],
+      :cd => [
+        Event.new('London', Time.parse('1 July 2013')),
+    ],
+    }[course_type.to_sym]
   end
 
   def subject
-    chosen_subject = ENV['TRAINING_SUBJECT'] || 'bdd'
-    # Define training subject locally to get the right website
     subject = {
       'bdd' => YAML.load(File.read('data/bddkickstart.yml')),
       'cd'  => YAML.load(File.read('data/cdkickstart.yml')),
-    }[chosen_subject]
+    }[course_type]
   end
 end
 
@@ -119,7 +126,15 @@ get '/' do
   erb :index
 end
 
-[:about, :details, :dates, :blog, :thanks, :'in-house-courses', :coaching].each do |page|
+get '/details' do
+  if (ENV['TRAINING_SUBJECT'] == 'cd')
+    erb :cd_details
+  else
+    erb :bdd_details
+  end
+end
+
+[:about, :dates, :blog, :thanks, :'in-house-courses', :coaching].each do |page|
   get "/#{page}" do
     erb page
   end
