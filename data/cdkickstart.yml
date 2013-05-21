@@ -2,6 +2,7 @@
 course_title: CD Kickstart
 short_name: Continuous Delivery
 long_name: Continuous Delivery
+twitter: cdkickstart
 promos:
 - !ruby/struct:Promo
   heading: A masterclass in Continuous Delivery.

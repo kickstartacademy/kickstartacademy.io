@@ -2,6 +2,7 @@
 course_title: BDD Kickstart
 short_name: BDD
 long_name: Behaviour-driven Development
+twitter: BDDKickstart
 promos:
 - !ruby/struct:Promo
   heading: A masterclass in Behaviour-driven Development.
