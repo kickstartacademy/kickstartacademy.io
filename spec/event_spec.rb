@@ -4,7 +4,7 @@ require 'active_support/core_ext'
 
 describe Event do
   let(:start_date) { 3.days.ago }
-  let(:event) { Event.new("Foo", start_date, "eventbrite", nil) }
+  let(:event) { Event.new("Foo", start_date, start_date + 2.days, "eventbrite", nil) }
 
   it "returns a set of three days for full date" do
     event.full_date.should == [start_date, start_date + 2.days]

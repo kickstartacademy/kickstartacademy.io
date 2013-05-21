@@ -99,11 +99,11 @@ helpers do
 
   def events
     { :bdd => [
-      Event.new('London', Time.parse('22 May 2013'), 5231034164, Venue.new("Unboxed Consulting", "17 Blossom St, London, E1 6PL", 51.521288,-0.07804)),
-      Event.new('Barcelona', Time.parse('11 Sep 2013')),
+      Event.new('London', Time.parse('22 May 2013'), Time.parse('24 May 2013'), 5231034164, Venue.new("Unboxed Consulting", "17 Blossom St, London, E1 6PL", 51.521288,-0.07804)),
+      Event.new('Barcelona', Time.parse('11 Sep 2013'), Time.parse('13 Sep 2013')),
     ],
       :cd => [
-        Event.new('London', Time.parse('1 July 2013')),
+        Event.new('London', Time.parse('1 July 2013'), Time.parse('2 July 2013')),
     ],
     }[course_type.to_sym]
   end
