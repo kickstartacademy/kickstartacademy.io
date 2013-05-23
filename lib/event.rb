@@ -1,4 +1,4 @@
-Event = Struct.new(:title, :date, :eventbrite_id, :venue) do
+Event = Struct.new(:title, :start_date, :end_date, :eventbrite_id, :venue) do
   def id
     title.downcase
   end
@@ -12,15 +12,15 @@ Event = Struct.new(:title, :date, :eventbrite_id, :venue) do
   end
 
   def full_date
-    [date, date + 2.days]
+    [start_date, end_date]
   end
 
   def fundamentals_date
-    date
+    start_date
   end
 
   def applied_date
-    [date + 1.day, date + 2.days]
+    [start_date + 1.day, end_date]
   end
 
   def with_venue
