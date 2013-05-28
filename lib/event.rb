@@ -1,4 +1,4 @@
-Event = Struct.new(:title, :start_date, :end_date, :eventbrite_id, :venue) do
+Event = Struct.new(:type, :title, :start_date, :end_date, :eventbrite_id, :venue) do
   def id
     title.downcase
   end
