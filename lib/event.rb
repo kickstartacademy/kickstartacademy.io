@@ -2,6 +2,10 @@ Event = Struct.new(:type, :title, :start_date, :end_date, :eventbrite_id, :venue
   def id
     "#{type.to_s.downcase}-#{title.downcase}" 
   end
+  
+  def course_type
+    { :bdd => "BDD Kickstart", :cd => "Continuous Delivery Kickstart" }[type]
+  end
 
   def tickets?
     !!eventbrite_id
