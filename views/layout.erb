@@ -44,7 +44,7 @@
                 <li class='<%= active(:dates) %> dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dates</a>
                   <ul class='dropdown-menu'>
-                    <% events.each do |event| %>
+                    <% all_events.each do |event| %>
                       <li>
                         <a href="/dates#<%= event.id %>">
                           <%= event.title %>
@@ -130,7 +130,7 @@
   <script type='text/javascript'>
     //<![CDATA[
     // Call the google map
-    <% events.each do |event| %>
+    <% all_events.each do |event| %>
       <% event.with_venue do |venue| %>
         mapInit('<%= venue.name %>', '<%= event.id %>', <%= venue.lat %>, <%= venue.lng %>);
       <% end %>
