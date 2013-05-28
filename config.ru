@@ -103,9 +103,9 @@ helpers do
 
   def all_events
     [
-      Event.new(:bdd, '(BDD) London', Time.parse('22 May 2013'), Time.parse('24 May 2013'), 5231034164, Venue.new("Unboxed Consulting", "17 Blossom St, London, E1 6PL", 51.521288,-0.07804)),
-      Event.new(:bdd, '(BDD) Barcelona', Time.parse('11 Sep 2013'), Time.parse('13 Sep 2013')),
-      Event.new(:cd,  '(CD) London', Time.parse('19 Sep 2013'), Time.parse('20 Sep 2013')),
+      Event.new(:bdd, 'London', Time.parse('22 May 2013'), Time.parse('24 May 2013'), 5231034164, Venue.new("Unboxed Consulting", "17 Blossom St, London, E1 6PL", 51.521288,-0.07804)),
+      Event.new(:bdd, 'Barcelona', Time.parse('11 Sep 2013'), Time.parse('13 Sep 2013')),
+      Event.new(:cd,  'London', Time.parse('19 Sep 2013'), Time.parse('20 Sep 2013')),
     ]
   end
 
