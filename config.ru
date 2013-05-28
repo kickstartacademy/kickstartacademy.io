@@ -127,13 +127,14 @@ get '/' do
   erb :index
 end
 
-get '/details' do
-  if (ENV['TRAINING_SUBJECT'] == 'cd')
-    erb :cd_details
-  else
-    erb :bdd_details
-  end
+get '/bdd-details' do
+  erb :bdd_details
 end
+
+get '/cd-details' do
+  erb :cd_details
+end
+
 
 get '/in-house-courses' do
   if (ENV['TRAINING_SUBJECT'] == 'cd')
