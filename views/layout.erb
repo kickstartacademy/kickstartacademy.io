@@ -61,6 +61,7 @@
                     <% all_events.each do |event| %>
                       <li>
                         <a href="/dates#<%= event.id %>">
+                          (<%= event.type.to_s.upcase %>)
                           <%= event.title %>
                           <%= course_date_range(event.full_date) %>
                         </a>

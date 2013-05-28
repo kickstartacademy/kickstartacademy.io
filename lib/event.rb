@@ -1,6 +1,6 @@
 Event = Struct.new(:type, :title, :start_date, :end_date, :eventbrite_id, :venue) do
   def id
-    title.downcase
+    "#{type.to_s.downcase}-#{title.downcase}" 
   end
 
   def tickets?
