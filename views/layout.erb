@@ -40,7 +40,21 @@
               <ul class='nav pull-right'>
                 <li class='<%= active(:home) %>'><a href="/">Home</a></li>
                 <li class='<%= active(:blog) %>'><a href="/blog">Blog</a></li>
-                <li class=''><a href="/details">Course Details</a></li>
+                <li class='<%= active(:dates) %> dropdown'>
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Course Details</a>
+                  <ul class='dropdown-menu'>
+                      <li>
+                        <a href="/bdd-details">
+                          BDD Kickstart
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/cd-details">
+                          Continuous Delivery Kickstart
+                        </a>
+                      </li>
+                  </ul>
+                </li>
                 <li class='<%= active(:dates) %> dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dates</a>
                   <ul class='dropdown-menu'>
