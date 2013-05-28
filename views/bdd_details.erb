@@ -27,7 +27,7 @@
       <div class='hero-unit pull-left'>
         <h2>
           <a class="btn btn-primary btn-large" href="/dates#<%= events.first.id %>">Book BDD Kickstart</a>
-          <small>Next date: <%= course_date_range(events.first.full_date) %>, <%= events.first.title %></small>
+          <small>Next date: <%= course_date_range(events.select { |e| e.type == :bdd }.first.full_date) %>, <%= events.first.title %></small>
         </h2>
       </div>
     </div>
@@ -101,7 +101,7 @@
         <div class='hero-unit pull-left'>
           <h2>
             <a class="btn btn-primary btn-large" href="/dates#<%= events.first.id %>">Book BDD Fundamentals</a>
-            <small>Next date: <%= course_date(events.first.fundamentals_date) %>, <%= events.first.title %></small>
+            <small>Next date: <%= course_date(events.select { |e| e.type == :bdd }.first.fundamentals_date) %>, <%= events.first.title %></small>
           </h2>
         </div>
       </div>
@@ -179,7 +179,7 @@
         <div class='hero-unit pull-left'>
           <h2>
             <a class="btn btn-primary btn-large" href="/dates#<%= events.first.id %>">Book BDD Applied</a>
-            <small>Next date: <%= course_date_range(events.first.applied_date) %>, <%= events.first.title %></small>
+            <small>Next date: <%= course_date_range(events.select { |e| e.type == :bdd }.first.applied_date) %>, <%= events.first.title %></small>
           </h2>
         </div>
       </div>
