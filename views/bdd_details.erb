@@ -26,8 +26,8 @@
       </div>
       <div class='hero-unit pull-left'>
         <h2>
-          <a class="btn btn-primary btn-large" href="/dates#<%= events.first.id %>">Book BDD Kickstart</a>
-          <small>Next date: <%= course_date_range(events.first.full_date) %>, <%= events.first.title %></small>
+          <a class="btn btn-primary btn-large" href="/dates#<%= events(:bdd).first.id %>">Book BDD Kickstart</a>
+          <small>Next date: <%= course_date_range(events(:bdd).first.full_date) %>, <%= events(:bdd).first.title %></small>
         </h2>
       </div>
     </div>
@@ -100,8 +100,8 @@
       <div class='row-fluid'>
         <div class='hero-unit pull-left'>
           <h2>
-            <a class="btn btn-primary btn-large" href="/dates#<%= events.first.id %>">Book BDD Fundamentals</a>
-            <small>Next date: <%= course_date(events.first.fundamentals_date) %>, <%= events.first.title %></small>
+            <a class="btn btn-primary btn-large" href="/dates#<%= events(:bdd).first.id %>">Book BDD Fundamentals</a>
+            <small>Next date: <%= course_date(events(:bdd).first.fundamentals_date) %>, <%= events(:bdd).first.title %></small>
           </h2>
         </div>
       </div>
@@ -178,8 +178,8 @@
       <div class='row-fluid'>
         <div class='hero-unit pull-left'>
           <h2>
-            <a class="btn btn-primary btn-large" href="/dates#<%= events.first.id %>">Book BDD Applied</a>
-            <small>Next date: <%= course_date_range(events.first.applied_date) %>, <%= events.first.title %></small>
+            <a class="btn btn-primary btn-large" href="/dates#<%= events(:bdd).first.id %>">Book BDD Applied</a>
+            <small>Next date: <%= course_date_range(events(:bdd).first.applied_date) %>, <%= events(:bdd).first.title %></small>
           </h2>
         </div>
       </div>
@@ -226,7 +226,7 @@
       <div class='row-fluid'>
         <div class='hero-unit pull-left'>
           <h2>
-            <a class="btn btn-primary btn-large" href="/dates#<%= events.first.id %>">Book BDD Kickstart</a>
+            <a class="btn btn-primary btn-large" href="/dates#<%= events(:bdd).first.id %>">Book BDD Kickstart</a>
           </h2>
         </div>
       </div>

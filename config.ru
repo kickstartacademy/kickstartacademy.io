@@ -85,35 +85,41 @@ helpers do
   end
 
   def course_date_range(dates)
-    dates.first.strftime("%-d") + '-' + dates.last.strftime("%-d %B %Y")
+    if (spans_month_boundary(dates))
+      dates.first.strftime("%-d %B") + '-' + dates.last.strftime("%-d %B %Y")
+    else
+      dates.first.strftime("%-d") + '-' + dates.last.strftime("%-d %B %Y")
+    end
+  end
+  
+  def spans_month_boundary(daterange)
+    daterange.first.month != daterange.last.month
   end
 
   def slugify(id)
     id.gsub(/\W/, '-')
   end
 
-  def course_type
-    # Define training subject locally to get the right website
-    chosen_subject = ENV['TRAINING_SUBJECT'] || 'bdd'
+  def events(type)
+    all_events.select { |e| e.type == type }
   end
 
-  def events
-    # Event.new('London', Time.parse('22 May 2013'), Time.parse('24 May 2013'), 5231034164, Venue.new("Unboxed Consulting", "17 Blossom St, London, E1 6PL", 51.521288,-0.07804)),
-    { :bdd => [
-      Event.new('Barcelona', Time.parse('11 Sep 2013'), Time.parse('13 Sep 2013')),
-    ],
-      :cd => [
-        Event.new('London', Time.parse('1 July 2013'), Time.parse('2 July 2013')),
-    ],
-    }[course_type.to_sym]
+  def all_events
+    [
+      # Event.new(:bdd, 'London', Time.parse('22 May 2013'), Time.parse('24 May 2013'), 5231034164, Venue.new("Unboxed Consulting", "17 Blossom St, London, E1 6PL", 51.521288,-0.07804)),
+      Event.new(:bdd, 'Barcelona', Time.parse('11 Sep 2013'), Time.parse('13 Sep 2013')),
+      Event.new(:cd,  'London', Time.parse('30 Sep 2013'), Time.parse('1 Oct 2013')),
+    ]
   end
-
-  def subject
-    subject = {
-      'bdd' => YAML.load(File.read('data/bddkickstart.yml')),
-      'cd'  => YAML.load(File.read('data/cdkickstart.yml')),
-    }[course_type]
+  
+  def promos
+    [
+      Promo.new("A masterclass in Behaviour-driven Development.", "Get a flying start with BDD, the collaborative process that's changing the face of software development.", Image.new("images/hero-shot-students.jpeg", "students")),
+      Promo.new("Less time hunting bugs<br/>More time shipping features", "Learn to catch bugs before they've even been written, giving you more time to focus on building software that matters."),
+      Promo.new("Learn from the experts.", "With 2 books and over 30 years' in software development, Matt and Chris have a wealth of experience to share with you.", Image.new("images/hero-shot-book.jpeg", "book"))
+    ]
   end
+  
 end
 
 set :static_cache_control, [:public, max_age: 1800]
@@ -126,13 +132,14 @@ get '/' do
   erb :index
 end
 
-get '/details' do
-  if (ENV['TRAINING_SUBJECT'] == 'cd')
-    erb :cd_details
-  else
-    erb :bdd_details
-  end
+get '/bdd-details' do
+  erb :bdd_details
 end
+
+get '/cd-details' do
+  erb :cd_details
+end
+
 
 get '/in-house-courses' do
   if (ENV['TRAINING_SUBJECT'] == 'cd')

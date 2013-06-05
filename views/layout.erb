@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8' />
     <!-- %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"} -->
-    <title><%= subject.short_name %> Kickstart</title>
+    <title>BDD Kickstart</title>
     <meta content='width=device-width' name='viewport' />
     <!--[if lt IE 9]>
     <script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script>
@@ -32,7 +32,7 @@
             </a>
             <h1 class='brand'>
               <a href='/'>
-                <%= subject.course_title %>
+                BDD Kickstart
                 <img src="images/logo.png" width="40px"></img>
               </a>
             </h1>
@@ -40,13 +40,28 @@
               <ul class='nav pull-right'>
                 <li class='<%= active(:home) %>'><a href="/">Home</a></li>
                 <li class='<%= active(:blog) %>'><a href="/blog">Blog</a></li>
-                <li class=''><a href="/details">Course Details</a></li>
+                <li class='<%= active(:dates) %> dropdown'>
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Course Details</a>
+                  <ul class='dropdown-menu'>
+                      <li>
+                        <a href="/bdd-details">
+                          BDD Kickstart
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/cd-details">
+                          Continuous Delivery Kickstart
+                        </a>
+                      </li>
+                  </ul>
+                </li>
                 <li class='<%= active(:dates) %> dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dates</a>
                   <ul class='dropdown-menu'>
-                    <% events.each do |event| %>
+                    <% all_events.each do |event| %>
                       <li>
                         <a href="/dates#<%= event.id %>">
+                          (<%= event.type.to_s.upcase %>)
                           <%= event.title %>
                           <%= course_date_range(event.full_date) %>
                         </a>
@@ -83,7 +98,7 @@
               </li>
               <li>
                 <i class='icon-twitter'></i>
-                <a href='http://twitter.com/<%= subject.twitter %>/' target='_blank'>@<%= subject.twitter %></a>
+                <a href='http://twitter.com/bddkickstart/' target='_blank'>@bddkickstart</a>
               </li>
             </ul>
           </div>
@@ -101,7 +116,7 @@
                 </li>
               <% end %>
             </ul>
-            <a href="https://twitter.com/<%= subject.twitter %>">more...</a>
+            <a href="https://twitter.com/bddkickstart">more...</a>
           </div>
           <div class='span4'>
             <h3>Latest posts</h3>
@@ -130,7 +145,7 @@
   <script type='text/javascript'>
     //<![CDATA[
     // Call the google map
-    <% events.each do |event| %>
+    <% all_events.each do |event| %>
       <% event.with_venue do |venue| %>
         mapInit('<%= venue.name %>', '<%= event.id %>', <%= venue.lat %>, <%= venue.lng %>);
       <% end %>
