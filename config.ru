@@ -85,7 +85,15 @@ helpers do
   end
 
   def course_date_range(dates)
-    dates.first.strftime("%-d") + '-' + dates.last.strftime("%-d %B %Y")
+    if (spans_month_boundary(dates))
+      dates.first.strftime("%-d %B") + '-' + dates.last.strftime("%-d %B %Y")
+    else
+      dates.first.strftime("%-d") + '-' + dates.last.strftime("%-d %B %Y")
+    end
+  end
+  
+  def spans_month_boundary(daterange)
+    daterange.first.month != daterange.last.month
   end
 
   def slugify(id)
@@ -104,7 +112,7 @@ helpers do
   def all_events
     [
       Event.new(:bdd, 'Barcelona', Time.parse('11 Sep 2013'), Time.parse('13 Sep 2013'), 6771179781),
-      Event.new(:cd,  'London', Time.parse('19 Sep 2013'), Time.parse('20 Sep 2013')),
+      Event.new(:cd,  'London', Time.parse('30 Sep 2013'), Time.parse('1 Oct 2013')),
     ]
   end
 
