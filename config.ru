@@ -100,11 +100,6 @@ helpers do
     id.gsub(/\W/, '-')
   end
 
-  def course_type
-    # Define training subject locally to get the right website
-    chosen_subject = ENV['TRAINING_SUBJECT'] || 'bdd'
-  end
-
   def events(type)
     all_events.select { |e| e.type == type }
   end
@@ -115,13 +110,6 @@ helpers do
       Event.new(:bdd, 'Barcelona', Time.parse('11 Sep 2013'), Time.parse('13 Sep 2013')),
       Event.new(:cd,  'London', Time.parse('30 Sep 2013'), Time.parse('1 Oct 2013')),
     ]
-  end
-
-  def subject
-    subject = {
-      'bdd' => YAML.load(File.read('data/bddkickstart.yml')),
-      'cd'  => YAML.load(File.read('data/cdkickstart.yml')),
-    }[course_type]
   end
   
   def promos
