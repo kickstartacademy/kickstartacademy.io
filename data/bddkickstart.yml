@@ -1,5 +1,3 @@
 --- !ruby/struct:Subject
 short_name: BDD
 long_name: Behaviour-driven Development
-twitter: BDDKickstart
-domain_name: bddkickstart.com

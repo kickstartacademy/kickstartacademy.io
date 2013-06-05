@@ -24,7 +24,7 @@
         <div class="span12">
           <h2>Venue</h2>
           <% unless event.venue? %>
-            <p>Venue not yet confirmed. Do you have a suitable venue? We offer training discounts to those hosting our courses: <a href="mailto:hello@<%= subject.domain_name %>?subject=Hosting BDD Kickstart <%= event.title %>">contact us</a> for more details.</p>
+            <p>Venue not yet confirmed. Do you have a suitable venue? We offer training discounts to those hosting our courses: <a href="mailto:hello@bddkickstart.com?subject=Hosting BDD Kickstart <%= event.title %>">contact us</a> for more details.</p>
           <% end %>
           <% event.with_venue do |venue| %>
             <h3><%= venue.name %></h3>
