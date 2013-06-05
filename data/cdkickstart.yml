@@ -4,24 +4,3 @@ short_name: Continuous Delivery
 long_name: Continuous Delivery
 twitter: cdkickstart
 domain_name: cdkickstart.com
-promos:
-- !ruby/struct:Promo
-  heading: A masterclass in Continuous Delivery.
-  strapline: Get a flying start with Continuous Delivery, the shipping process that's
-    changing the face of agile software development.
-  image: !ruby/struct:Image
-    url: images/hero-shot-laptops.jpeg
-    alt_text: practical work
-- !ruby/struct:Promo
-  heading: Less time managing releases<br/>More time shipping features
-  strapline: Learn to streamline and automate your deployment process, giving you more
-    time to focus on building software that matters.
-  image: !ruby/struct:Image
-    url: images/hero-shot-helping.jpeg
-    alt_text: mentoring
-- !ruby/struct:Promo
-  heading: Practise techniques in simulation.
-  strapline: Through sophisticated simulations, we perform many releases of code during the course and see how we can use metrics to track and react to performance.
-  image: !ruby/struct:Image
-    url: images/hero-shot-graph.jpeg
-    alt_text: metrics graph
