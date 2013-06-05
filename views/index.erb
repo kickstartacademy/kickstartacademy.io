@@ -3,7 +3,7 @@
     <div class='carousel slide' id='myCarousel'>
       <!-- Carousel items -->
       <div class='carousel-inner'>
-        <% subject.promos.each_with_index do |promo, i| %>
+        <% promos.each_with_index do |promo, i| %>
           <div class='<%= 'active' if i == 0 %> item'>
             <div class='row-fluid'>
               <div class='<%= "span7" if promo.image %>'>
