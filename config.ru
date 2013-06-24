@@ -132,6 +132,7 @@ get '/' do
   erb :index
 end
 
+get '/details' { redirect '/bdd-details' }
 get '/bdd-details' do
   erb :bdd_details
 end
@@ -139,7 +140,6 @@ end
 get '/cd-details' do
   erb :cd_details
 end
-
 
 get '/in-house-courses' do
   if (ENV['TRAINING_SUBJECT'] == 'cd')
