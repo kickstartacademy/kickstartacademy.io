@@ -132,7 +132,7 @@ get '/' do
   erb :index
 end
 
-get '/details' { redirect '/bdd-details' }
+get('/details') { redirect '/bdd-details' }
 get '/bdd-details' do
   erb :bdd_details
 end
