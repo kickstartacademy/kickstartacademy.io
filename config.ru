@@ -8,7 +8,6 @@ require 'rack-cache'
 require 'yaml'
 
 require File.dirname(__FILE__) + '/lib/event'
-require File.dirname(__FILE__) + '/lib/subject'
 
 # Defined in ENV on Heroku. To try locally, start memcached and uncomment:
 # ENV["MEMCACHE_SERVERS"] = "localhost"
@@ -110,7 +109,9 @@ helpers do
       Event.new(:cd,  'London', Time.parse('30 Sep 2013'), Time.parse('1 Oct 2013')),
     ]
   end
-  
+
+  Promo = Struct.new(:heading, :strapline, :image)
+  Image = Struct.new(:url, :alt_text)
   def promos
     [
       Promo.new("A masterclass in Behaviour-driven Development.", "Get a flying start with BDD, the collaborative process that's changing the face of software development.", Image.new("images/hero-shot-students.jpeg", "students")),
