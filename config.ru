@@ -106,7 +106,7 @@ helpers do
   def all_events
     [
       Event.new(:bdd, 'Barcelona', Time.parse('11 Sep 2013'), Time.parse('13 Sep 2013'), 6771179781),
-      Event.new(:cd,  'London', Time.parse('30 Sep 2013'), Time.parse('1 Oct 2013')),
+      Event.new(:cd,  'London', Time.parse('30 Sep 2013'), Time.parse('1 Oct 2013'), 6859008479),
     ]
   end
 
