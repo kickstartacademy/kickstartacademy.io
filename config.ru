@@ -105,8 +105,26 @@ helpers do
 
   def all_events
     [
-      Event.new(:bdd, 'Barcelona', Time.parse('11 Sep 2013'), Time.parse('13 Sep 2013'), 6771179781),
-      Event.new(:cd,  'London', Time.parse('30 Sep 2013'), Time.parse('1 Oct 2013'), 6859008479),
+      Event.new(
+        :bdd,
+        'Barcelona',
+        Time.parse('11 Sep 2013'),
+        Time.parse('13 Sep 2013'),
+        6771179781, 
+        Venue.new(
+          'Auditori AXA', 
+          'Avinguda Diagonal 547 Barcelona', 
+          41.390449, 
+          2.135979,
+        )
+      ),
+      Event.new(
+        :cd,
+        'London', 
+        Time.parse('30 Sep 2013'), 
+        Time.parse('1 Oct 2013'), 
+        6859008479,
+      ),
     ]
   end
 
