@@ -53,18 +53,22 @@ helpers do
   end
 
   def blog_entries(url)
-    Timeout.timeout(3) do
+    p "Loading entries for #{url}"
+    Timeout.timeout(10) do
       Feedzirra::Feed.add_common_feed_entry_element('posterous:firstName', as: 'author')
       feed = Feedzirra::Feed.fetch_and_parse(url)
-      return [] if feed == 0 || feed == 404 # this is what Feedzirra gives us if the request timed out
+      p "feed no good: #{feed}" and return [] if feed == 0 || feed == 404 # this is what Feedzirra gives us if the request timed out
+      p "feed nil" and return [] if feed.nil?
+      p "Found #{feed.entries.count} entries"
       feed.entries
     end
   rescue TimeoutError
+    p "timed out"
     []
   end
 
   def blog_urls
-    return [] unless ENV['RACK_ENV'] == 'production'
+ #   return [] unless ENV['RACK_ENV'] == 'production'
     [
       'http://chrismdp.com/tag/cucumber/atom.xml',
       'http://chrismdp.com/tag/bddkickstart/atom.xml',
