@@ -8,6 +8,7 @@ require 'rack-cache'
 require 'yaml'
 
 require File.dirname(__FILE__) + '/lib/event'
+require File.dirname(__FILE__) + '/lib/blog'
 
 # Defined in ENV on Heroku. To try locally, start memcached and uncomment:
 # ENV["MEMCACHE_SERVERS"] = "localhost"
@@ -45,39 +46,13 @@ helpers do
   end
 
   def blog_articles
-    blog_urls.map do |url|
-      blog_entries(url)
-    end.flatten.uniq(&:id).sort do |a,b|
+    settings.blog.articles.sort do |a,b|
       b.published <=> a.published
     end[0..15]
   end
 
-  def blog_entries(url)
-    p "Loading entries for #{url}"
-    Timeout.timeout(10) do
-      Feedzirra::Feed.add_common_feed_entry_element('posterous:firstName', as: 'author')
-      feed = Feedzirra::Feed.fetch_and_parse(url)
-      p "feed no good: #{feed}" and return [] if feed == 0 || feed == 404 # this is what Feedzirra gives us if the request timed out
-      p "feed nil" and return [] if feed.nil?
-      p "Found #{feed.entries.count} entries"
-      feed.entries
-    end
-  rescue TimeoutError
-    p "timed out"
-    []
-  end
-
-  def blog_urls
- #   return [] unless ENV['RACK_ENV'] == 'production'
-    [
-      'http://chrismdp.com/tag/cucumber/atom.xml',
-      'http://chrismdp.com/tag/bddkickstart/atom.xml',
-      'http://chrismdp.com/tag/bdd/atom.xml',
-      'http://blog.mattwynne.net/tag/cucumber/atom',
-      'http://blog.mattwynne.net/tag/bdd/atom',
-      'http://claysnow.co.uk/?tag=bdd&feed=rss2',
-      'http://chatley.com/atom.xml',
-    ]
+  def blog_loading?
+    settings.blog.refreshing?
   end
 
   def friendly_date(date)
@@ -146,6 +121,15 @@ helpers do
 end
 
 set :static_cache_control, [:public, max_age: 1800]
+set :blog, Blog.new([
+  'http://chrismdp.com/tag/cucumber/atom.xml',
+  'http://chrismdp.com/tag/bddkickstart/atom.xml',
+  'http://chrismdp.com/tag/bdd/atom.xml',
+  'http://blog.mattwynne.net/tag/cucumber/atom',
+  'http://blog.mattwynne.net/tag/bdd/atom',
+  'http://claysnow.co.uk/?tag=bdd&feed=rss2',
+  'http://chatley.com/atom.xml',
+]).refresh
 
 before do
   cache_control :public, max_age: 1800  # 30 mins
