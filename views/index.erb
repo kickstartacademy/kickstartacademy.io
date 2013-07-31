@@ -3,24 +3,61 @@
     <div class='carousel slide' id='myCarousel'>
       <!-- Carousel items -->
       <div class='carousel-inner'>
-        <% promos.each_with_index do |promo, i| %>
-          <div class='<%= 'active' if i == 0 %> item'>
+
+          <div class='active item'>
             <div class='row-fluid'>
-              <div class='<%= "span7" if promo.image %>'>
-                <div class='hero-unit <%= 'pull-center' unless promo.image %>'>
-                  <h1><%= promo.heading %></h1>
-                  <p><%= promo.strapline %></p>
+              <div class='span7'>
+                <div class='hero-unit'>
+                  <h1>
+                    A masterclass in Behaviour-driven Development.
+                  </h1>
+                  <p>
+                    Get a flying start with BDD, the collaborative process that's changing the face of software development.
+                  </p>
                   <a class="btn btn-primary btn-large" href="details">Find out more</a>
                 </div>
               </div>
-              <% if promo.image %>
-                <div class='span5'>
-                  <img alt='<%= promo.image.alt_text %>' class='pull-right' src='<%= promo.image.url %>' />
-                </div>
-              <% end %>
+              <div class='span5'>
+                <img alt='students' class='pull-right' src='images/hero-shot-students.jpeg' />
+              </div>
             </div>
           </div>
-        <% end %>
+
+          <div class='item'>
+            <div class='row-fluid'>
+              <div>
+                <div class='hero-unit pull-center'>
+                  <h1>
+                    Less time hunting bugs<br/>More time shipping features
+                  </h1>
+                  <p>
+                    Learn to catch bugs before they've even been written, giving you more time to focus on building software that matters.
+                  </p>
+                  <a class="btn btn-primary btn-large" href="details">Find out more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class='item'>
+            <div class='row-fluid'>
+              <div class='span7'>
+                <div class='hero-unit'>
+                  <h1>
+                    Learn from the experts.
+                  </h1>
+                  <p>
+                    With 2 books and over 30 years' in software development, Matt and Chris have a wealth of experience to share with you.
+                  </p>
+                  <a class="btn btn-primary btn-large" href="details">Find out more</a>
+                </div>
+              </div>
+              <div class='span5'>
+                <img alt='The Cucumber Book' class='pull-right' src='images/hero-shot-book.jpeg' />
+              </div>
+            </div>
+          </div>
+
       </div>
       <!-- Carousel nav -->
       <a class='carousel-control left' data-slide='prev' href='#myCarousel'>&lsaquo;</a>

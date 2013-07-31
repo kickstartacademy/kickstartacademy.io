@@ -107,17 +107,6 @@ helpers do
       ),
     ]
   end
-
-  Promo = Struct.new(:heading, :strapline, :image)
-  Image = Struct.new(:url, :alt_text)
-  def promos
-    [
-      Promo.new("A masterclass in Behaviour-driven Development.", "Get a flying start with BDD, the collaborative process that's changing the face of software development.", Image.new("images/hero-shot-students.jpeg", "students")),
-      Promo.new("Less time hunting bugs<br/>More time shipping features", "Learn to catch bugs before they've even been written, giving you more time to focus on building software that matters."),
-      Promo.new("Learn from the experts.", "With 2 books and over 30 years' in software development, Matt and Chris have a wealth of experience to share with you.", Image.new("images/hero-shot-book.jpeg", "book"))
-    ]
-  end
-  
 end
 
 set :static_cache_control, [:public, max_age: 1800]
