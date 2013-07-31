@@ -1,0 +1,66 @@
+<section class="section alt">
+  <div class="container">
+    <div class="page-header">
+      <h1>
+        Courses
+        <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</small>
+      </h1>
+    </div>
+    <div class="row-fluid">
+      <div class="span9">
+        <ul class="thumbnails bordered">
+          <li>
+            <a href="/courses/bdd-kickstart">
+              <div class="row-fluid">
+                <div class="span4 pull-center">
+                  <i class="icon-comment enormous-icon circled pull-center"></i>
+                </div>
+                <div class="span8">
+                  <h3>BDD Kickstart</h3>
+                  <p>
+                    Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development.
+                  </p>
+                  <p>
+                    Blah blah and some more blah about the blah
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/courses/continuous-delivery-kickstart">
+              <div class="row-fluid">
+                <div class="span4 pull-center">
+                  <i class="icon-truck enormous-icon circled pull-center"></i>
+                </div>
+                <div class="span8">
+                  <h3>Continuous Delivery Kickstart</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <aside class="span3 sidebar">
+        <div class="sidebar-widget">
+          <h2 class="sidebar-header">Blog posts</h2>
+          <ul class="unstyled">
+            <% blog_articles.entries.each do |article| %>
+              <li>
+                <h4>
+                  <a href="<%= article.url %>"><%= article.title %></a>
+                </h4>
+                <p>Published <abbr class='timeago' title='<%= article.published.iso8601 %>'><%= friendly_date(article.published) %></abbr></p>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

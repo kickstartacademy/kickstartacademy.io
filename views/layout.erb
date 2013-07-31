@@ -8,16 +8,16 @@
     <!--[if lt IE 9]>
     <script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script>
     <![endif]-->
-    <link href='favicon.ico' rel='shortcut icon' />
-    <link href='images/apple-touch-icon-144-precomposed.png' rel='apple-touch-icon-precomposed' sizes='144x144' />
-    <link href='images/apple-touch-icon-114-precomposed.png' rel='apple-touch-icon-precomposed' sizes='114x114' />
-    <link href='images/apple-touch-icon-72-precomposed.png' rel='apple-touch-icon-precomposed' sizes='72x72' />
-    <link href='images/apple-touch-icon-57-precomposed.png' rel='apple-touch-icon-precomposed' />
-    <link href="stylesheets/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/responsive.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/font-awesome.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/theme.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/fonts.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href='/favicon.ico' rel='shortcut icon' />
+    <link href='/images/apple-touch-icon-144-precomposed.png' rel='apple-touch-icon-precomposed' sizes='144x144' />
+    <link href='/images/apple-touch-icon-114-precomposed.png' rel='apple-touch-icon-precomposed' sizes='114x114' />
+    <link href='/images/apple-touch-icon-72-precomposed.png' rel='apple-touch-icon-precomposed' sizes='72x72' />
+    <link href='/images/apple-touch-icon-57-precomposed.png' rel='apple-touch-icon-precomposed' />
+    <link href="/stylesheets/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/responsive.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/font-awesome.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/theme.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/fonts.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
   <body class='theme-pattern-tiny-grid theme-color-green'>
     <!-- Page Header -->
@@ -33,28 +33,14 @@
             <h1 class='brand'>
               <a href='/'>
                 Kickstart Academy
-                <img src="images/logo.png" width="40px"></img>
+                <img src="/images/logo.png" width="40px"></img>
               </a>
             </h1>
             <div class='nav-collapse'>
               <ul class='nav pull-right'>
                 <li class='<%= active(:home) %>'><a href="/">Home</a></li>
                 <li class='<%= active(:blog) %>'><a href="/blog">Blog</a></li>
-                <li class='<%= active(:dates) %> dropdown'>
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses</a>
-                  <ul class='dropdown-menu'>
-                      <li>
-                        <a href="/bdd-details">
-                          BDD Kickstart
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/cd-details">
-                          Continuous Delivery Kickstart
-                        </a>
-                      </li>
-                  </ul>
-                </li>
+                <li class='<%= active(:courses) %>'><a href="/courses">Courses</a></li>
                 <li class='<%= active(:dates) %> dropdown'>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dates</a>
                   <ul class='dropdown-menu'>

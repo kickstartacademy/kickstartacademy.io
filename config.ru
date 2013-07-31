@@ -70,7 +70,7 @@ helpers do
       dates.first.strftime("%-d") + '-' + dates.last.strftime("%-d %B %Y")
     end
   end
-  
+
   def spans_month_boundary(daterange)
     daterange.first.month != daterange.last.month
   end
@@ -110,15 +110,22 @@ helpers do
 end
 
 set :static_cache_control, [:public, max_age: 1800]
-set :blog, Blog.new([
-  'http://chrismdp.com/tag/cucumber/atom.xml',
-  'http://chrismdp.com/tag/bddkickstart/atom.xml',
-  'http://chrismdp.com/tag/bdd/atom.xml',
-  'http://blog.mattwynne.net/tag/cucumber/atom',
-  'http://blog.mattwynne.net/tag/bdd/atom',
-  'http://claysnow.co.uk/?tag=bdd&feed=rss2',
-  'http://chatley.com/atom.xml',
-]).refresh
+
+
+BLOG_URLS = if ENV['RACK_ENV'] == 'production'
+              [
+                'http://chrismdp.com/tag/cucumber/atom.xml',
+                'http://chrismdp.com/tag/bddkickstart/atom.xml',
+                'http://chrismdp.com/tag/bdd/atom.xml',
+                'http://blog.mattwynne.net/tag/cucumber/atom',
+                'http://blog.mattwynne.net/tag/bdd/atom',
+                'http://claysnow.co.uk/?tag=bdd&feed=rss2',
+                'http://chatley.com/atom.xml',
+              ]
+            else
+              []
+            end
+set :blog, Blog.new(BLOG_URLS).refresh
 
 before do
   cache_control :public, max_age: 1800  # 30 mins
@@ -129,13 +136,14 @@ get '/' do
 end
 
 get('/details') { redirect '/bdd-details' }
-get '/bdd-details' do
-  erb :bdd_details
-end
+get('/bdd-details') { redirect '/courses/bdd-kickstart' }
 
-get '/cd-details' do
-  erb :cd_details
+['bdd-kickstart', 'continuous-delivery-kickstart'].each do |course|
+  get "/courses/#{course}" do
+    erb "courses/#{course}".to_sym
+  end
 end
+get("/courses") { erb :'courses/index' }
 
 get '/in-house-courses' do
   if (ENV['TRAINING_SUBJECT'] == 'cd')
@@ -145,7 +153,7 @@ get '/in-house-courses' do
   end
 end
 
-[:about, :dates, :blog, :thanks, :coaching].each do |page|
+[:about, :dates, :blog, :thanks, :coaching, :courses].each do |page|
   get "/#{page}" do
     erb page
   end
