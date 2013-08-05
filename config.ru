@@ -145,15 +145,7 @@ get('/bdd-details') { redirect '/courses/bdd-kickstart' }
 end
 get("/courses") { erb :'courses/index' }
 
-get '/in-house-courses' do
-  if (ENV['TRAINING_SUBJECT'] == 'cd')
-    erb :'cd-in-house-courses'
-  else
-    erb :'bdd-in-house-courses'
-  end
-end
-
-[:about, :dates, :blog, :thanks, :coaching, :courses].each do |page|
+[:about, :dates, :blog, :thanks, :coaching, :'in-house-courses'].each do |page|
   get "/#{page}" do
     erb page
   end
