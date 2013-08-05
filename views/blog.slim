@@ -1,0 +1,46 @@
+section.section.alt
+  .container
+    .hero-unit
+      h1 Blog
+      p The very latest thinking from us on BDD, Continuous Delivery, and more.
+- if blog_loading?
+  section#content.section[role="main"]
+    .container
+      .row-fluid
+        .span12
+          p
+            |  Please wait while the blog loads. 
+- else
+  section#content.section[role="main"]
+    .container
+      .row-fluid
+        .span9
+          - blog_articles.entries.each do |article|
+            article
+              header[style="position: relative"]
+                a.anchor[name=slugify(article.id)]
+                h1
+                  = article.title
+                  small
+                    | by 
+                    = article.author
+                p
+                  | Published 
+                  abbr.timeago[title=article.published.iso8601]
+                    = friendly_date(article.published)
+              .content
+                = article.content || article.summary
+              footer
+                |  This article was originally published 
+                a href=article.url
+                | here
+                | . 
+            hr
+        aside.span3.sidebar
+          .hero-unit
+            p
+              | Sign up for our newsletter
+            form.form-vertical[action="http://thinkcodelearn.createsend.com/t/r/s/yhtrfu/" method="post"]
+              input#yhtrfu-yhtrfu[type="text" name="cm-yhtrfu-yhtrfu" placeholder="Email"]
+              button.btn.btn-primary[type="submit"]
+                | Sign me up

@@ -2,10 +2,10 @@ require 'bundler/setup'
 require 'sinatra'
 require 'twitter'
 require 'feedzirra'
-
 require 'dalli'
 require 'rack-cache'
 require 'yaml'
+require 'slim'
 
 require File.dirname(__FILE__) + '/lib/event'
 require File.dirname(__FILE__) + '/lib/blog'
@@ -123,7 +123,9 @@ BLOG_URLS = if ENV['RACK_ENV'] == 'production'
                 'http://chatley.com/atom.xml',
               ]
             else
-              []
+              [
+                'http://chatley.com/atom.xml',
+              ]
             end
 set :blog, Blog.new(BLOG_URLS).refresh
 
@@ -131,28 +133,30 @@ before do
   cache_control :public, max_age: 1800  # 30 mins
 end
 
-get '/' do
-  erb :index
+get('/details')           { redirect '/bdd-details' }
+get('/bdd-details')       { redirect '/courses/bdd-kickstart' }
+get('/in-house-training') { redirect '/in-house-courses' }
+
+get("/")        { slim :index }
+
+%i(
+  courses/bdd-kickstart 
+  courses/continuous-delivery-kickstart 
+  blog 
+  coaching 
+  dates 
+  about 
+  courses 
+  thanks 
+  in-house-courses
+).each do |page|
+  path = "/#{page}"
+  get(path) { slim page }
 end
 
-get('/details') { redirect '/bdd-details' }
-get('/bdd-details') { redirect '/courses/bdd-kickstart' }
-
-['bdd-kickstart', 'continuous-delivery-kickstart'].each do |course|
-  get "/courses/#{course}" do
-    erb "courses/#{course}".to_sym
-  end
-end
-get("/courses") { erb :'courses/index' }
-
-[:about, :dates, :blog, :thanks, :coaching, :'in-house-courses'].each do |page|
-  get "/#{page}" do
-    erb page
-  end
-end
-
-get '/in-house-training' do
-  redirect '/in-house-courses'
+get('/maps.js') do 
+  content_type 'text/javascript'
+  erb :'maps.js', layout: false
 end
 
 run Sinatra::Application

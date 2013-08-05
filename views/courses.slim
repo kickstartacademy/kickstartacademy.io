@@ -1,0 +1,50 @@
+section.section.alt
+  .container
+    .page-header
+      h1
+        |  Courses 
+        small
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    .row-fluid
+      .span9
+        ul.thumbnails.bordered
+          li
+            a[href="/courses/bdd-kickstart"]
+              .row-fluid
+                .span4.pull-center
+                  i.icon-comment.enormous-icon.circled.pull-center
+                .span8
+                  h3
+                    | BDD Kickstart
+                  p
+                    |  Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development. 
+                  p
+                    |  Blah blah and some more blah about the blah 
+
+          li
+            a[href="/courses/continuous-delivery-kickstart"]
+              .row-fluid
+                .span4.pull-center
+                  i.icon-truck.enormous-icon.circled.pull-center
+                .span8
+                  h3
+                    | Continuous Delivery Kickstart
+                  p
+                    |  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+      aside.span3.sidebar
+        .sidebar-widget
+          h2.sidebar-header
+            | Blog posts
+          ul.unstyled
+            - blog_articles.entries.each do |article|
+              li
+                h4
+                  |  <a href="
+                  = article.url
+                  | ">
+                  = article.title
+                p
+                  | Published 
+                  abbr.timeago[title=article.published.iso8601]
+                    = friendly_date(article.published)

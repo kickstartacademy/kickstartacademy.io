@@ -1,0 +1,43 @@
+section.section.alt
+  .container
+    .hero-unit
+      h1 When can we start?
+
+- for event in all_events
+  section.section
+    a.anchor[name=event.id]
+    .container
+      .page-header
+        h1 
+          = "#{event.course_type} - #{event.title}"
+          small< = course_date_range(event.full_date)
+      - if event.tickets?
+        .row-fluid
+          h2 Tickets
+          iframe src="http://www.eventbrite.co.uk/tickets-external?eid=#{event.eventbrite_id}&ref=etckt&v=2" frameborder="0" height="440" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"
+      .row-fluid
+        .span12
+          h2 Venue
+          - unless event.venue?
+            p
+              | Venue not yet confirmed. Do you have a suitable venue? We offer training discounts to those hosting our courses: 
+              a href="mailto:hello@bddkickstart.com?subject=Hosting BDD Kickstart #{event.title}" contact us
+              |  for more details.
+
+          - event.with_venue do |venue|
+            h3 = venue.name
+            p = venue.address
+
+  - event.with_venue do
+    section#promo.section[style="overflow:hidden"]
+      .map-top-shadow
+      div.map id="#{event.id}-map"
+      .map-bottom-shadow
+
+section.section.alt
+  .container
+    .hero-unit
+      p
+        | Don't see your city here? 
+        a[href="/#contact-us"] contact us
+        |  about organising a Kickstart near you.

@@ -6,10 +6,12 @@ gem "twitter"
 gem "feedzirra"
 gem "dalli"
 gem "rack-cache"
+gem "slim"
 
 group :development do
   gem "shotgun"
   gem "rspec"
   gem "activesupport"
+  gem "html2slim"
 end
 

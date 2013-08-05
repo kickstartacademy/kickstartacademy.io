@@ -1,0 +1,131 @@
+#content[role="main"]
+  section#promo.section.alt
+    .container
+      .hero-unit
+        h1
+          | What is Continuous Delivery Kickstart?
+        p
+          |  In two days, we'll teach you everything you need to be off and running with Continuous Delivery. 
+        p
+          |  We'll start by teaching you the fundamental principles
+          |  of Continuous Delivery, and how it fits into the wider world of agile. We'll show you how integrate a set of tools to create a deployment pipeline allowing your code to flow smoothly though all the stages from development to production. 
+        p
+          |  Then we'll investigate how having this pipeline allows us to deploy code in much smaller batch sizes, iterating more quickly. We'll look at how automating the integration, test and release processes can change the way that a development team behaves, and the way we think about developing new features. 
+        p
+          |  Read further for 
+          a[href="#learningoutcomes"]
+            | full details of our learning outcomes
+          | . The course is practical and you'll experience putting the tools into action, as well as getting the theory behind them.
+      .hero-unit.pull-left
+        h2
+          a.btn.btn-primary.btn-large href="/dates##{events(:cd).first.id}"
+            | Book Continuous Delivery Kickstart
+          small<
+            | Next date: 
+            = course_date_range(events(:cd).first.full_date)
+            | , 
+            = events(:cd).first.title
+  section#applied.section.alt
+    .container
+      .page-header
+        h1
+          |  Continuous Delivery 
+          small
+            | Two-day technical workshop for developers, operations people and project managers.
+      .row-fluid
+        ul.thumbnails.bordered
+          li.span6
+            .row-fluid
+              .span4.pull-center
+                i.icon-key.enormous-icon.circled.pull-center
+              .span8
+                h3
+                  | Key concepts
+                p
+                  |  We'll give you the big picture, so you can place each of the technical practices we'll show you in context. You'll come away understanding the why as well as the how. 
+            hr
+            .row-fluid
+              .span4.pull-center
+                i.icon-beaker.enormous-icon.circled.pull-center
+              .span8
+                h3
+                  | Experiment
+                p
+                  |  The course gives you the opportunity to experiment with tools in a safe environment, put together something end-to-end in a short time, and investigate the effects and benefits of Continuous Delivery. 
+          li.span6
+            .row-fluid
+              .span4.pull-center
+                i.icon-cogs.enormous-icon.circled.pull-center
+              .span8
+                h3
+                  | Putting Tools Together
+                p
+                  |  Different tool serve different purposes. We'll look at the different types, and put a selection together to form a deployment pipeline that is more than the sum of its parts. 
+            hr
+            .row-fluid
+              .span4.pull-center
+                i.icon-briefcase.enormous-icon.circled.pull-center
+              .span8
+                h3
+                  | Carrying Legacy Baggage?
+                p
+                  |  You're probably working on existing projects rather than starting shiny new ones. We'll show you pragmatic steps to start introducing Continuous Delivery techniques on an existing application. 
+  section.section
+    a.anchor[name="learningoutcomes"]
+    .container
+      .page-header
+        h1
+          |  Detailed Learning Outcomes 
+      .row-fluid
+        .span12
+          p
+            | By the end of Continuous Delivery Kickstart, we expect delegates to have learned:
+          ul
+            li
+              | What Continuous Delivery is and why it is useful
+            li
+              | The relationship between version control, build, testing, deployment and release
+            li
+              | What a Deployment Pipeline is, and how to set one up
+            li
+              | Using a Continuous Integration server as the engine for the deployment pipeline
+            li
+              | The landscape of different tools available that help with different phases
+            li
+              | The difference between Continuous Delivery and Continuous Deployment
+            li
+              | The importance of automated testing in Continuous Delivery
+            li
+              | Testing in representative pre-production environments
+            li
+              | How we can use metrics to make decisions about the success of features
+            li
+              | The effect of small batch sizes
+            li
+              | How Continuous Delivery relates to the ideas behind Lean Startup
+            li
+              | Techniques for using the cloud to streamline the delivery process
+      .row-fluid
+        .hero-unit.pull-left
+          h2
+            a.btn.btn-primary.btn-large href="/dates##{ events(:cd).first.id}"
+              | Book Continuous Delivery Kickstart
+  section#feedback.section.alt
+    .container
+      .page-header
+        h1
+          |  Feedback? 
+          small
+            | Have you been to Continuous Delivery Kickstart? Please leave a comment here.
+      .row-fluid
+        #disqus_thread
+        javascript:
+          var disqus_shortname = 'bddkickstart'; /* * * DON'T EDIT BELOW THIS LINE * * */ (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); 
+        noscript
+          | Please enable JavaScript to view the 
+          a[href="http://disqus.com/?ref_noscript"]
+            | comments powered by Disqus.
+        a.dsq-brlink[href="http://disqus.com"]
+          | comments powered by 
+          span.logo-disqus
+            | Disqus
