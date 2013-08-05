@@ -29,7 +29,7 @@ section.section.alt
                   abbr.timeago[title=article.published.iso8601]
                     = friendly_date(article.published)
               .content
-                = article.content || article.summary
+                == article.content || article.summary
               footer
                 |  This article was originally published 
                 a href=article.url
