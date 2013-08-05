@@ -21,7 +21,7 @@ section.section.alt
                 a.anchor[name=slugify(article.id)]
                 h1
                   = article.title
-                  small
+                  small<
                     | by 
                     = article.author
                 p
@@ -31,9 +31,9 @@ section.section.alt
               .content
                 == article.content || article.summary
               footer
-                |  This article was originally published 
+                | This article was originally published 
                 a href=article.url
-                | here
+                  | here
                 | . 
             hr
         aside.span3.sidebar
