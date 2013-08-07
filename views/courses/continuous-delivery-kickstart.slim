@@ -5,9 +5,17 @@
         h1
           | Continuous Delivery Kickstart
         p
-          | Continuous Delivery is the secret sauce that lets you deploy updates to production at a moment's notice.
+          | A two-day technical workshop for developers, operations people and project managers.
+
+  section.section
+    .container
+      .row-fluid
         p
-          |  In two days, we'll teach you everything you need to be off and running with Continuous Delivery. 
+          | Continuous Delivery is the secret sauce that lets companies like 
+          a href="http://blogs.wsj.com/cio/2013/04/17/how-facebook-pushes-two-releases-per-day/" Facebook
+          |  and 
+          a href="http://www.wired.com/business/2013/04/linkedin-software-revolution/" Linkedin
+          |  deploy to production several times a day.
         p
           |  We'll start by teaching you the fundamental principles
           |  of Continuous Delivery, and how it fits into the wider world of agile. We'll show you how integrate a set of tools to create a deployment pipeline allowing your code to flow smoothly though all the stages from development to production. 
@@ -28,7 +36,7 @@
             | , 
             = events(:cd).first.title
 
-  section.section
+  section.section.alt
     .container
       .page-header
         h1
@@ -55,13 +63,11 @@
               span.blocked STRESS-FREE RELEASES
             p No more late nights or working the weekend panicking over production problems.
 
-  section#applied.section.alt
+  section.section
     .container
       .page-header
         h1
-          |  Continuous Delivery 
-          small
-            | Two-day technical workshop for developers, operations people and project managers.
+          |  Course Content
       .row-fluid
         ul.thumbnails.bordered
           li.span6
@@ -100,7 +106,8 @@
                   | Carrying Legacy Baggage?
                 p
                   |  You're probably working on existing projects rather than starting shiny new ones. We'll show you pragmatic steps to start introducing Continuous Delivery techniques on an existing application. 
-  section.section
+
+  section.section.alt
     a.anchor[name="learningoutcomes"]
     .container
       .page-header
