@@ -19,9 +19,6 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.8)
       sax-machine (~> 0.1.0)
-    hpricot (0.8.6)
-    html2slim (0.0.3)
-      hpricot
     i18n (0.6.1)
     json (1.7.5)
     loofah (1.2.1)
@@ -71,7 +68,6 @@ DEPENDENCIES
   activesupport
   dalli
   feedzirra
-  html2slim
   rack-cache
   rspec
   shotgun

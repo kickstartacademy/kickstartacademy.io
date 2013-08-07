@@ -1,0 +1,9 @@
+.brand img {
+  position: relative;
+  top: -5px;
+}
+
+article.course {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}

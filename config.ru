@@ -124,7 +124,7 @@ BLOG_URLS = if ENV['RACK_ENV'] == 'production'
               ]
             else
               [
-                'http://chatley.com/atom.xml',
+                'http://chrismdp.com/tag/bdd/atom.xml',
               ]
             end
 set :blog, Blog.new(BLOG_URLS).refresh

@@ -1,0 +1,8 @@
+h2
+  a.btn.btn-primary.btn-large href="/dates##{events(:cd).first.id}"
+    | Book This Course
+  small<
+    | Next date: 
+    = course_date_range(events(:cd).first.full_date)
+    | , 
+    = events(:cd).first.title

@@ -1,39 +1,66 @@
+section.section.alt#promo
+  .container
+    .row-fluid
+      .span7
+        .hero-unit
+          h1 Our Courses
+          p Learn the skills that enable your agile teams to excel.
+          ul.icons
+            li
+              i.icon-ok
+              a href="#bdd" Behaviour-Driven Development
+            li
+              i.icon-ok
+              a href="#cd" Continuous Delivery
+      .span5
+        img.pull-right[alt="students" src="images/hero-shot-tooky.jpeg"]
+
+section.section
+  .container
+    .row-fluid
+      p
+        | We run 
+        a href="/dates" public courses
+        |  on a regular basis, but we're always happy to provide something more bespoke for you an an 
+        a href="/in-house" in-house course
+        | . Please 
+        == slim :contact_us_link
+        |  to discuss your requirements.
+
 section.section.alt
   .container
-    .page-header
-      h1
-        |  Courses 
-        small
-          | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     .row-fluid
       .span9
-        ul.thumbnails.bordered
-          li
-            a[href="/courses/bdd-kickstart"]
-              .row-fluid
-                .span4.pull-center
-                  i.icon-comment.enormous-icon.circled.pull-center
-                .span8
-                  h3
-                    | BDD Kickstart
-                  p
-                    |  Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development. 
-                  p
-                    |  Blah blah and some more blah about the blah 
+        article.course.well#bdd
+          .page-header
+            h1 
+              | BDD Kickstart
+              small<
+                | 3 days
+          .row-fluid
+            p
+              |  Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development. 
+            a.btn.btn-primary.btn-large href="/courses/bdd-kickstart"
+              | Find out more
+            == slim :book_bdd_button
 
-          li
-            a[href="/courses/continuous-delivery-kickstart"]
-              .row-fluid
-                .span4.pull-center
-                  i.icon-truck.enormous-icon.circled.pull-center
-                .span8
-                  h3
-                    | Continuous Delivery Kickstart
-                  p
-                    |  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        article.course.well#cd
+          .page-header
+            h1 
+              | Continuous Delivery Kickstart
+              small<
+                | 2 days
+          .row-fluid
+            p
+              | Streamline the pipeline from your developer's fingers to your user's screen
+            a.btn.btn-primary.btn-large href="/courses/continuous-delivery-kickstart"
+              | Find out more
+            == slim :book_cd_button
 
       aside.span3.sidebar
-        .sidebar-widget
+        .sidebar-widget.well
+          == slim :newsletter_signup
+        .sidebar-widget.well
           h2.sidebar-header
             | Blog posts
           ul.unstyled

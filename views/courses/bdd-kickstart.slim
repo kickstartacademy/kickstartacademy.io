@@ -1,9 +1,10 @@
-#content[role="main"]
+#content role="main"
+
   section#promo.section.alt
     .container
       .hero-unit
         h1
-          | What is BDD Kickstart?
+          | BDD Kickstart
         p
           |  In three days, we'll teach you everything you need to be off and running with Behaviour-Driven Development. 
         p
@@ -19,15 +20,40 @@
           a[href="#learningoutcomes"] full details of our learning outcomes
           | . We recommend attending the full course, but you can book one of the individual modules if you prefer.
       .hero-unit.pull-left
-        h2
-          a.btn.btn-primary.btn-large href="/dates##{events(:bdd).first.id}"
-            | Book BDD Kickstart
-          small<
-            | Next date: 
-            = course_date_range(events(:bdd).first.full_date)
-            | , 
-            = events(:bdd).first.title
-  section#fundamentals.section
+        == slim :book_bdd_button
+
+  section.section
+    .container
+      .page-header
+        h1
+          |  What are the benefits? 
+          small
+            | Why BDD teams are happy teams
+      .row-fluid
+        ul.thumbnails.bordered.pull-center
+          li.span4.pull-center.well
+            h3
+              i.icon-truck.huge-icon
+              span.blocked
+                | Focus on value
+            p
+              |  Learn expert techniques to break down requirements into bite-size pieces. Now you can focus on shipping the stuff that matters most. 
+          li.span4.pull-center.well
+            h3
+              i.icon-signal.huge-icon
+              span.blocked
+                | Predictable Quality
+            p
+              |  No more frantic scrabbling to a deadline. Push the risk to the front of your project so you can power over the finish line with confidence. 
+          li.span4.pull-center.well
+            h3
+              i.icon-umbrella.huge-icon
+              span.blocked
+                | Protection from defects
+            p
+              |  Living documentation produced by a BDD process catches bugs before they're coded, and provides lasting protection against regressions. 
+
+  section#fundamentals.section.alt
     .container
       .page-header
         h1
@@ -85,7 +111,8 @@
               = course_date(events(:bdd).first.fundamentals_date)
               | , 
               = events(:bdd).first.title
-  section#applied.section.alt
+
+  section#applied.section
     .container
       .page-header
         h1
@@ -140,7 +167,8 @@
               = course_date_range(events(:bdd).first.applied_date)
               | , 
               = events(:bdd).first.title
-  section.section
+
+  section.section.alt
     a.anchor[name="learningoutcomes"]
     .container
       .page-header
@@ -193,7 +221,8 @@
           h2
             a.btn.btn-primary.btn-large href="/dates##{events(:bdd).first.id}"
               | Book BDD Kickstart
-  section#feedback.section.alt
+
+  section#feedback.section
     .container
       .page-header
         h1

@@ -48,43 +48,9 @@ section.section
   .container
     .row-fluid
       .span-12.pull-center
-        p
-          | Sign up for our newsletter
-        form.form-horizontal[action="http://thinkcodelearn.createsend.com/t/r/s/yhtrfu/" method="post"]
-          input#yhtrfu-yhtrfu[type="text" name="cm-yhtrfu-yhtrfu" placeholder="Email"]
-          button.btn.btn-primary[type="submit"]
-            | Sign me up
+        == slim :newsletter_signup
+
 section.section.alt
-  .container
-    .page-header
-      h1
-        |  What are the benefits? 
-        small
-          | Why BDD will make you happier
-    .row-fluid
-      ul.thumbnails.bordered.pull-center
-        li.span4.pull-center.well
-          h3
-            i.icon-truck.huge-icon
-            span.blocked
-              | Focus on value
-          p
-            |  Learn expert techniques to break down requirements into bite-size pieces. Now you can focus on shipping the stuff that matters most. 
-        li.span4.pull-center.well
-          h3
-            i.icon-signal.huge-icon
-            span.blocked
-              | Predictable Quality
-          p
-            |  No more frantic scrabbling to a deadline. Push the risk to the front of your project so you can power over the finish line with confidence. 
-        li.span4.pull-center.well
-          h3
-            i.icon-umbrella.huge-icon
-            span.blocked
-              | Protection from defects
-          p
-            |  Living documentation produced by a BDD process catches bugs before they're coded, and provides lasting protection against regressions. 
-section.section
   .container
     .row-fluid
       .hero-unit.pull-center
@@ -95,7 +61,8 @@ section.section
         p
           a[target="_blank" href="http://blog.mattwynne.net/2011/08/24/bdd-training/#comment-1481"]
             | Amy Espinosa, User Experience & Information Architecture Manager, Wolters Kluwer
-section.section.alt
+
+section.section
   .container
     .page-header
       h1
