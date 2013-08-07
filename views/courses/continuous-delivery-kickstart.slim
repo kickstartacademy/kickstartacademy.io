@@ -5,6 +5,8 @@
         h1
           | Continuous Delivery Kickstart
         p
+          | Continuous Delivery is the secret sauce that lets you deploy updates to production at a moment's notice.
+        p
           |  In two days, we'll teach you everything you need to be off and running with Continuous Delivery. 
         p
           |  We'll start by teaching you the fundamental principles
@@ -25,6 +27,34 @@
             = course_date_range(events(:cd).first.full_date)
             | , 
             = events(:cd).first.title
+
+  section.section
+    .container
+      .page-header
+        h1
+          |  What are the benefits? 
+          small
+            | Why Continuous Delivery gives you a competitive advantage
+      .row-fluid
+        ul.thumbnails.bordered.pull-center
+          li.span4.pull-center.well
+            h3
+              i.icon-signal.huge-icon
+              span.blocked IMPROVE BUSINESS AGILITY
+            p Continually convert business ideas into delivered, working software, allowing you to easily respond to market demands.
+
+          li.span4.pull-center.well
+            h3
+              i.icon-truck.huge-icon
+              span.blocked Faster DELIVERY
+            p Streamline the pipeline from the developer's fingertips to your users' desktops.
+
+          li.span4.pull-center.well
+            h3
+              i.icon-glass.huge-icon
+              span.blocked STRESS-FREE RELEASES
+            p No more late nights or working the weekend panicking over production problems.
+
   section#applied.section.alt
     .container
       .page-header
