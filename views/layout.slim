@@ -4,17 +4,19 @@ html[lang="en"]
     meta[charset="utf-8"]
     title
       | Kickstart Academy
-    meta[content="width=device-width" name="viewport"]
-    link[href="/favicon.ico" rel="shortcut icon"]
-    link[href="/images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144"]
-    link[href="/images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114"]
-    link[href="/images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72"]
-    link[href="/images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon-precomposed"]
-    link[href="/stylesheets/bootstrap.css" media="screen" rel="stylesheet" type="text/css"]
-    link[href="/stylesheets/responsive.css" media="screen" rel="stylesheet" type="text/css"]
-    link[href="/stylesheets/font-awesome.css" media="screen" rel="stylesheet" type="text/css"]
-    link[href="/stylesheets/theme.css" media="screen" rel="stylesheet" type="text/css"]
-    link[href="/stylesheets/fonts.css" media="screen" rel="stylesheet" type="text/css"]
+    meta content="width=device-width" name="viewport"
+    link href="/favicon.ico" rel="shortcut icon"
+    link href="/images/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144"
+    link href="/images/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114"
+    link href="/images/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72"
+    link href="/images/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon-precomposed"
+    link href="/stylesheets/bootstrap.css" media="screen" rel="stylesheet" type="text/css"
+    link href="/stylesheets/responsive.css" media="screen" rel="stylesheet" type="text/css"
+    link href="/stylesheets/font-awesome.css" media="screen" rel="stylesheet" type="text/css"
+    link href="/stylesheets/theme.css" media="screen" rel="stylesheet" type="text/css"
+    link href="/stylesheets/fonts.css" media="screen" rel="stylesheet" type="text/css"
+    link href="/stylesheets/custom.css" media="screen" rel="stylesheet" type="text/css"
+
   body.theme-pattern-tiny-grid.theme-color-green
     header#masthead
       nav.navbar.navbar-fixed-top
@@ -26,13 +28,13 @@ html[lang="en"]
               span.icon-bar
             h1.brand
               a[href="/"]
-                |  Kickstart Academy 
-                img[src="/images/logo.png" width="40px"]
+                | Kickstart Academy
+                img< src="/images/logo.png" width="40px"
+                br
+                small
+                  | Learning is fun
             .nav-collapse
               ul.nav.pull-right
-                li class=active(:home)
-                  a[href="/"]
-                    | Home
                 li class=active(:blog)
                   a[href="/blog"]
                     | Blog
@@ -45,13 +47,8 @@ html[lang="en"]
                   ul.dropdown-menu
                     - all_events.each do |event|
                       li
-                        |  <a href="/dates#
-                        = event.id
-                        | "> (
-                        = event.type.to_s.upcase
-                        | ) 
-                        = event.title
-                        = course_date_range(event.full_date)
+                        a href="/dates##{event.id}"
+                          = "(#{event.type.to_s.upcase}) #{event.title} #{course_date_range(event.full_date)}"
                 li class=active(:onsite)
                   a[href="/in-house-courses"]
                     | In-house
