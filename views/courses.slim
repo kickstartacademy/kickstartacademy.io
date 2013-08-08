@@ -67,11 +67,8 @@ section.section.alt
             - blog_articles.entries.each do |article|
               li
                 h4
-                  |  <a href="
-                  = article.url
-                  | ">
-                  = article.title
+                  a href=article.url
+                    = article.title
                 p
-                  | Published 
-                  abbr.timeago[title=article.published.iso8601]
-                    = friendly_date(article.published)
+                  | by 
+                  = article.author
