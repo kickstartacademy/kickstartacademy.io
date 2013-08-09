@@ -39,13 +39,8 @@ html[lang="en"]
                   a[href="/courses"]
                     | Courses
                 li class=active(:dates)
-                  a.dropdown-toggle[data-toggle="dropdown" href="#"]
+                  a[href="/dates"]
                     | Dates
-                  ul.dropdown-menu
-                    - all_events.each do |event|
-                      li
-                        a href="/dates##{event.id}"
-                          = "(#{event.type.to_s.upcase}) #{event.title} #{course_date_range(event.full_date)}"
                 li class=active(:onsite)
                   a[href="/in-house-courses"]
                     | In-house

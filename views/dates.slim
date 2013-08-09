@@ -2,6 +2,16 @@ section.section.alt
   .container
     .hero-unit
       h1 When can we start?
+      p
+        | Here's a list of our upcoming public courses:
+      ol.icons
+        - for event in all_events
+          li
+            i.icon-calendar
+            a href="##{event.id}" 
+              = "#{event.course_type} - #{event.title}"
+              = " (#{course_date_range(event.full_date)})"
+
 
 - for event in all_events
   section.section
