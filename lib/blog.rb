@@ -10,6 +10,11 @@ class Blog
     end
   end
 
+  def popular_articles
+    urls = File.read(File.expand_path(__FILE__ + '/../../config/popular_articles')).lines.map(&:strip)
+    articles.select { |a| urls.include?(a.url) }
+  end
+
   def refresh(options = {})
     sources.each &:refresh
     if options[:sync]

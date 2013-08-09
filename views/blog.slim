@@ -37,5 +37,17 @@ section.section.alt
                 | . 
             hr
         aside.span3.sidebar
-          .hero-unit
+          .sidebar-widget.well
             == slim :newsletter_signup_sidebar
+          .sidebar-widget.well
+            h2.sidebar-header
+              | Popular posts
+            ul.unstyled
+              - popular_posts.each do |article|
+                li
+                  h4
+                    a href=article.url
+                      = article.title
+                  p
+                    | by 
+                    = article.author

@@ -51,6 +51,12 @@ helpers do
     end[0..15]
   end
 
+  def popular_posts
+    settings.blog.popular_articles.sort do |a,b|
+      b.published <=> a.published
+    end[0..15]
+  end
+
   def blog_loading?
     settings.blog.refreshing?
   end
