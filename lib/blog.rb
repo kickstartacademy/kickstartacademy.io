@@ -12,7 +12,15 @@ class Blog
 
   def popular_articles
     urls = File.read(File.expand_path(__FILE__ + '/../../config/popular_articles')).lines.map(&:strip)
-    articles.select { |a| urls.include?(a.url) }
+    urls.map do |url|
+      if article = articles.find { |a| a.url =~ /#{url}/ }
+        puts "popular articles: Found #{url}"
+        article
+      else
+        puts "popular articles: Could not find #{url}"
+        nil
+      end
+    end.compact
   end
 
   def refresh(options = {})
@@ -52,16 +60,16 @@ class Blog
         begin
           Timeout.timeout(10) do
             @status = :refreshing
-            p "#{url}: Refreshing"
+            p "blog: #{url}: Refreshing"
             Feedzirra::Feed.add_common_feed_entry_element('posterous:firstName', as: 'author')
             feed = Feedzirra::Feed.fetch_and_parse(url)
             @articles = feed.entries
-            p "#{url}: Fetched #{@articles.count} articles"
+            p "blog: #{url}: Fetched #{@articles.count} articles"
           end
         rescue => e
-          p "#{url}: #{e}"
+          p "blog: #{url}: #{e}"
         ensure
-          p "#{url}: Going back to idle status"
+          p "blog: #{url}: Going back to idle status"
           @status = :idle
         end
       end

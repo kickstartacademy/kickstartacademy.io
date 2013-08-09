@@ -1,8 +1,9 @@
+# needs the be the exact URL from the feed. Some have trailing slashes, some don't
 http://blog.mattwynne.net/2012/11/02/is-cucumber-just-a-scam/
 http://blog.mattwynne.net/2012/11/20/tdd-vs-bdd/
 http://blog.mattwynne.net/2013/03/04/optimising-a-slow-build-youre-solving-the-wrong-problem/
 http://blog.mattwynne.net/2013/05/09/two-ways-to-react/
-http://chatley.com/posts/01-24-2013/training-from-the-back/
-http://chrismdp.com/2012/10/the-simplest-cucumber-project/
-http://chrismdp.com/2012/09/the-power-of-feedback/
 http://claysnow.co.uk/be-pure-be-vigilant-behave/
+http://chatley.com/posts/01-24-2013/training-from-the-back
+http://chrismdp.com/2012/10/the-simplest-cucumber-project
+http://chrismdp.com/2012/09/the-power-of-feedback
