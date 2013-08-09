@@ -7,7 +7,7 @@ class Blog
   def articles
     sources.inject([]) do |articles, source|
       articles + source.articles
-    end
+    end.flatten.uniq(&:url)
   end
 
   def popular_articles

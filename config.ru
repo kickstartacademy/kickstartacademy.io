@@ -118,7 +118,11 @@ end
 set :static_cache_control, [:public, max_age: 1800]
 
 
-BLOG_URLS = if ENV['RACK_ENV'] == 'production'
+BLOG_URLS = if ENV['BLOG_DEV']
+              [
+                'http://chrismdp.com/tag/bdd/atom.xml',
+              ]
+            else
               [
                 'http://chrismdp.com/tag/cucumber/atom.xml',
                 'http://chrismdp.com/tag/bddkickstart/atom.xml',
@@ -127,10 +131,6 @@ BLOG_URLS = if ENV['RACK_ENV'] == 'production'
                 'http://blog.mattwynne.net/tag/bdd/atom',
                 'http://claysnow.co.uk/?tag=bdd&feed=rss2',
                 'http://chatley.com/atom.xml',
-              ]
-            else
-              [
-                'http://chrismdp.com/tag/bdd/atom.xml',
               ]
             end
 set :blog, Blog.new(BLOG_URLS).refresh
