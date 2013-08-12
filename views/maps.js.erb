@@ -1,6 +1,6 @@
 // Function to style the map in the contact page, change lat and lng vars to create your own map
 function mapInit(title, id, lat, lng) {
-  if (google == 'undefined') return null;
+  if (typeof(google) == 'undefined') return null;
 
   // Create an array of styles.
   var styles =   [
