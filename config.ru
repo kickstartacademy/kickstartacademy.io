@@ -143,6 +143,7 @@ get('/details')           { redirect '/bdd-details' }
 get('/bdd-details')       { redirect '/courses/bdd-kickstart' }
 get('/in-house')          { redirect '/in-house-courses' }
 get('/in-house-training') { redirect '/in-house-courses' }
+get('/about')             { redirect '/team' }
 
 get("/")        { slim :index }
 
@@ -152,7 +153,7 @@ get("/")        { slim :index }
   blog 
   coaching 
   dates 
-  about 
+  team 
   courses 
   thanks 
   in-house-courses
