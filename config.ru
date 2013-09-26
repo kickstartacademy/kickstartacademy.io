@@ -103,9 +103,9 @@ helpers do
       ),
       Event.new(
         :cd,
-        'Paris', 
-        Time.parse('3 Mar 2014'), 
-        Time.parse('4 Mar 2014'), 
+        'Paris',
+        Time.parse('3 Mar 2014'),
+        Time.parse('4 Mar 2014'),
       ),
     ]
   end
@@ -145,21 +145,21 @@ get('/about')             { redirect '/team' }
 get("/")        { slim :index }
 
 %i(
-  courses/bdd-kickstart 
-  courses/continuous-delivery-kickstart 
-  blog 
-  coaching 
-  dates 
-  team 
-  courses 
-  thanks 
+  courses/bdd-kickstart
+  courses/continuous-delivery-kickstart
+  blog
+  coaching
+  dates
+  team
+  courses
+  thanks
   in-house-courses
 ).each do |page|
   path = "/#{page}"
   get(path) { slim page }
 end
 
-get('/maps.js') do 
+get('/maps.js') do
   content_type 'text/javascript'
   erb :'maps.js', layout: false
 end
