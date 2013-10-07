@@ -45,7 +45,8 @@ section.section.alt
               |  Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development. 
             a.btn.btn-primary.btn-large href="/courses/bdd-kickstart"
               | Find out more
-            == slim :book_bdd_button
+            - if upcoming_event(:bdd)
+              == slim :book_bdd_button
 
         article.course.well#cd
           .page-header
@@ -58,7 +59,8 @@ section.section.alt
               | Streamline the pipeline from your developer's fingers to your user's screen.
             a.btn.btn-primary.btn-large href="/courses/continuous-delivery-kickstart"
               | Find out more
-            == slim :book_cd_button
+            - if upcoming_event(:cd)
+              == slim :book_cd_button
 
       aside.span3.sidebar
         .sidebar-widget.well

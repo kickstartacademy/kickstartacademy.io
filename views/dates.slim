@@ -14,6 +14,7 @@ section.section.alt
 
 
 - for event in all_events
+  - next if event.end_date < Date.today
   section.section
     a.anchor[name=event.id]
     .container
