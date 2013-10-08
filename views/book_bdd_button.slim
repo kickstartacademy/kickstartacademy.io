@@ -1,8 +1,8 @@
 h2
-  a.btn.btn-primary.btn-large href="/dates##{events(:bdd).first.id}"
+  a.btn.btn-primary.btn-large href="/dates##{upcoming_event(:bdd).id}"
     | Book BDD Kickstart
   small<
     | Next date: 
-    = course_date_range(events(:bdd).first.full_date)
+    = course_date_range(upcoming_event(:bdd).full_date)
     | , 
-    = events(:bdd).first.title
+    = upcoming_event(:bdd).title
