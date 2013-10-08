@@ -93,16 +93,9 @@ helpers do
     [
       Event.new(
         :bdd,
-        'Barcelona',
-        Time.parse('11 Sep 2013'),
-        Time.parse('13 Sep 2013'),
-        6771179781, 
-        Venue.new(
-          'Auditori AXA', 
-          'Avinguda Diagonal 547 Barcelona', 
-          41.390449, 
-          2.135979,
-        )
+        'London',
+        Time.parse('4 Dec 2013'),
+        Time.parse('6 Dec 2013'),
       ),
       Event.new(
         :cd,
