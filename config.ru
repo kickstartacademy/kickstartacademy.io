@@ -103,10 +103,9 @@ helpers do
       ),
       Event.new(
         :cd,
-        'London', 
-        Time.parse('30 Sep 2013'), 
-        Time.parse('1 Oct 2013'), 
-        6859008479,
+        'Paris', 
+        Time.parse('3 Mar 2014'), 
+        Time.parse('4 Mar 2014'), 
       ),
     ]
   end
