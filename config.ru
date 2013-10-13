@@ -100,6 +100,7 @@ helpers do
         'London',
         Time.parse('4 Dec 2013'),
         Time.parse('6 Dec 2013'),
+        Tito.new('kickstart-bdd-london-2013')
       ),
       Event.new(
         :cd,

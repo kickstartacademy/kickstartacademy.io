@@ -1,4 +1,4 @@
-Event = Struct.new(:type, :title, :start_date, :end_date, :eventbrite_id, :venue) do
+Event = Struct.new(:type, :title, :start_date, :end_date, :tickets, :venue) do
   def id
     "#{type.to_s.downcase}-#{title.downcase}"
   end
@@ -8,7 +8,7 @@ Event = Struct.new(:type, :title, :start_date, :end_date, :eventbrite_id, :venue
   end
 
   def tickets?
-    !!eventbrite_id
+    !!tickets
   end
 
   def venue?
@@ -31,6 +31,9 @@ Event = Struct.new(:type, :title, :start_date, :end_date, :eventbrite_id, :venue
     yield venue if venue?
   end
 end
+
+Eventbrite = Struct.new(:eventbrite_id)
+Tito = Struct.new(:tito_id)
 
 Venue = Struct.new(:name, :address, :lat, :lng)
 

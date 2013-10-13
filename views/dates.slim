@@ -25,7 +25,12 @@ section.section.alt
       - if event.tickets?
         .row-fluid
           h2 Tickets
-          iframe src="http://www.eventbrite.co.uk/tickets-external?eid=#{event.eventbrite_id}&ref=etckt&v=2" frameborder="0" height="440" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"
+          - if event.tickets.respond_to?(:eventbrite_id)
+            iframe src="http://www.eventbrite.co.uk/tickets-external?eid=#{event.tickets.eventbrite_id}&ref=etckt&v=2" frameborder="0" height="440" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"
+          - else
+            #tito-register-form
+            link rel="stylesheet" type="text/css" href='https://tito.io/kickstartacademy/#{event.tickets.tito_id}.css'
+            script src='https://tito.io/kickstartacademy/#{event.tickets.tito_id}.js?version=3' type='text/javascript'
       .row-fluid
         .span12
           h2 Venue
