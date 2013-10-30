@@ -8,6 +8,10 @@ article.course {
   padding-bottom: 50px;
 }
 
+#tito-register-form {
+  min-width: 280px;
+}
+
 .tito-ticket-price-quantity {
   margin-top: -27px;
 }
