@@ -23,6 +23,7 @@ GEM
     json (1.7.5)
     loofah (1.2.1)
       nokogiri (>= 1.4.4)
+    memcachier (0.0.2)
     multi_json (1.3.6)
     multipart-post (1.1.5)
     nokogiri (1.5.5)
@@ -68,6 +69,7 @@ DEPENDENCIES
   activesupport
   dalli
   feedzirra
+  memcachier
   rack-cache
   rspec
   shotgun
