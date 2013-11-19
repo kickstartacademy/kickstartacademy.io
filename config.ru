@@ -95,13 +95,15 @@ helpers do
   end
 
   def all_events
+    unboxed = Venue.new('Unboxed consulting', '17 Blossom Street, London, E1 6PL, United Kingdom', 51.521118, -0.077833)
     [
       Event.new(
         :bdd,
         'London',
         Time.parse('4 Dec 2013'),
         Time.parse('6 Dec 2013'),
-        Tito.new('kickstart-bdd-london-2013')
+        Tito.new('kickstart-bdd-london-2013'),
+        unboxed
       ),
       Event.new(
         :cd,
