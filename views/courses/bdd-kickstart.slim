@@ -24,7 +24,7 @@
               a[href="/bddk-benefits.pdf"] download a PDF of the benefits.
           .sidebar.span3
             - if upcoming_event(:bdd)
-                == slim :book_bdd_button
+              == slim :book_bdd_button, locals: { options: { show_coaches: true } }
 
   section.section
     .container
