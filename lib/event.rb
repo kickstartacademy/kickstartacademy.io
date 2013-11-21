@@ -1,4 +1,4 @@
-Event = Struct.new(:type, :title, :start_date, :end_date, :tickets, :venue) do
+Event = Struct.new(:type, :title, :start_date, :end_date, :tickets, :venue, :coaches) do
   def id
     "#{type.to_s.downcase}-#{title.downcase}"
   end
@@ -37,3 +37,8 @@ Tito = Struct.new(:tito_id)
 
 Venue = Struct.new(:name, :address, :lat, :lng)
 
+Coach = Struct.new(:name, :twitter, :avatar) do
+  def bio
+    "/team##{twitter}"
+  end
+end
