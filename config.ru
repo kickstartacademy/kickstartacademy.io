@@ -106,7 +106,8 @@ helpers do
         Time.parse('6 Dec 2013'),
         Tito.new('kickstart-bdd-london-2013'),
         unboxed,
-        [mattwynne, tooky]
+        [mattwynne, tooky],
+        %{BDD Kickstart is a 1-3 day masterclass, teaching you everything you need to be up and running with Behaviour-Driven Development. <a href="/courses/bdd-kickstart">Learn more</a> or <a href="bddk-benefits.pdf">download the benefits</a> and put them on you boss's desk.}
       ),
       Event.new(
         :cd,

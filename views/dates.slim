@@ -18,19 +18,39 @@ section.section.alt
   section.section
     a.anchor[name=event.id]
     .container
-      .page-header
-        h1 
-          = "#{event.course_type} - #{event.title}"
-          small< = course_date_range(event.full_date)
-      - if event.tickets?
-        .row-fluid
-          h2 Tickets
-          - if event.tickets.respond_to?(:eventbrite_id)
-            iframe src="http://www.eventbrite.co.uk/tickets-external?eid=#{event.tickets.eventbrite_id}&ref=etckt&v=2" frameborder="0" height="440" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"
-          - else
-            #tito-register-form
-            link rel="stylesheet" type="text/css" href='https://tito.io/kickstartacademy/#{event.tickets.tito_id}.css'
-            script src='https://tito.io/kickstartacademy/#{event.tickets.tito_id}.js?version=3' type='text/javascript'
+      .row-fluid
+        .page-header
+          h1 
+            = "#{event.course_type} - #{event.title}"
+            small< = course_date_range(event.full_date)
+      .row-fluid
+        .span9
+          - if event.details
+            .row-fluid
+              == event.details
+          - if event.tickets?
+            .row-fluid.pull-left
+              br
+              - if event.tickets.respond_to?(:eventbrite_id)
+                iframe src="http://www.eventbrite.co.uk/tickets-external?eid=#{event.tickets.eventbrite_id}&ref=etckt&v=2" frameborder="0" height="440" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"
+              - else
+                #tito-register-form
+                link rel="stylesheet" type="text/css" href='https://tito.io/kickstartacademy/#{event.tickets.tito_id}.css'
+                script src='https://tito.io/kickstartacademy/#{event.tickets.tito_id}.js?version=3' type='text/javascript'
+        .sidebar.span3
+          .row-fluid.pull-left
+            h2 
+              | Coaches
+              - if event.coaches
+                - event.coaches.each do |coach|
+                  figure.thumbnail-figure
+                    a href=coach.bio
+                      img src=coach.avatar
+                    figcaption.thumbnail-title
+                      h3
+                        span
+                          = coach.name
+
       .row-fluid
         .span12
           h2 Venue

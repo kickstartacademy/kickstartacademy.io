@@ -2,11 +2,11 @@
 
   section#promo.section.alt
     .container
-      .hero-unit
-        h1
-          | BDD Kickstart
-        .row-fluid
-          .span9
+      .row-fluid
+        .span9
+          .hero-unit
+            h1
+              | BDD Kickstart
             p
               |  In three days, we'll teach you everything you need to be off and running with Behaviour-Driven Development. 
             p
@@ -22,9 +22,9 @@
               a[href="#learningoutcomes"] full details of our learning outcomes
               |  or 
               a[href="/bddk-benefits.pdf"] download a PDF of the benefits.
-          .sidebar.span3
-            - if upcoming_event(:bdd)
-              == slim :book_bdd_button, locals: { options: { show_coaches: true } }
+        .sidebar.span3
+          - if upcoming_event(:bdd)
+            == slim :book_bdd_button, locals: { options: { show_coaches: true } }
 
   section.section
     .container
