@@ -95,12 +95,19 @@ helpers do
   end
 
   def all_events
+    #unboxed = Venue.new('Unboxed consulting', '17 Blossom Street, London, E1 6PL, United Kingdom', 51.521118, -0.077833)
+    seb = Coach.new('Seb Rose', 'seb', '/images/seb-sm-bw.png')
+    rob = Coach.new('Rob Chatley', 'rob', '/images/rob.png')
     [
       Event.new(
         :cd,
         'Paris',
         Time.parse('25 Mar 2014'),
         Time.parse('26 Mar 2014'),
+        Tito.new('kickstart-cd-paris-2014'),
+        nil,
+        [rob, seb],
+        %{Optimise the pipeline from a developer's fingers to your users' desktop.}
       ),
     ]
   end
