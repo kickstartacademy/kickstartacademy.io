@@ -9,7 +9,7 @@ section.section.alt
       .row-fluid
         .span12
           p
-            |  Please wait while the blog loads.
+            |  Please wait while the blog loads. 
 - else
   section#content.section[role="main"]
     .container
@@ -23,19 +23,19 @@ section.section.alt
                   a[href="##{slugify(article.id)}"]
                     = article.title
                   small<
-                    | by
+                    | by 
                     = article.author
                 p
-                  | Published
+                  | Published 
                   abbr.timeago[title=article.published.iso8601]
                     = friendly_date(article.published)
               .content
                 == article.content || article.summary
               footer
-                | This article was originally published
+                | This article was originally published 
                 a href=article.url
                   | here
-                | .
+                | . 
             hr
         aside.span3.sidebar
           .sidebar-widget.well
@@ -50,5 +50,5 @@ section.section.alt
                     a href=article.url
                       == article.title
                   p
-                    | by
+                    | by 
                     = article.author
