@@ -20,7 +20,8 @@ section.section.alt
               header[style="position: relative"]
                 a.anchor[name=slugify(article.id)]
                 h1
-                  = article.title
+                  a[href=slugify(article.id)]
+                    = article.title
                   small<
                     | by
                     = article.author
