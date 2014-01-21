@@ -36,7 +36,7 @@ helpers do
 
   def tweets
     return [] unless ENV['RACK_ENV'] == 'production'
-    Twitter.user_timeline('bddkickstart', count: 3) rescue []
+    Twitter.user_timeline('kickstartac', count: 3) rescue []
   end
 
   def markup_tweet(raw)
