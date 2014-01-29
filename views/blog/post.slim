@@ -1,0 +1,20 @@
+article
+  header[style="position: relative"]
+    a.anchor[name=slugify(article.id)]
+    h1
+      a[href="/blog/#{article.page_slug}"]
+        = article.title
+      small<
+        | by 
+        = article.author
+    p
+      | Published 
+      abbr.timeago[title=article.published.iso8601]
+        = friendly_date(article.published)
+  .content
+    == article.content || article.summary
+  footer
+    | This article was originally published 
+    a href=article.url
+      | here
+    | . 

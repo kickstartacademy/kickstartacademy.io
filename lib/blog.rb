@@ -63,7 +63,7 @@ class Blog
             p "blog: #{url}: Refreshing"
             Feedzirra::Feed.add_common_feed_entry_element('posterous:firstName', as: 'author')
             feed = Feedzirra::Feed.fetch_and_parse(url)
-            @articles = feed.entries
+            @articles = feed.entries.map { |e| Article.new(e) }
             p "blog: #{url}: Fetched #{@articles.count} articles"
           end
         rescue => e
@@ -81,6 +81,13 @@ class Blog
 
     def articles
       @articles ||= []
+    end
+  end
+
+  require 'delegate'
+  class Article < SimpleDelegator
+    def page_slug
+      @page_slug ||= "#{published.strftime("%Y-%m-%d")}-#{title.downcase.gsub(/\W+/, '-')}"
     end
   end
 

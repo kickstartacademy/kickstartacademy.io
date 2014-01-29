@@ -47,9 +47,16 @@ helpers do
   end
 
   def blog_articles
+    all_articles[0..15]
+  end
+
+  def article
+  end
+
+  def all_articles
     settings.blog.articles.sort do |a,b|
       b.published <=> a.published
-    end[0..15]
+    end
   end
 
   def popular_posts
@@ -160,6 +167,11 @@ get("/")        { slim :index }
   path = "/#{page}"
   get(path) { slim page }
 end
+
+get('/blog/:page_slug') { |page_slug|
+  article = all_articles.detect { |a| a.page_slug == page_slug }
+  slim :"blog/article", :locals => { :article => article }
+}
 
 get('/maps.js') do
   content_type 'text/javascript'
