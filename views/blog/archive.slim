@@ -15,7 +15,16 @@ section.section.alt
     .container
       .row-fluid
         .span9
-          - blog_articles.entries.each do |article|
-            == slim :"blog/post", :locals => { :article => article }
-            hr
+          - all_articles.entries.each do |article|
+            h2
+              a[href="/blog/#{article.page_slug}"]
+                = article.title
+              small<
+                | by 
+                = article.author
+            p
+              | Published 
+              abbr.timeago[title=article.published.iso8601]
+                = friendly_date(article.published)
         == slim :blog_sidebar
+

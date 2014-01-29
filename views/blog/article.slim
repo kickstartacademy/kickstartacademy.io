@@ -1,5 +1,19 @@
-section#content.section[role="main"]
+section.section.alt
   .container
-    .row-fluid
-      .span9
-        == slim :"blog/post", :locals => { :article => article }
+    .hero-unit
+      h1 Blog
+      p The very latest thinking from us on BDD, Continuous Delivery, and more.
+- if blog_loading?
+  section#content.section[role="main"]
+    .container
+      .row-fluid
+        .span12
+          p
+            |  Please wait while the blog loads. 
+- else
+  section#content.section[role="main"]
+    .container
+      .row-fluid
+        .span9
+          == slim :"blog/post", :locals => { :article => article }
+        == slim :blog_sidebar

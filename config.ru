@@ -157,6 +157,7 @@ get("/")        { slim :index }
   courses/bdd-kickstart
   courses/continuous-delivery-kickstart
   blog
+  blog/archive
   coaching
   dates
   team

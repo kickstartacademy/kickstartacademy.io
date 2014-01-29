@@ -1,6 +1,6 @@
 article
   header[style="position: relative"]
-    a.anchor[name=slugify(article.id)]
+    a.anchor[name="#{slugify(article.id)}"]
     h1
       a[href="/blog/#{article.page_slug}"]
         = article.title
