@@ -8,7 +8,7 @@ aside.span3.sidebar
       - popular_posts.each do |article|
         li
           h4
-            a href=article.url
+            a href="/blog/#{article.page_slug}"
               == article.title
           p
             | by 
