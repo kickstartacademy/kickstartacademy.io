@@ -3,14 +3,22 @@ section.section.alt
     .hero-unit
       h1 When can we start?
       p
-        | Here's a list of our upcoming public courses:
-      ol.icons
-        - for event in all_events
-          li
-            i.icon-calendar
-            a href="/dates/#{event.id}" 
-              = "#{event.course_type} - #{event.title}"
-              = " (#{course_date_range(event.full_date)})"
+        | Here's a list of our upcoming public courses.
+    .row-fluid
+      - for event in all_events
+        .well.pricing-table.span6.pull-center
+          h3
+            a href="/dates/#{event.id}"
+              span.blocked= event.course_type
+          h2.pricing-table-price= event.title
+          ul.pricing-table-list
+            li= course_date_range(event.full_date)
+            - if event.venue?
+              li= event.venue.address
+            - else
+              li Venue to be confirmed
+
+          a.btn.btn-primary href="/dates/#{event.id}" Book now
 
 
 section.section
