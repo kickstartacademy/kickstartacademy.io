@@ -1,8 +1,7 @@
 h2
-  a.btn.btn-primary.btn-large href="/dates##{upcoming_event(:cd).id}"
-    | Book This Course
+  a.btn.btn-primary.btn-large href="/dates/#{upcoming_event(:cd).id}"
+    | Book CD Kickstart
   small<
-    | Next date: 
     = course_date_range(upcoming_event(:cd).full_date)
     | , 
     = upcoming_event(:cd).title

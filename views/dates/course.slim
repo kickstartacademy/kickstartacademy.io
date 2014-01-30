@@ -1,0 +1,58 @@
+section.section.alt
+  .container
+    .hero-unit
+      h1 
+        == event.course_type
+      h2
+        == event.title
+        small< = course_date_range(event.full_date)
+      p
+        == event.details
+section.section
+  .container
+    .row-fluid
+      .span9
+        - if event.tickets?
+          .row-fluid.pull-left
+            br
+            - if event.tickets.respond_to?(:eventbrite_id)
+              iframe src="http://www.eventbrite.co.uk/tickets-external?eid=#{event.tickets.eventbrite_id}&ref=etckt&v=2" frameborder="0" height="440" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"
+            - else
+              #tito-register-form
+              link rel="stylesheet" type="text/css" href='https://tito.io/kickstartacademy/#{event.tickets.tito_id}.css'
+              script src='https://tito.io/kickstartacademy/#{event.tickets.tito_id}.js?version=3' type='text/javascript'
+      .sidebar.span3
+        .row-fluid.pull-left
+          h2 
+            | Coaches
+            - if event.coaches
+              - event.coaches.each do |coach|
+                figure.thumbnail-figure
+                  a href=coach.bio
+                    img src=coach.avatar
+                  figcaption.thumbnail-title
+                    h3
+                      span
+                        = coach.name
+
+    .row-fluid
+      .span12
+        h2 Venue
+        - unless event.venue?
+          p
+            | Venue not yet confirmed. Do you have a suitable venue? We offer training discounts to those hosting our courses: 
+            a href="mailto:hello@bddkickstart.com?subject=Hosting #{event.course_type} #{event.title}" contact us
+            |  for more details.
+
+        - event.with_venue do |venue|
+          h3 = venue.name
+          p = venue.address
+
+- event.with_venue do
+  section#promo.section[style="overflow:hidden"]
+    .map-top-shadow
+    div.map id="#{event.id}-map"
+    .map-bottom-shadow
+
+
+script[src="https://maps.googleapis.com/maps/api/js?sensor=false"]

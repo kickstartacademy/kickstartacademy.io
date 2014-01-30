@@ -105,6 +105,9 @@ helpers do
     valtech = Venue.new('Valtech', '103 Rue de Grenelle, 75007, Paris, France', 48.856993,2.319338)
     seb = Coach.new('Seb Rose', 'seb', '/images/seb-sm-bw.png')
     rob = Coach.new('Rob Chatley', 'rob', '/images/rob.png')
+    matt = Coach.new('Matt Wynne', 'matt', '/images/matt.png')
+    steve = Coach.new('Steve Tooke', 'tooky', '/images/tooky.jpg')
+    aslak = Coach.new('Mystery Guest', 'mystery', '/images/shhh.png')
     [
       Event.new(
         :cd,
@@ -115,6 +118,16 @@ helpers do
         valtech,
         [rob, seb],
         %{Optimise the pipeline from a developer's fingers to your users' desktop.}
+      ),
+      Event.new(
+        :bdd,
+        'London',
+        Time.parse('29 Apr 2014'),
+        Time.parse('01 May 2014'),
+        Tito.new('kickstart-bdd-london-2014'),
+        nil,
+        [matt, steve, aslak],
+        %{Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development.}
       ),
     ]
   end
@@ -173,6 +186,11 @@ get('/blog/:page_slug') { |page_slug|
   article = all_articles.detect { |a| a.page_slug == page_slug }
   slim :"blog/article", :locals => { :article => article }
 }
+
+get('/dates/:event_id') do |event_id|
+  event = all_events.detect { |e| e.id == event_id }
+  slim :"dates/course", :locals => { :event => event }
+end
 
 get('/maps.js') do
   content_type 'text/javascript'

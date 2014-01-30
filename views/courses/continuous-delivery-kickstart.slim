@@ -20,7 +20,7 @@
           | Teams who practise Continuous Delivery are ready to deploy their code at a moment's notice. They automate mercilessly, maximising the time they can spend on new features. Repetitive, error-prone release procedures are a thing of the past. By the end of this very hands-on course, you'll have gained the skill and experience to apply this groundbreaking technique at your own company.
         - if upcoming_event(:cd)
           h2
-            a.btn.btn-primary.btn-large href="/dates##{upcoming_event(:cd).id}"
+            a.btn.btn-primary.btn-large href="/dates/#{upcoming_event(:cd).id}"
               | Book Continuous Delivery Kickstart
             small<
               | Next date: 
@@ -138,7 +138,7 @@
         .row-fluid
           .hero-unit.pull-left
             h2
-              a.btn.btn-primary.btn-large href="/dates##{ upcoming_event(:cd).id}"
+              a.btn.btn-primary.btn-large href="/dates/#{ upcoming_event(:cd).id}"
                 | Book Continuous Delivery Kickstart
   section#feedback.section.alt
     .container
