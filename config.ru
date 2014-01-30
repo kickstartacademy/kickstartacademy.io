@@ -107,7 +107,7 @@ helpers do
     rob = Coach.new('Rob Chatley', 'rob', '/images/rob.png')
     matt = Coach.new('Matt Wynne', 'matt', '/images/matt.png')
     steve = Coach.new('Steve Tooke', 'tooky', '/images/tooky.jpg')
-    aslak = Coach.new('Mystery Guest', 'mystery', '/images/mystery.jpg')
+    aslak = Coach.new('Mystery Guest', 'mystery', '/images/shhh.png')
     [
       Event.new(
         :cd,
