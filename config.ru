@@ -187,6 +187,11 @@ get('/blog/:page_slug') { |page_slug|
   slim :"blog/article", :locals => { :article => article }
 }
 
+get('/dates/:event_id') do |event_id|
+  event = all_events.detect { |e| e.id == event_id }
+  slim :"dates/course", :locals => { :event => event }
+end
+
 get('/maps.js') do
   content_type 'text/javascript'
   erb :'maps.js', layout: false
