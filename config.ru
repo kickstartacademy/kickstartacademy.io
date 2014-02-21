@@ -109,6 +109,7 @@ helpers do
     matt = Coach.new('Matt Wynne', 'matt', '/images/matt.png')
     steve = Coach.new('Steve Tooke', 'tooky', '/images/tooky.jpg')
     aslak = Coach.new('Aslak Hellesøy', 'aslak', '/images/aslak.jpg')
+    sandi = Coach.new('Sandi Metz', 'sandimetz', '/images/sandi.jpg')
     [
       Event.new(
         :cd,
@@ -129,6 +130,26 @@ helpers do
         ustwo,
         [matt, aslak],
         %{Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development.}
+      ),
+      Event.new(
+        :poodr,
+        'London',
+        Time.parse('25 Jun 2014'),
+        Time.parse('27 Jun 2014'),
+        Tito.new('kickstart-poodr-3-day-london-2014'),
+        nil,
+        [matt, sandi],
+        %{TODO FILL IN}
+      ),
+      Event.new(
+        :poodr,
+        'London',
+        Time.parse('3 Jul 2014'),
+        Time.parse('4 Jul 2014'),
+        Tito.new('kickstart-poodr-2-day-london-2014'),
+        nil,
+        [matt, sandi],
+        %{TODO FILL IN}
       ),
     ]
   end
@@ -171,6 +192,7 @@ get("/")        { slim :index }
 %i(
   courses/bdd-kickstart
   courses/continuous-delivery-kickstart
+  courses/practical-object-oriented-design
   blog
   blog/archive
   coaching

@@ -12,6 +12,9 @@ section.section.alt#promo
             li
               i.icon-ok
               a href="/courses/continuous-delivery-kickstart" Continuous Delivery
+            li
+              i.icon-ok
+              a href="/courses/practical-object-oriented-design" Practical Object Oriented Design
           p
             | Our courses are highly practical. We teach in small groups, giving you 
             | great access to our team of industry experts.
@@ -61,6 +64,20 @@ section.section.alt
               | Find out more
             - if upcoming_event(:cd)
               == slim :book_cd_button
+
+        article.course.well#poodr
+          .page-header
+            h1 
+              | Practical Object Oriented Design
+              small<
+                | 2/3 days
+          .row-fluid
+            p
+              | TODO FILL IN
+            a.btn.btn-primary.btn-large href="/courses/practical-object-oriented-design"
+              | Find out more
+            - if upcoming_event(:cd)
+              == slim :book_poodr_button
 
       aside.span3.sidebar
         .sidebar-widget.well

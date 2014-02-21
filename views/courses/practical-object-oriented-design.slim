@@ -1,0 +1,133 @@
+#content[role="main"]
+  section#promo.section.alt
+    .container
+      .hero-unit
+        h1
+          | Practical Object Oriented Design Kickstart
+        p
+          | TODO FILL IN
+
+  section.section
+    .container
+      .row-fluid
+        p
+          | TODO FILL IN
+        - if upcoming_event(:poodr)
+          h2
+            a.btn.btn-primary.btn-large href="/dates/#{upcoming_event(:poodr).id}"
+              | Book Practical Object Oriented Design
+            small<
+              | Next date: 
+              = course_date_range(upcoming_event(:poodr).full_date)
+              | , 
+              = upcoming_event(:poodr).title
+
+  section.section.alt
+    .container
+      .page-header
+        h1
+          |  What are the benefits? 
+          small
+            | Why Practical Object Oriented Design gives you a competitive advantage
+      .row-fluid
+        ul.thumbnails.bordered.pull-center
+          li.span4.pull-center.well
+            h3
+              i.icon-dashboard.huge-icon
+              span.blocked TODO FILL IN
+            p Continually convert business ideas into delivered, working software, allowing you to easily respond to market demands.
+
+          li.span4.pull-center.well
+            h3
+              i.icon-download-alt.huge-icon
+              span.blocked TODO FILL IN
+            p Streamline the pipeline from the developer's fingertips to your users' desktops.
+
+          li.span4.pull-center.well
+            h3
+              i.icon-glass.huge-icon
+              span.blocked TODO FILL IN
+            p No more late nights or working the weekend panicking over production problems.
+
+  section.section
+    .container
+      .page-header
+        h1
+          |  Course Content
+      .row-fluid
+        ul.thumbnails.bordered
+          li.span6
+            .row-fluid
+              .span4.pull-center
+                i.icon-key.enormous-icon.circled.pull-center
+              .span8
+                h3
+                  | Key concepts
+                p
+                  |  TODO FILL IN
+            hr
+            .row-fluid
+              .span4.pull-center
+                i.icon-group.enormous-icon.circled.pull-center
+              .span8
+                h3
+                  | A New Team Dynamic
+                p
+                  | TODO FILL IN
+          li.span6
+            .row-fluid
+              .span4.pull-center
+                i.icon-wrench.enormous-icon.circled.pull-center
+              .span8
+                h3
+                  | Choosing the best tools
+                p
+                  |  TODO FILL IN
+            hr
+            .row-fluid
+              .span4.pull-center
+                i.icon-briefcase.enormous-icon.circled.pull-center
+              .span8
+                h3
+                  | Back in the real world
+                p
+                  |  TODO FILL IN
+
+  section.section.alt
+    a.anchor[name="learningoutcomes"]
+    .container
+      .page-header
+        h1
+          |  Detailed Learning Outcomes 
+      .row-fluid
+        .span12
+          p
+            | By the end of Practical Object Oriented Design, we expect delegates to have learned:
+          ul
+            li
+              | TODO FILL IN
+      - if upcoming_event(:poodr)
+        .row-fluid
+          .hero-unit.pull-left
+            h2
+              a.btn.btn-primary.btn-large href="/dates/#{ upcoming_event(:poodr).id}"
+                | Book Practical Object Oriented Design
+  section#feedback.section.alt
+    .container
+      .page-header
+        h1
+          |  Feedback? 
+          small
+            | Have you been to Practical Object Oriented Design Kickstart? Please leave a comment here.
+      .row-fluid
+        #disqus_thread
+        javascript:
+          var disqus_shortname = 'poodrkickstart'; /* * * DON'T EDIT BELOW THIS LINE * * */ (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); 
+        noscript
+          | Please enable JavaScript to view the 
+          a[href="http://disqus.com/?ref_noscript"]
+            | comments powered by Disqus.
+        a.dsq-brlink[href="http://disqus.com"]
+          | comments powered by 
+          span.logo-disqus
+            | Disqus
