@@ -10,6 +10,7 @@ article.course {
 
 #tito-register-form {
   min-width: 280px;
+  width: 75% !important;
 }
 
 .tito-ticket-price-quantity {
