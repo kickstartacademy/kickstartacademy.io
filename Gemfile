@@ -8,6 +8,7 @@ gem "memcachier"
 gem "dalli"
 gem "rack-cache"
 gem "slim"
+gem "redcarpet"
 
 group :development do
   gem "shotgun"
