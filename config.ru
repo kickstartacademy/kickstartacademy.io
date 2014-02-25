@@ -107,7 +107,7 @@ helpers do
     rob = Coach.new('Rob Chatley', 'rob', '/images/rob.png')
     matt = Coach.new('Matt Wynne', 'matt', '/images/matt.png')
     steve = Coach.new('Steve Tooke', 'tooky', '/images/tooky.jpg')
-    aslak = Coach.new('Mystery Guest', 'mystery', '/images/shhh.png')
+    aslak = Coach.new('Aslak Hellesøy', 'aslak', '/images/aslak.jpg')
     [
       Event.new(
         :cd,
@@ -126,7 +126,7 @@ helpers do
         Time.parse('01 May 2014'),
         Tito.new('kickstart-bdd-london-2014'),
         nil,
-        [matt, steve, aslak],
+        [matt, aslak],
         %{Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development.}
       ),
     ]
