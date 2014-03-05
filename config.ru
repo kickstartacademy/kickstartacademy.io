@@ -150,6 +150,7 @@ BLOG_URLS = if ENV['BLOG_DEV']
                 'http://claysnow.co.uk/?tag=bdd&feed=rss2',
                 'http://chatley.com/atom.xml',
                 'http://tooky.co.uk/rss/',
+                'https://cucumber.pro/feed.xml',
               ]
             end
 set :blog, Blog.new(BLOG_URLS).refresh
