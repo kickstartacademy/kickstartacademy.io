@@ -2,6 +2,9 @@
 function mapInit(title, id, lat, lng) {
   if (typeof(google) == 'undefined') return null;
 
+  var mapElement = document.getElementById(id + '-map');
+  if ((mapElement == undefined) || (mapElement == null)) return null;
+
   // Create an array of styles.
   var styles =   [
   {
@@ -39,8 +42,7 @@ function mapInit(title, id, lat, lng) {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP]
     }
   },
-  map = new google.maps.Map(document.getElementById(id + '-map'),
-      mapOptions),
+  map = new google.maps.Map(mapElement, mapOptions),
   venue = new google.maps.LatLng( lat, lng ),
 
   marker = new google.maps.Marker({
