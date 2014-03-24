@@ -103,6 +103,7 @@ helpers do
 
   def all_events
     valtech = Venue.new('Valtech', '103 Rue de Grenelle, 75007, Paris, France', 48.856993,2.319338)
+    ustwo = Venue.new('usTwo', '62 Shoreditch High Street, London, E1 6JJ, United Kingdom', 51.5228274,-0.0778368)
     seb = Coach.new('Seb Rose', 'seb', '/images/seb-sm-bw.png')
     rob = Coach.new('Rob Chatley', 'rob', '/images/rob.png')
     matt = Coach.new('Matt Wynne', 'matt', '/images/matt.png')
@@ -125,7 +126,7 @@ helpers do
         Time.parse('29 Apr 2014'),
         Time.parse('01 May 2014'),
         Tito.new('kickstart-bdd-london-2014'),
-        nil,
+        ustwo,
         [matt, aslak],
         %{Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development.}
       ),
