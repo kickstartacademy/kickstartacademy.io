@@ -5,13 +5,13 @@
         h1
           | Practical Object Oriented Design Kickstart
         p
-          | TODO FILL IN
+          | Practical Object-Oriented Design (POODR) is about how to write better object-oriented code in Ruby.
+        p
+          | This course explains object-oriented design (OOD) using realistic Ruby examples. POODR is a practical, readable, and understandable introduction to how OOD can lower your costs and improve your applications.
 
   section.section
     .container
       .row-fluid
-        p
-          | TODO FILL IN
         - if upcoming_event(:poodr)
           h2
             a.btn.btn-primary.btn-large href="/dates/#{upcoming_event(:poodr).id}"
@@ -28,26 +28,26 @@
         h1
           |  What are the benefits? 
           small
-            | Why Practical Object Oriented Design gives you a competitive advantage
+            | Why POODR gives you a competitive advantage
       .row-fluid
         ul.thumbnails.bordered.pull-center
           li.span4.pull-center.well
             h3
               i.icon-dashboard.huge-icon
-              span.blocked TODO FILL IN
-            p Continually convert business ideas into delivered, working software, allowing you to easily respond to market demands.
+              span.blocked Speed up the rate of change
+            p Learn how to identify and fix the issues in your code which hinder your ability to add new features.
 
           li.span4.pull-center.well
             h3
-              i.icon-download-alt.huge-icon
-              span.blocked TODO FILL IN
-            p Streamline the pipeline from the developer's fingertips to your users' desktops.
+              i.icon-cogs.huge-icon
+              span.blocked Test your code efficiently
+            p Tests take time to write and maintain, yet not all tests are equally valuable. Learn to test efficiently without wasting time.
 
           li.span4.pull-center.well
             h3
-              i.icon-glass.huge-icon
-              span.blocked TODO FILL IN
-            p No more late nights or working the weekend panicking over production problems.
+              i.icon-money.huge-icon
+              span.blocked Lower maintenance cost
+            p With cleaner more readable code your maintenance overhead drops significantly, leading to time savings and less churn.
 
   section.section
     .container
@@ -59,30 +59,30 @@
           li.span6
             .row-fluid
               .span4.pull-center
-                i.icon-key.enormous-icon.circled.pull-center
+                i.icon-question.enormous-icon.circled.pull-center
               .span8
                 h3
-                  | Key concepts
+                  | What is OOD?
                 p
-                  |  TODO FILL IN
+                  |  Bust some of the misconceptions about Object Oriented Design with a firm understanding of the main concepts.
             hr
             .row-fluid
               .span4.pull-center
-                i.icon-group.enormous-icon.circled.pull-center
+                i.icon-cogs.enormous-icon.circled.pull-center
               .span8
                 h3
-                  | A New Team Dynamic
+                  | Designing cost-effective tests
                 p
-                  | TODO FILL IN
+                  | Learn to test where the risk is by testing only what you need to.
           li.span6
             .row-fluid
               .span4.pull-center
                 i.icon-wrench.enormous-icon.circled.pull-center
               .span8
                 h3
-                  | Choosing the best tools
+                  | New techniques for code improvement
                 p
-                  |  TODO FILL IN
+                  | Expand your toolkit by learning new ways of improving your code
             hr
             .row-fluid
               .span4.pull-center
@@ -91,7 +91,7 @@
                 h3
                   | Back in the real world
                 p
-                  |  TODO FILL IN
+                  | Learn how to connect your learning on the training with your real work.
 
   section.section.alt
     a.anchor[name="learningoutcomes"]
@@ -105,7 +105,21 @@
             | By the end of Practical Object Oriented Design, we expect delegates to have learned:
           ul
             li
-              | TODO FILL IN
+              | How object-oriented programming can help you craft Ruby code that is easier to maintain and upgrade
+            li
+              | How to decide what belongs in a single Ruby class
+            li
+              | How to avoid entangling objects that should be kept separate
+            li
+              | How to define flexible interfaces among objects
+            li
+              | How to reduce programming overhead costs with duck typing
+            li
+              | How to successfully apply inheritance
+            li
+              | The secrets to designing cost-effective tests
+            li
+              | How to solve common problems associated with poorly designed Ruby code
       - if upcoming_event(:poodr)
         .row-fluid
           .hero-unit.pull-left

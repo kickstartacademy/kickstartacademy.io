@@ -139,7 +139,7 @@ helpers do
         Tito.new('kickstart-poodr-3-day-london-2014'),
         nil,
         [matt, sandi],
-        %{TODO FILL IN}
+        %{Learn how to write true object-oriented code. If your code is killing you and the joy is gone, this is the cure.}
       ),
       Event.new(
         :poodr,
@@ -149,7 +149,7 @@ helpers do
         Tito.new('kickstart-poodr-2-day-london-2014'),
         nil,
         [matt, sandi],
-        %{TODO FILL IN}
+        %{Learn how to write true object-oriented code. If your code is killing you and the joy is gone, this is the cure.}
       ),
     ]
   end
