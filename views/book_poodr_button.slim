@@ -1,0 +1,7 @@
+h2
+  a.btn.btn-primary.btn-large href="/dates/#{upcoming_event(:poodr).id}"
+    | Book Practical Object Oriented Design
+  small<
+    = course_date_range(upcoming_event(:poodr).full_date)
+    | , 
+    = upcoming_event(:poodr).title

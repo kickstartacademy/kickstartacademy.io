@@ -1,0 +1,147 @@
+#content[role="main"]
+  section#promo.section.alt
+    .container
+      .hero-unit
+        h1
+          | Practical Object Oriented Design Kickstart
+        p
+          | Practical Object-Oriented Design (POODR) is about how to write better object-oriented code in Ruby.
+        p
+          | This course explains object-oriented design (OOD) using realistic Ruby examples. POODR is a practical, readable, and understandable introduction to how OOD can lower your costs and improve your applications.
+
+  section.section
+    .container
+      .row-fluid
+        - if upcoming_event(:poodr)
+          h2
+            a.btn.btn-primary.btn-large href="/dates/#{upcoming_event(:poodr).id}"
+              | Book Practical Object Oriented Design
+            small<
+              | Next date: 
+              = course_date_range(upcoming_event(:poodr).full_date)
+              | , 
+              = upcoming_event(:poodr).title
+
+  section.section.alt
+    .container
+      .page-header
+        h1
+          |  What are the benefits? 
+          small
+            | Why POODR gives you a competitive advantage
+      .row-fluid
+        ul.thumbnails.bordered.pull-center
+          li.span4.pull-center.well
+            h3
+              i.icon-dashboard.huge-icon
+              span.blocked Speed up the rate of change
+            p Learn how to identify and fix the issues in your code which hinder your ability to add new features.
+
+          li.span4.pull-center.well
+            h3
+              i.icon-cogs.huge-icon
+              span.blocked Test your code efficiently
+            p Tests take time to write and maintain, yet not all tests are equally valuable. Learn to test efficiently without wasting time.
+
+          li.span4.pull-center.well
+            h3
+              i.icon-money.huge-icon
+              span.blocked Lower maintenance cost
+            p With cleaner more readable code your maintenance overhead drops significantly, leading to time savings and less churn.
+
+  section.section
+    .container
+      .page-header
+        h1
+          |  Course Content
+      .row-fluid
+        ul.thumbnails.bordered
+          li.span6
+            .row-fluid
+              .span4.pull-center
+                i.icon-question.enormous-icon.circled.pull-center
+              .span8
+                h3
+                  | What is OOD?
+                p
+                  |  Bust some of the misconceptions about Object Oriented Design with a firm understanding of the main concepts.
+            hr
+            .row-fluid
+              .span4.pull-center
+                i.icon-cogs.enormous-icon.circled.pull-center
+              .span8
+                h3
+                  | Designing cost-effective tests
+                p
+                  | Learn to test where the risk is by testing only what you need to.
+          li.span6
+            .row-fluid
+              .span4.pull-center
+                i.icon-wrench.enormous-icon.circled.pull-center
+              .span8
+                h3
+                  | New techniques for code improvement
+                p
+                  | Expand your toolkit by learning new ways of improving your code
+            hr
+            .row-fluid
+              .span4.pull-center
+                i.icon-briefcase.enormous-icon.circled.pull-center
+              .span8
+                h3
+                  | Back in the real world
+                p
+                  | Learn how to connect your learning on the training with your real work.
+
+  section.section.alt
+    a.anchor[name="learningoutcomes"]
+    .container
+      .page-header
+        h1
+          |  Detailed Learning Outcomes 
+      .row-fluid
+        .span12
+          p
+            | By the end of Practical Object Oriented Design, we expect delegates to have learned:
+          ul
+            li
+              | How object-oriented programming can help you craft Ruby code that is easier to maintain and upgrade
+            li
+              | How to decide what belongs in a single Ruby class
+            li
+              | How to avoid entangling objects that should be kept separate
+            li
+              | How to define flexible interfaces among objects
+            li
+              | How to reduce programming overhead costs with duck typing
+            li
+              | How to successfully apply inheritance
+            li
+              | The secrets to designing cost-effective tests
+            li
+              | How to solve common problems associated with poorly designed Ruby code
+      - if upcoming_event(:poodr)
+        .row-fluid
+          .hero-unit.pull-left
+            h2
+              a.btn.btn-primary.btn-large href="/dates/#{ upcoming_event(:poodr).id}"
+                | Book Practical Object Oriented Design
+  section#feedback.section.alt
+    .container
+      .page-header
+        h1
+          |  Feedback? 
+          small
+            | Have you been to Practical Object Oriented Design Kickstart? Please leave a comment here.
+      .row-fluid
+        #disqus_thread
+        javascript:
+          var disqus_shortname = 'poodrkickstart'; /* * * DON'T EDIT BELOW THIS LINE * * */ (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); 
+        noscript
+          | Please enable JavaScript to view the 
+          a[href="http://disqus.com/?ref_noscript"]
+            | comments powered by Disqus.
+        a.dsq-brlink[href="http://disqus.com"]
+          | comments powered by 
+          span.logo-disqus
+            | Disqus
