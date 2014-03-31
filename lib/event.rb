@@ -4,7 +4,7 @@ Event = Struct.new(:type, :title, :start_date, :end_date, :tickets, :venue, :coa
   end
 
   def course_type
-    { :bdd => "BDD Kickstart", :cd => "Continuous Delivery Kickstart" }[type]
+    { :bdd => "BDD Kickstart", :cd => "Continuous Delivery Kickstart", :poodr => "Practical Object Oriented Design Kickstart" }[type]
   end
 
   def tickets?
