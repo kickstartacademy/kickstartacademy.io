@@ -4,7 +4,7 @@ Event = Struct.new(:type, :title, :start_date, :end_date, :tickets, :venue, :coa
   end
 
   def course_type
-    { :bdd => "BDD Kickstart", :cd => "Continuous Delivery Kickstart" }[type]
+    { :bdd => "BDD Kickstart", :cd => "Continuous Delivery Kickstart", :poodr => "Practical Object Oriented Design Kickstart" }[type]
   end
 
   def tickets?
@@ -29,6 +29,16 @@ Event = Struct.new(:type, :title, :start_date, :end_date, :tickets, :venue, :coa
 
   def with_venue
     yield venue if venue?
+  end
+
+  def draft?
+    false
+  end
+end
+
+DraftEvent = Class.new(Event) do
+  def draft?
+    true
   end
 end
 

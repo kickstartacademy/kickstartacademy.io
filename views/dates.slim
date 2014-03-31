@@ -6,6 +6,7 @@ section.section.alt
         | Here's a list of our upcoming public courses.
     .row-fluid
       - for event in all_events
+        - next if event.draft? && !view_drafts?
         .well.pricing-table.span6.pull-center
           h3
             a href="/dates/#{event.id}"
