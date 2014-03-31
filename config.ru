@@ -30,7 +30,20 @@ Twitter.configure do |config|
   config.oauth_token_secret = 'b6nHS25AmaPjVInwfF1DjpoNQo0ufwtkpny9lK00'
 end
 
+before do
+  @draft = params.fetch("draft") { false }
+end
+
 helpers do
+  def view_drafts?
+    @draft
+  end
+
+  def draft_only
+    return unless view_drafts?
+    yield if block_given?
+  end
+
   def active(page)
   end
 
@@ -131,7 +144,7 @@ helpers do
         [matt, aslak],
         %{Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development.}
       ),
-      Event.new(
+      DraftEvent.new(
         :poodr,
         'London',
         Time.parse('25 Jun 2014'),
@@ -141,7 +154,7 @@ helpers do
         [matt, sandi],
         %{Learn how to write true object-oriented code. If your code is killing you and the joy is gone, this is the cure.}
       ),
-      Event.new(
+      DraftEvent.new(
         :poodr,
         'London',
         Time.parse('3 Jul 2014'),
@@ -192,7 +205,6 @@ get("/")        { slim :index }
 %i(
   courses/bdd-kickstart
   courses/continuous-delivery-kickstart
-  courses/practical-object-oriented-design
   blog
   blog/archive
   coaching
@@ -204,6 +216,17 @@ get("/")        { slim :index }
 ).each do |page|
   path = "/#{page}"
   get(path) { slim page }
+end
+
+# draft pages
+%i(
+  courses/practical-object-oriented-design
+).each do |page|
+  path = "/#{page}"
+  get(path) do
+    return 404 unless view_drafts?
+    slim page
+  end
 end
 
 get('/blog/:page_slug') { |page_slug|

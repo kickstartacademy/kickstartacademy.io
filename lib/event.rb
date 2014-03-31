@@ -30,6 +30,16 @@ Event = Struct.new(:type, :title, :start_date, :end_date, :tickets, :venue, :coa
   def with_venue
     yield venue if venue?
   end
+
+  def draft?
+    false
+  end
+end
+
+DraftEvent = Class.new(Event) do
+  def draft?
+    true
+  end
 end
 
 Eventbrite = Struct.new(:eventbrite_id)
