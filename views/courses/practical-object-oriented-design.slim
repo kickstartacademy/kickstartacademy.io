@@ -2,12 +2,16 @@
   section#promo.section.alt
     .container
       .hero-unit
-        h1
-          | Practical Object Oriented Design Kickstart
-        p
-          | Practical Object-Oriented Design (POODR) is about how to write better object-oriented code in Ruby.
-        p
-          | This course explains object-oriented design (OOD) using realistic Ruby examples. POODR is a practical, readable, and understandable introduction to how OOD can lower your costs and improve your applications.
+        .row-fluid
+          .span8
+            h1
+              | Sandi Metz's Practical Object Oriented Design
+            p
+              | Practical Object-Oriented Design (POODR) from Sandi Metz is about how to write better object-oriented code.
+            p
+              | This course explains object-oriented design (OOD) using realistic examples. POODR is a practical, readable, and understandable introduction to how OOD can lower your costs and improve your applications.
+          .span4
+            img src="/images/sandi.jpg"
 
   section.section
     .container
@@ -105,9 +109,9 @@
             | By the end of Practical Object Oriented Design, we expect delegates to have learned:
           ul
             li
-              | How object-oriented programming can help you craft Ruby code that is easier to maintain and upgrade
+              | How object-oriented programming can help you craft code that is easier to maintain and upgrade
             li
-              | How to decide what belongs in a single Ruby class
+              | How to decide what belongs in a single class
             li
               | How to avoid entangling objects that should be kept separate
             li
@@ -119,7 +123,7 @@
             li
               | The secrets to designing cost-effective tests
             li
-              | How to solve common problems associated with poorly designed Ruby code
+              | How to solve common problems associated with poorly designed code
       - if upcoming_event(:poodr)
         .row-fluid
           .hero-unit.pull-left
