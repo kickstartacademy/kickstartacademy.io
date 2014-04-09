@@ -151,8 +151,8 @@ helpers do
         Time.parse('27 Jun 2014'),
         Tito.new('kickstart-poodr-3-day-london-2014'),
         nil,
-        [matt, sandi],
-        %{Learn how to write true object-oriented code. If your code is killing you and the joy is gone, this is the cure.}
+        [sandi, matt],
+        %{Transform your code! Join the author of <em>Practical Object Oriented Design</em> in Ruby for this acclaimed course.}
       ),
       DraftEvent.new(
         :poodr,
@@ -161,8 +161,8 @@ helpers do
         Time.parse('4 Jul 2014'),
         Tito.new('kickstart-poodr-2-day-london-2014'),
         nil,
-        [matt, sandi],
-        %{Learn how to write true object-oriented code. If your code is killing you and the joy is gone, this is the cure.}
+        [sandi, matt],
+        %{Transform your code! Join the author of <em>Practical Object Oriented Design</em> in Ruby for this acclaimed course.}
       ),
     ]
   end
