@@ -125,16 +125,6 @@ helpers do
     sandi = Coach.new('Sandi Metz', 'sandimetz', '/images/sandi.jpg')
     [
       Event.new(
-        :cd,
-        'Paris',
-        Time.parse('25 Mar 2014'),
-        Time.parse('26 Mar 2014'),
-        Tito.new('kickstart-cd-paris-2014'),
-        valtech,
-        [rob, seb],
-        %{Optimise the pipeline from a developer's fingers to your users' desktop.}
-      ),
-      Event.new(
         :bdd,
         'London',
         Time.parse('29 Apr 2014'),
@@ -146,20 +136,20 @@ helpers do
       ),
       DraftEvent.new(
         :poodr,
-        'London',
+        'London 3 day',
         Time.parse('25 Jun 2014'),
         Time.parse('27 Jun 2014'),
-        Tito.new('kickstart-poodr-3-day-london-2014'),
+        Tito.new('poodr-3day-london-2014'),
         nil,
         [sandi, matt],
         %{Transform your code! Join the author of <em>Practical Object Oriented Design</em> in Ruby for this acclaimed course.}
       ),
       DraftEvent.new(
         :poodr,
-        'London',
+        'London 2 day',
         Time.parse('3 Jul 2014'),
         Time.parse('4 Jul 2014'),
-        Tito.new('kickstart-poodr-2-day-london-2014'),
+        Tito.new('poodr-2day-london-2014'),
         nil,
         [sandi, matt],
         %{Transform your code! Join the author of <em>Practical Object Oriented Design</em> in Ruby for this acclaimed course.}

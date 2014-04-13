@@ -7,17 +7,19 @@ section.section.alt
     .row-fluid
       - for event in all_events
         - next if event.draft? && !view_drafts?
-        .well.pricing-table.span6.pull-center
+        .well.pricing-table.span4.pull-center
           h3
             a href="/dates/#{event.id}"
-              span.blocked= event.course_type
-          h2.pricing-table-price= event.title
+              span.blocked= event.title
+          h2.pricing-table-price{style='min-height:100px'}
+            a href="/dates/#{event.id}"
+             = event.course_type
           ul.pricing-table-list
             li= course_date_range(event.full_date)
             - if event.venue?
-              li= event.venue.address
+              li{style='min-height:50px'}= event.venue.address
             - else
-              li Venue to be confirmed
+              li{style='min-height:50px'} Venue to be confirmed
 
           a.btn.btn-primary href="/dates/#{event.id}" Book now
 

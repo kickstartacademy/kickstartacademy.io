@@ -1,6 +1,6 @@
 Event = Struct.new(:type, :title, :start_date, :end_date, :tickets, :venue, :coaches, :details) do
   def id
-    "#{type.to_s.downcase}-#{title.downcase}"
+    "#{type.to_s.downcase}-#{title.downcase.gsub(/\W+/, '-')}"
   end
 
   def course_type
