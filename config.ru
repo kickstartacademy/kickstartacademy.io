@@ -134,7 +134,7 @@ helpers do
         [matt, aslak],
         %{Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development.}
       ),
-      DraftEvent.new(
+      Event.new(
         :poodr,
         'London 3 day',
         Time.parse('25 Jun 2014'),
@@ -144,7 +144,7 @@ helpers do
         [sandi, matt],
         %{Transform your code! Join the author of <em>Practical Object Oriented Design</em> in Ruby for this acclaimed course.}
       ),
-      DraftEvent.new(
+      Event.new(
         :poodr,
         'London 2 day',
         Time.parse('3 Jul 2014'),
@@ -195,6 +195,7 @@ get("/")        { slim :index }
 %i(
   courses/bdd-kickstart
   courses/continuous-delivery-kickstart
+  courses/practical-object-oriented-design
   blog
   blog/archive
   coaching
@@ -209,15 +210,14 @@ get("/")        { slim :index }
 end
 
 # draft pages
-%i(
-  courses/practical-object-oriented-design
-).each do |page|
-  path = "/#{page}"
-  get(path) do
-    return 404 unless view_drafts?
-    slim page
-  end
-end
+#%i(
+#).each do |page|
+  #path = "/#{page}"
+  #get(path) do
+    #return 404 unless view_drafts?
+    #slim page
+  #end
+#end
 
 get('/blog/:page_slug') { |page_slug|
   article = all_articles.detect { |a| a.page_slug == page_slug }
