@@ -65,6 +65,24 @@ section.section.alt
             - if upcoming_event(:cd)
               == slim :book_cd_button
 
+        article.course.well#cd
+          .page-header
+            h1 
+              | Sandi Metz's Practial Object Oriented Design
+              small<
+                | 2 & 3 days
+          .row-fluid
+            p
+              | Transform your code! Join the author of Practical Object Oriented Design in Ruby for this acclaimed course.
+            a.btn.btn-primary.btn-large href="/courses/practical-object-oriented-design"
+              | Find out more
+            | &nbsp;
+            - upcoming_events(:poodr).each do |event|
+              a.btn.btn-primary.btn-large href="/dates/#{event.id}"
+                = "Tickets for #{course_date_range(event.full_date)}"
+              | &nbsp;
+
+
 
         - draft_only
           article.course.well#poodr
