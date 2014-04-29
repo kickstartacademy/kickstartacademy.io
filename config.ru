@@ -110,8 +110,12 @@ helpers do
     all_events.select { |e| e.type == type }
   end
 
+  def upcoming_events(type)
+    events(type).reject { |e| e.start_date < Date.today }.sort_by(&:start_date)
+  end
+
   def upcoming_event(type)
-    events(type).reject { |e| e.start_date < Date.today }.sort_by(&:start_date).first
+    upcoming_events(type).first
   end
 
   def all_events

@@ -18,13 +18,10 @@
       .row-fluid
         - if upcoming_event(:poodr)
           h2
-            a.btn.btn-primary.btn-large href="/dates/#{upcoming_event(:poodr).id}"
-              | Book Practical Object Oriented Design
-            small<
-              | Next dates: 
-              a href="/dates/poodr-london-3-day" 25-27 June 2014
-              |  and 
-              a href="/dates/poodr-london-2-day" 3-4 July 2014
+            - upcoming_events(:poodr).each do |event|
+              a.btn.btn-primary.btn-large href="/dates/#{event.id}"
+                = "Tickets for #{course_date_range(event.full_date)}"
+              | &nbsp;
 
   section.section.alt
     .container
