@@ -176,6 +176,7 @@ BLOG_URLS = if ENV['BLOG_DEV']
                 'http://chrismdp.com/tag/bdd/atom.xml',
                 'http://blog.mattwynne.net/tag/cucumber/atom',
                 'http://blog.mattwynne.net/tag/bdd/atom',
+                'http://blog.mattwynne.net/tag/agile/atom',
                 'http://claysnow.co.uk/?tag=bdd&feed=rss2',
                 'http://chatley.com/atom.xml',
                 'http://tooky.co.uk/feed.xml',
