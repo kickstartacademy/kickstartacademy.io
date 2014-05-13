@@ -129,22 +129,12 @@ helpers do
     sandi = Coach.new('Sandi Metz', 'sandimetz', '/images/sandi.jpg')
     [
       Event.new(
-        :bdd,
-        'London',
-        Time.parse('29 Apr 2014'),
-        Time.parse('01 May 2014'),
-        Tito.new('kickstart-bdd-london-2014'),
-        ustwo,
-        [matt, aslak],
-        %{Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development.}
-      ),
-      Event.new(
         :poodr,
         'London 3 day',
         Time.parse('25 Jun 2014'),
         Time.parse('27 Jun 2014'),
         Tito.new('poodr-3day-london-2014'),
-        nil,
+        ustwo,
         [sandi, matt],
         %{Transform your code! Join the author of <em>Practical Object Oriented Design</em> in Ruby for this acclaimed course.}
       ),
@@ -154,7 +144,7 @@ helpers do
         Time.parse('3 Jul 2014'),
         Time.parse('4 Jul 2014'),
         Tito.new('poodr-2day-london-2014'),
-        nil,
+        ustwo,
         [sandi, matt],
         %{Transform your code! Join the author of <em>Practical Object Oriented Design</em> in Ruby for this acclaimed course.}
       ),
