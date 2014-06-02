@@ -171,6 +171,7 @@ BLOG_URLS = if ENV['BLOG_DEV']
                 'http://chatley.com/atom.xml',
                 'http://tooky.co.uk/feed.xml',
                 'https://cucumber.pro/feed.xml',
+                'http://www.sandimetz.com/atom.xml'
               ]
             end
 set :blog, Blog.new(BLOG_URLS).refresh
