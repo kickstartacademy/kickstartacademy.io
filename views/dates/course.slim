@@ -8,9 +8,10 @@ section.section.alt
         small< = course_date_range(event.full_date)
       p
         == event.details
-      p
-        a.btn.btn-primary href="/dates"
-          | See other available course dates
+      - if all_events.count > 1
+        p
+          a.btn.btn-primary href="/dates"
+            | See other available course dates
 section.section
   .container
     .row-fluid

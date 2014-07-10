@@ -126,34 +126,24 @@ helpers do
     matt = Coach.new('Matt Wynne', 'matt', '/images/matt.png')
     steve = Coach.new('Steve Tooke', 'tooky', '/images/tooky.jpg')
     aslak = Coach.new('Aslak Hellesøy', 'aslak', '/images/aslak.jpg')
+    julien = Coach.new('Julien Biezemans', 'julien', '/images/julien.png')
     sandi = Coach.new('Sandi Metz', 'sandimetz', '/images/sandi.jpg')
     [
       Event.new(
-        :poodr,
-        'London 3 day',
-        Time.parse('25 Jun 2014'),
-        Time.parse('27 Jun 2014'),
-        Tito.new('poodr-3day-london-2014'),
-        ustwo,
-        [sandi, matt],
-        %{Transform your code! Join the author of <em>Practical Object Oriented Design</em> in Ruby for this acclaimed course.}
-      ),
-      Event.new(
-        :poodr,
-        'London 2 day',
-        Time.parse('3 Jul 2014'),
-        Time.parse('4 Jul 2014'),
-        Tito.new('poodr-2day-london-2014'),
-        ustwo,
-        [sandi, matt],
-        %{Transform your code! Join the author of <em>Practical Object Oriented Design</em> in Ruby for this acclaimed course.}
+        :bdd,
+        'Atlanta, GA',
+        Time.parse('5 Nov 2014'),
+        Time.parse('7 Nov 2014'),
+        Tito.new('bdd-kickstart-atlanta-nov-2014'),
+        nil,
+        [aslak, julien],
+        %{Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development.}
       ),
     ]
   end
 end
 
 set :static_cache_control, [:public, max_age: 1800]
-
 
 BLOG_URLS = if ENV['BLOG_DEV']
               [
