@@ -120,14 +120,17 @@ helpers do
 
   def all_events
     valtech = Venue.new('Valtech', '103 Rue de Grenelle, 75007, Paris, France', 48.856993,2.319338)
-    ustwo = Venue.new('usTwo', '62 Shoreditch High Street, London, E1 6JJ, United Kingdom', 51.5228274,-0.0778368)
-    seb = Coach.new('Seb Rose', 'seb', '/images/seb-sm-bw.png')
-    rob = Coach.new('Rob Chatley', 'rob', '/images/rob.png')
-    matt = Coach.new('Matt Wynne', 'matt', '/images/matt.png')
-    steve = Coach.new('Steve Tooke', 'tooky', '/images/tooky.jpg')
-    aslak = Coach.new('Aslak Hellesøy', 'aslak', '/images/aslak.jpg')
-    julien = Coach.new('Julien Biezemans', 'julien', '/images/julien.png')
-    sandi = Coach.new('Sandi Metz', 'sandimetz', '/images/sandi.jpg')
+    ustwo   = Venue.new('usTwo', '62 Shoreditch High Street, London, E1 6JJ, United Kingdom', 51.5228274,-0.0778368)
+
+    seb     = Coach.new( 'Seb Rose',          'seb',        '/images/seb-sm-bw.png' )
+    rob     = Coach.new( 'Rob Chatley',       'rob',        '/images/rob.png'       )
+    matt    = Coach.new( 'Matt Wynne',        'matt',       '/images/matt.png'      )
+    steve   = Coach.new( 'Steve Tooke',       'tooky',      '/images/tooky.jpg'     )
+    aslak   = Coach.new( 'Aslak Hellesøy',    'aslak',      '/images/aslak.jpg'     )
+    julien  = Coach.new( 'Julien Biezemans',  'julien',     '/images/julien.png'    )
+    sandi   = Coach.new( 'Sandi Metz',        'sandimetz',  '/images/sandi.jpg'     )
+    liz     = Coach.new( 'Liz Keogh',         'liz',        '/images/liz.jpg'       )
+
     [
       Event.new(
         :bdd,
