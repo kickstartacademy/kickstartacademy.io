@@ -134,6 +134,16 @@ helpers do
     [
       Event.new(
         :bdd,
+        'Berlin, Germany',
+        Time.parse('22 Oct 2014'),
+        Time.parse('24 Oct 2014'),
+        Tito.new('bdd-kickstart-berlin-2014'),
+        nil,
+        [aslak, liz],
+        %{Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development.}
+      ),
+      Event.new(
+        :bdd,
         'Atlanta, GA',
         Time.parse('5 Nov 2014'),
         Time.parse('7 Nov 2014'),
