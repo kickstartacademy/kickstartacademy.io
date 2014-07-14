@@ -92,9 +92,9 @@ helpers do
 
   def course_date_range(dates)
     if (spans_month_boundary(dates))
-      dates.first.strftime("%-d %B") + '-' + dates.last.strftime("%-d %B %Y")
+      dates.first.strftime("%-d %b") + '-' + dates.last.strftime("%-d %b %Y")
     else
-      dates.first.strftime("%-d") + '-' + dates.last.strftime("%-d %B %Y")
+      dates.first.strftime("%-d") + '-' + dates.last.strftime("%-d %b %Y")
     end
   end
 

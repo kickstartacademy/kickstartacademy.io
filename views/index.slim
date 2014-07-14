@@ -17,6 +17,11 @@ section#promo.section.alt
             li
               i.icon-ok
               a href="/courses/practical-object-oriented-design" Practical Object Oriented Design
+          - for event in all_events
+            - next if event.draft? && !view_drafts?
+            a.btn.btn-primary href="/dates/#{event.id}"
+              = "#{event.course_type}: #{course_date_range(event.full_date)} in #{event.title}"
+            | &nbsp;
       .span3.offset1
         br
         br
