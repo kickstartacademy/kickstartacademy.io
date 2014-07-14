@@ -202,6 +202,7 @@ get("/")        { slim :index }
   team
   courses
   thanks
+  remote
   in-house-courses
 ).each do |page|
   path = "/#{page}"
