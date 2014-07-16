@@ -1,48 +1,48 @@
 section#promo.section.alt
   .container
-    #myCarousel.carousel.slide
-      .carousel-inner
-        .item.active
-          .row-fluid
-            .span7
-              .hero-unit
-                h1
-                  |  A masterclass in Behaviour-driven Development. 
-                p
-                  |  Get a flying start with BDD, the collaborative process that's changing the face of software development. 
-                a.btn.btn-primary.btn-large[href="/courses/bdd-kickstart"]
-                  | Find out more
-            .span5
-              img.pull-right[alt="students" src="images/hero-shot-students.jpeg"]
-        .item
-          .row-fluid
-            div
-              .hero-unit.pull-center
-                h1
-                  |  Less time hunting bugs
-                  br
-                  | More time shipping features 
-                p
-                  |  Learn to catch bugs before they've even been written, giving you more time to focus on building software that matters. 
-                a.btn.btn-primary.btn-large[href="details"]
-                  | Find out more
-        .item
-          .row-fluid
-            .span7
-              .hero-unit
-                h1
-                  |  Learn from the experts. 
-                p
-                  |  With 2 books and over 65 years in software development, our coaches have a wealth of experience to share with you. 
-                a.btn.btn-primary.btn-large[href="details"]
-                  | Find out more
-            .span5
-              img.pull-right[alt="The Cucumber Book" src="images/hero-shot-book.jpeg"]
-      a.carousel-control.left[data-slide="prev" href="#myCarousel"]
-        | ‹
-      a.carousel-control.right[data-slide="next" href="#myCarousel"]
-        | ›
     .row-fluid
+      .span8
+        .hero-unit
+          h1
+            | Learn from the experts.
+          p style='font-size: 1.5em; line-height: 1.5em'
+            | Kickstart Academy is a co-operative assembly of experts who deliver their own public and private courses in:
+          ul.icons
+            li
+              i.icon-ok
+              a href="/courses/bdd-kickstart" Behaviour-Driven Development
+            li
+              i.icon-ok
+              a href="/courses/continuous-delivery-kickstart" Continuous Delivery
+            li
+              i.icon-ok
+              a href="/courses/practical-object-oriented-design" Practical Object Oriented Design
+          - for event in all_events
+            - next if event.draft? && !view_drafts?
+            a.btn.btn-primary href="/dates/#{event.id}"
+              = "#{event.course_type}: #{course_date_range(event.full_date)} in #{event.title}"
+            | &nbsp;
+      .span3.offset1
+        br
+        br
+        h3
+          a href='team#julien' Julien Biezemans
+        h3
+          a href='team#rob' Rob Chatley
+        h3
+          a href='team#liz' Liz Keogh
+        h3
+          a href='team#aslak' Aslak Hellesøy
+        h3
+          a href='team#sandi' Sandi Metz
+        h3
+          a href='team#chris' Chris Parsons
+        h3
+          a href='team#seb' Seb Rose
+        h3
+          a href='team#tooky' Steve Tooke
+        h3
+          a href='team#matt' Matt Wynne
 
 section.section
   .container
@@ -50,45 +50,7 @@ section.section
       .span-12.pull-center
         == slim :newsletter_signup
 
-  section.section.alt
-    .container
-      .page-header
-        h1
-          |  What to expect
-          small
-            |  We're not a regular training company, but that's a good thing.
-      .row-fluid
-        ul.thumbnails.bordered.pull-center
-          li.span4.pull-center.well
-            h3
-              i.icon-star.huge-icon
-              span.blocked
-                | Access to Experts
-            p
-              |  We're 
-              a href="/team" all industry experts
-              | . You'll be hanging out and learning from the people who wrote your favourite technical books and open-source tools.
-          li.span4.pull-center.well
-            h3
-              i.icon-wrench.huge-icon
-              span.blocked
-                | Learning by Doing
-            p
-              |  Our courses are practical. This hands-on style of training will give you the confidence to apply what you've learned when you get back to the office.
-          li.span4.pull-center.well
-            h3
-              i.icon-forward.huge-icon
-              span.blocked
-                | Progressive Concepts
-            p
-              |  You already know your scrum. We teach advanced skills, like 
-              a href="/courses/continuous-delivery-kickstart" Continuous Delivery
-              |  and 
-              a href="/courses/bdd-kickstart" Behaviour-Driven Development
-              | , that enable agile teams to excel.
-
-
-section.section
+section.section.alt
   .container
     .row-fluid
       .hero-unit.pull-center
@@ -100,58 +62,40 @@ section.section
           a[target="_blank" href="http://blog.mattwynne.net/2011/08/24/bdd-training/#comment-1481"]
             | Amy Espinosa, User Experience & Information Architecture Manager, Wolters Kluwer
 
-section.section.alt
+section.section
   .container
     .page-header
       h1
-        |  Who are we? 
+        |  What to expect
         small
-          | Nice to meet you.
-    ul.thumbnails.bordered.thumbnail-list
-      li.span6
-        a[href="about#matt"]
-          figure.thumbnail-figure
-            img[alt="" src="images/matt.png"]
-            figcaption.thumbnail-title
-              h3
-                span
-                  | Matt Wynne
-              p
-                span
-                  | Teacher
-        p
-          |  Matt works as an independent consultant, helping teams like yours learn to enjoy delivering software to the best of their abilities. He's co-author of 
-          a[href="http://pragprog.com/book/hwcuc"]
-            | The Cucumber Book: Behaviour-Driven Development for Testers and Developers
-          | . In his spare time he is a core developer on the 
-          a[href="http://cukes.info"]
-            | Cucumber
-          |  project. He blogs at 
-          a[href="http://mattwynne.net"]
-            | mattwynne.net
-          |  and tweets as 
-          a[href="http://twitter.com/mattwynne"]
-            | @mattwynne
-          | . 
-      li.span6
-        a[href="/about#chris"]
-          figure.thumbnail-figure
-            img[alt="" src="images/chris.png"]
-            figcaption.thumbnail-title
-              h3
-                span
-                  | Chris Parsons
-              p
-                span
-                  | Teacher
-        p
-          |  Chris trains and speaks internationally on Ruby, Cucumber, being agile, code quality and programmer education at conferences including Rubyconf, the Scottish Ruby Conference, and Software Craftsmanship North America and Software Craftsmanship UK. He blogs at 
-          a[href="http://chrismdp.com/"]
-            | http://chrismdp.com/
-          |  and tweets as 
-          a[href="http://twitter.com/chrismdp"]
-            | @chrismdp
-          | . 
-      .span12
-        a.btn.btn-primary href="/team"
-          | Meet the rest of the team
+          |  We're not a regular training company, but that's a good thing.
+    .row-fluid
+      ul.thumbnails.bordered.pull-center
+        li.span4.pull-center.well
+          h3
+            i.icon-star.huge-icon
+            span.blocked
+              | Access to Experts
+          p
+            |  We're
+            a href="/team" all industry experts
+            | . You'll be hanging out and learning from the people who wrote your favourite technical books and open-source tools.
+        li.span4.pull-center.well
+          h3
+            i.icon-wrench.huge-icon
+            span.blocked
+              | Learning by Doing
+          p
+            |  Our courses are practical. This hands-on style of training will give you the confidence to apply what you've learned when you get back to the office.
+        li.span4.pull-center.well
+          h3
+            i.icon-forward.huge-icon
+            span.blocked
+              | Progressive Concepts
+          p
+            |  You already know your scrum. We teach advanced skills, like
+            a href="/courses/continuous-delivery-kickstart" Continuous Delivery
+            |  and
+            a href="/courses/bdd-kickstart" Behaviour-Driven Development
+            | , that enable agile teams to excel.
+
