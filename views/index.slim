@@ -17,6 +17,7 @@ section#promo.section.alt
             li
               i.icon-ok
               a href="/courses/practical-object-oriented-design" Practical Object Oriented Design
+          h3 Next courses
           - for event in all_events
             - next if event.draft? && !view_drafts?
             a.btn.btn-primary href="/dates/#{event.id}"
