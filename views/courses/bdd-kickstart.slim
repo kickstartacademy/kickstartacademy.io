@@ -2,9 +2,9 @@
 
   section#promo.section.alt
     .container
-      .row-fluid
-        .span9
-          .hero-unit
+      .hero-unit
+        .row-fluid
+          .span9
             h1
               | BDD Kickstart
             p
@@ -22,9 +22,17 @@
               a[href="#learningoutcomes"] full details of our learning outcomes
               |  or 
               a[href="/bddk-benefits.pdf"] download a PDF of the benefits.
-        .sidebar.span3
-          - if upcoming_event(:bdd)
-            == slim :book_bdd_button, locals: { options: { show_coaches: true } }
+          .sidebar.span3
+            - if upcoming_event(:bdd)
+              h2 Dates
+              - for event in upcoming_events(:bdd)
+                h3
+                  = course_date_range(event.full_date)
+                h3
+                  = event.title
+                p
+                  a.btn.btn-primary.btn-large href="/dates/#{event.id}"
+                    | Book BDD Kickstart
 
   section.section
     .container
