@@ -46,10 +46,15 @@ section.section.alt
           .row-fluid
             p
               |  Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development. 
-            a.btn.btn-primary.btn-large href="/courses/bdd-kickstart"
-              | Find out more
-            - if upcoming_event(:bdd)
-              == slim :book_bdd_button
+            p
+              a.btn.btn-primary.btn-large href="/courses/bdd-kickstart"
+                | Find out more
+            p
+              - for event in upcoming_events(:bdd)
+                - next if event.draft? && !view_drafts?
+                a.btn.btn-primary href="/dates/#{event.id}"
+                  = "#{event.course_type}: #{course_date_range(event.full_date)} in #{event.title}"
+                | &nbsp;
 
         article.course.well#cd
           .page-header
