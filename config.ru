@@ -1,2 +1,3 @@
-require_relative 'lib/app'
+$: << File.dirname(__FILE__) + '/lib'
+require 'app'
 run Sinatra::Application
