@@ -123,6 +123,7 @@ helpers do
   def all_events
     valtech = Venue.new('Valtech', '103 Rue de Grenelle, 75007, Paris, France', 48.856993,2.319338)
     ustwo   = Venue.new('usTwo', '62 Shoreditch High Street, London, E1 6JJ, United Kingdom', 51.5228274,-0.0778368)
+    anteo   = Venue.new('Anteo', '1230 Peachtree Street NE, Atlanta, GA 30309', 33.788424, -84.383851)
 
     seb     = Coach.new( 'Seb Rose',          'seb',        '/images/seb-sm-bw.png' )
     rob     = Coach.new( 'Rob Chatley',       'rob',        '/images/rob.png'       )
@@ -142,7 +143,7 @@ helpers do
         Tito.new('bdd-kickstart-berlin-2014'),
         nil,
         [aslak, liz],
-        %{Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development.}
+        %{Get a headstart with <a href="/courses/bdd-kickstart">Behaviour-Driven Development</a>, the collaborative process that's changing the face of software development.}
       ),
       Event.new(
         :bdd,
@@ -150,9 +151,9 @@ helpers do
         Time.parse('5 Nov 2014'),
         Time.parse('7 Nov 2014'),
         Tito.new('bdd-kickstart-atlanta-nov-2014'),
-        nil,
+        anteo,
         [aslak, julien],
-        %{Get a headstart with Behaviour-Driven Development, the collaborative process that's changing the face of software development.}
+        %{Get a headstart with <a href="/courses/bdd-kickstart">Behaviour-Driven Development</a>, the collaborative process that's changing the face of software development.}
       ),
     ]
   end
