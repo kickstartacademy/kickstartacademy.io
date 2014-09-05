@@ -53,7 +53,7 @@ section.section.alt
               - for event in upcoming_events(:bdd)
                 - next if event.draft? && !view_drafts?
                 a.btn.btn-primary href="/dates/#{event.id}"
-                  = "#{event.course_type}: #{course_date_range(event.full_date)} in #{event.title}"
+                  = "#{course_type_description(event.type)}: #{course_date_range(event.full_date)} in #{event.title}"
                 | &nbsp;
 
         article.course.well#cd

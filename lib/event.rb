@@ -3,10 +3,6 @@ Event = Struct.new(:type, :title, :start_date, :end_date, :tickets, :venue, :coa
     "#{type.to_s.downcase}-#{title.downcase.gsub(/\W+/, '-')}"
   end
 
-  def course_type
-    { :bdd => "BDD Kickstart", :cd => "Continuous Delivery Kickstart", :poodr => "Practical Object Oriented Design" }[type]
-  end
-
   def tickets?
     !!tickets
   end

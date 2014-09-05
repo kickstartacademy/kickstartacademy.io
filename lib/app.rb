@@ -92,6 +92,10 @@ helpers do
     date.strftime("%-d %B %Y")
   end
 
+  def course_type_description(type)
+    { :bdd => "BDD Kickstart", :cd => "Continuous Delivery", :poodr => "Practical Object Oriented Design" }[type]
+  end
+
   def course_date_range(dates)
     if (spans_month_boundary(dates))
       dates.first.strftime("%-d %b") + '-' + dates.last.strftime("%-d %b %Y")
@@ -191,6 +195,8 @@ get('/details')           { redirect '/bdd-details' }
 get('/bdd-details')       { redirect '/courses/bdd-kickstart' }
 get('/in-house')          { redirect '/in-house-courses' }
 get('/in-house-training') { redirect '/in-house-courses' }
+get('/in-house-courses/') { redirect '/in-house-courses' }
+get('/in-house-courses') { redirect '/in-house-courses/bdd' }
 get('/about')             { redirect '/team' }
 
 get("/")        { slim :index }
@@ -207,7 +213,6 @@ get("/")        { slim :index }
   courses
   thanks
   remote
-  in-house-courses
 ).each do |page|
   path = "/#{page}"
   get(path) { slim page }
@@ -222,6 +227,10 @@ end
     #slim page
   #end
 #end
+
+get('/in-house-courses/:course_type') { |course_type|
+  slim :"in-house-courses", :locals => { :course_type => course_type.to_sym }
+}
 
 get('/blog/:page_slug') { |page_slug|
   article = all_articles.detect { |a| a.page_slug == page_slug }

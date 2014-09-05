@@ -13,7 +13,7 @@ section.section.alt
               span.blocked= event.title
           h2.pricing-table-price{style='min-height:100px'}
             a href="/dates/#{event.id}"
-             = event.course_type
+             = course_type_description(event.type)
           ul.pricing-table-list
             li= course_date_range(event.full_date)
             - if event.venue?

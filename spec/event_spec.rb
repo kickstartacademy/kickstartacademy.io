@@ -18,8 +18,4 @@ describe Event do
     event.applied_date.should == [start_date + 1.day, start_date + 2.days]
   end
   
-  it "has course type defined by type" do
-    event.course_type.should == "BDD Kickstart"
-  end
-  
 end
