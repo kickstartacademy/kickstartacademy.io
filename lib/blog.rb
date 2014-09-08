@@ -60,16 +60,16 @@ class Blog
       Thread.new do
         begin
           Timeout.timeout(20) do
-            p "blog: #{url}: Refreshing"
+            #p "blog: #{url}: Refreshing"
             Feedzirra::Feed.add_common_feed_entry_element('posterous:firstName', as: 'author')
             feed = Feedzirra::Feed.fetch_and_parse(url)
             @articles = feed.entries.map { |e| Article.new(e) }
-            p "blog: #{url}: Fetched #{@articles.count} articles"
+            #p "blog: #{url}: Fetched #{@articles.count} articles"
           end
         rescue => e
           p "blog: #{url}: #{e}"
         ensure
-          p "blog: #{url}: Going back to idle status"
+          #p "blog: #{url}: Going back to idle status"
           @status = :idle
         end
       end

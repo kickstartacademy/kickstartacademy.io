@@ -14,5 +14,6 @@ group :development do
   gem "shotgun"
   gem "rspec"
   gem "activesupport"
+  gem "rack-test"
 end
 
