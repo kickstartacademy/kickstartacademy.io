@@ -3,7 +3,7 @@ require_relative '../lib/blog'
 describe Blog do
 
   let(:blog) { Blog.new(urls) }
-  let(:urls) { [ 'http://blog.mattwynne.net/tag/bdd/feed/atom'] }
+  let(:urls) { ['http://blog.mattwynne.net/tag/bdd/feed/atom'] }
 
   it "has no articles by default" do
     blog.articles.should be_empty

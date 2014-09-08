@@ -56,10 +56,10 @@ class Blog
     end
 
     def refresh
+      @status = :refreshing
       Thread.new do
         begin
           Timeout.timeout(20) do
-            @status = :refreshing
             p "blog: #{url}: Refreshing"
             Feedzirra::Feed.add_common_feed_entry_element('posterous:firstName', as: 'author')
             feed = Feedzirra::Feed.fetch_and_parse(url)
