@@ -196,8 +196,9 @@ get('/bdd-details')       { redirect '/courses/bdd-kickstart' }
 get('/in-house')          { redirect '/in-house-courses' }
 get('/in-house-training') { redirect '/in-house-courses' }
 get('/in-house-courses/') { redirect '/in-house-courses' }
-get('/in-house-courses') { redirect '/in-house-courses/bdd' }
+get('/in-house-courses')  { redirect '/in-house-courses/bdd' }
 get('/about')             { redirect '/team' }
+get('/subscribe')         { redirect 'https://confirmsubscription.com/h/r/98D0EAA88FC788CA' }
 
 get("/")        { slim :index }
 
