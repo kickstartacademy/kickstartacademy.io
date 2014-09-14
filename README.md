@@ -1,11 +1,18 @@
+[![Circle CI](https://circleci.com/gh/kickstartacademy/kickstartacademy.io.png?style=badge)](https://circleci.com/gh/kickstartacademy/kickstartacademy.io)
+
 # Run the app
 
     bundle install
     bundle exec rackup
+    bundle exec rackup
+
+# Run the tests
+
+    bundle exec rspec
 
 # Releasing
 
-The site is hosted on Heroku. Once you have release karma, add a `heroku` remote pointing to `git@heroku.com:kickstartacademy.git` and you should be able to `git push heroku master`.
+The site is hosted on Heroku. Pushing a build to Github is enough to trigger deployment, which will happen if the tests all pass.
 
 # Flushing the cache
 
