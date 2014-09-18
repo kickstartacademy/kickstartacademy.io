@@ -31,10 +31,10 @@ if memcache_servers = ENV["MEMCACHE_SERVERS"]
 end
 
 Twitter.configure do |config|
-  config.consumer_key = '5sD8eQtceH3dFX53KAmBrg'
-  config.consumer_secret = 'Bs4maTs0neLCs1Hm7LnjooOmkQITLLDahclCzQINW74'
-  config.oauth_token = '860940638-JdRZgiJ878yOdLR757akKn8FfmsCVW5l73buMCeR'
-  config.oauth_token_secret = 'b6nHS25AmaPjVInwfF1DjpoNQo0ufwtkpny9lK00'
+  config.consumer_key = ENV["TWITTER_CONSUMER_KEY"]
+  config.consumer_secret = ENV["TWITTER_CONSUMER_SECRET"]
+  config.oauth_token = ENV["TWITTER_OAUTH_TOKEN"]
+  config.oauth_token_secret = ENV["TWITTER_OAUTH_TOKEN_SECRET"]
 end
 
 before do
