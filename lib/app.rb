@@ -7,6 +7,7 @@ require 'dalli'
 require 'rack-cache'
 require 'yaml'
 require 'slim'
+require 'rest_client'
 require 'dotenv'
 
 Dotenv.load(
@@ -253,4 +254,26 @@ end
 get('/maps.js') do
   content_type 'text/javascript'
   erb :'maps.js', layout: false
+end
+
+post('/integrations/tito/ticket') do
+  # TODO: If this is useful pull out the message creation, and slack
+  # posting
+  ticket_data = JSON.parse(request.body.string)
+
+  slack_message = {
+    "channel" => "#general",
+    "username" => "kickstartac",
+    "icon_emoji" => ":rocket:",
+    "text" => "#{ticket_data["release"]} created for #{ticket_data["name"]}"
+  }
+
+  begin
+    RestClient.post ENV["SLACK_WEBHOOK_URL"],
+      :payload => slack_message.to_json
+  rescue Exception => e
+    # TODO: log errors
+  ensure
+    200
+  end
 end

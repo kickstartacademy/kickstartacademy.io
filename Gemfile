@@ -9,6 +9,7 @@ gem "dalli"
 gem "rack-cache"
 gem "slim"
 gem "redcarpet"
+gem "rest-client"
 gem "dotenv"
 
 group :development do
@@ -16,5 +17,6 @@ group :development do
   gem "rspec"
   gem "activesupport"
   gem "rack-test"
+  gem "webmock"
 end
 
