@@ -9,6 +9,7 @@ gem "dalli"
 gem "rack-cache"
 gem "slim"
 gem "redcarpet"
+gem "dotenv"
 
 group :development do
   gem "shotgun"

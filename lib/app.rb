@@ -7,6 +7,12 @@ require 'dalli'
 require 'rack-cache'
 require 'yaml'
 require 'slim'
+require 'dotenv'
+
+Dotenv.load(
+  File.expand_path("../../.#{ENV["RACK_ENV"]}.env", __FILE__),
+  File.expand_path("../../.env", __FILE__),
+)
 
 require_relative 'event'
 require_relative 'blog'
