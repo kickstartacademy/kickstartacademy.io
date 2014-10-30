@@ -157,6 +157,16 @@ helpers do
         [aslak, julien],
         %{Get a headstart with <a href="/courses/bdd-kickstart">Behaviour-Driven Development</a>, the collaborative process that's changing the face of software development.}
       ),
+      Event.new(
+        :bdd,
+        'London, UK',
+        Time.parse('4 Feb 2015'),
+        Time.parse('6 Feb 2015'),
+        Tito.new('bdd-kickstart-london-feb-2015'),
+        ustwo,
+        [liz, aslak],
+        %{Get a headstart with <a href="/courses/bdd-kickstart">Behaviour-Driven Development</a>, the collaborative process that's changing the face of software development.}
+      ),
     ]
   end
 end
