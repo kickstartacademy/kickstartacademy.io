@@ -19,6 +19,8 @@ html[lang="en"]
     link href="/stylesheets/custom.css" media="screen" rel="stylesheet" type="text/css"
 
   body.theme-pattern-tiny-grid.theme-color-green
+    a.bddk-ribbon[href="/courses/bdd-kickstart"]
+      img[src="/images/promo-ribbon.png" alt="BDD Kickstart San Francisco"]
     header#masthead
       nav.navbar.navbar-fixed-top
         .navbar-inner
@@ -60,7 +62,7 @@ html[lang="en"]
             h3#contact-us
               | Contact us
             p
-              |  Do you have a question? Would you like the training in your city, or your company? Just want to say hello? We'd love to hear from you. 
+              |  Do you have a question? Would you like the training in your city, or your company? Just want to say hello? We'd love to hear from you.
             ul.icons
               li
                 i.icon-envelope
@@ -84,7 +86,7 @@ html[lang="en"]
                     i.icon-twitter
                     == markup_tweet(tweet.text)
                     small
-                      |  by 
+                      |  by
                       a[href="http://twitter.com/#{tweet.from_user}"]
                         | @
                         = tweet.from_user
@@ -112,4 +114,4 @@ script[src="/javascripts/script.js" type="text/javascript"]
 script[src="/maps.js" type="text/javascript"]
 script[type="text/javascript" src="/javascripts/jquery.timeago.js"]
 javascript:
-  jQuery(document).ready(function() { jQuery("abbr.timeago").timeago(); }); 
+  jQuery(document).ready(function() { jQuery("abbr.timeago").timeago(); });
