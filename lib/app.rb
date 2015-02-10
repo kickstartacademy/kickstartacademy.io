@@ -161,7 +161,7 @@ helpers do
           <p>In three days, we'll teach you everything you need to be off and running with Behaviour-Driven Development.</p>
         <p>We'll start by teaching you the fundamental principles of BDD, and how it fits into the wider world of agile. We'll show you how to run specification workshops to explore new functionality as a collaborative activity, and show you how to express those specifications as executable Cucumber tests.</p>
         <p>Then we'll start applying those fundamentals in practice. We'll show you how to automate your application, whether it's a Java web service, a rich AJAX web application or a Flash game. We'll explore what to do as your test suite grows in size, and prepare you for the major hurdles most teams run into as they start to adopt BDD.</p>
-        <p><a href="/courses/bdd-kickstart">Learn more</a>.</p>}
+        <p>Learn more <a href="/courses/bdd-kickstart">about the course</a>.</p>}
       ),
     ]
   end
