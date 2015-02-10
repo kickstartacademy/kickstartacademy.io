@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'bundler/setup'
 require 'sinatra'
 require 'twitter'
@@ -145,16 +146,17 @@ helpers do
     julien  = Coach.new( 'Julien Biezemans',  'julien',     '/images/julien.png'    )
     sandi   = Coach.new( 'Sandi Metz',        'sandimetz',  '/images/sandi.jpg'     )
     liz     = Coach.new( 'Liz Keogh',         'liz',        '/images/liz.jpg'       )
+    pat     = Coach.new( 'Pat Maddox',        'pat',        '/images/pat.jpg'       )
 
     [
       Event.new(
         :bdd,
-        'London, UK',
-        Time.parse('4 Feb 2015'),
-        Time.parse('6 Feb 2015'),
-        Tito.new('bdd-kickstart-london-feb-2015'),
-        ustwo,
-        [liz, aslak],
+        'San Francisco, USA',
+        Time.parse('21 April 2015'),
+        Time.parse('23 April 2015'),
+        Tito.new('sanfrancisco2015'),
+        nil, #location
+        [julien, pat],
         %{Get a headstart with <a href="/courses/bdd-kickstart">Behaviour-Driven Development</a>, the collaborative process that's changing the face of software development.}
       ),
     ]
