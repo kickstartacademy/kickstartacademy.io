@@ -4,7 +4,6 @@
 
     bundle install
     bundle exec rackup
-    bundle exec rackup
 
 # Run the tests
 
