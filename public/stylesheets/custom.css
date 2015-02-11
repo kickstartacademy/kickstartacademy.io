@@ -26,9 +26,8 @@ article.course {
 	opacity: .9;
 }
 
-@media (max-width: @screen-md) {
+@media (max-width: 979px) {
 	.bddk-ribbon {
-		width: 153px;
-		height: 153px;
+    display: none;
 	}
 }
