@@ -1,7 +1,7 @@
 section.section.alt
   .container
     .hero-unit
-      h1 
+      h1
         == course_type_description(event.type)
       h2
         == event.title
@@ -27,7 +27,7 @@ section.section
               script src='https://tito.io/kickstartacademy/#{event.tickets.tito_id}.js?version=3' type='text/javascript'
       .sidebar.span3
         .row-fluid.pull-left
-          h2 
+          h2
             | Coaches
             - if event.coaches
               - event.coaches.each do |coach|
@@ -44,7 +44,7 @@ section.section
         h2 Venue
         - unless event.venue?
           p
-            | Venue not yet confirmed. Do you have a suitable venue? We offer training discounts to those hosting our courses: 
+            | Venue not yet confirmed. Do you have a suitable venue? We offer training discounts to those hosting our courses:
             a href="mailto:sales@cucumber.pro?subject=Hosting #{course_type_description(event.type)} #{event.title}" contact us
             |  for more details.
 
@@ -62,10 +62,11 @@ section.section.alt
   .container
     .hero-unit
       h2 Cancellation and refund policy
-      p We are happy to transfer tickets, just contact us to let us know. If you need to cancel, here are the rules:
+      p
+        | We are happy to transfer tickets, just contact us to let us know. If you need to cancel, here are the rules:
         ul
-          li If you cancel more than 4 weeks before the course you'll get a 90% refund.
-          li If you cancel up to 2 weeks before the course you'll get a 50% refund.
+          li If you cancel more than 4 weeks before the course you'll get a 90% refund;
+          li If you cancel up to 2 weeks before the course you'll get a 50% refund;
           li No refund within 2 weeks of the course.
 
 script[src="https://maps.googleapis.com/maps/api/js?sensor=false"]
