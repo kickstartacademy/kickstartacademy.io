@@ -26,6 +26,21 @@ article.course {
 	opacity: .9;
 }
 
+.brand .umbrella {
+  display: block;
+  margin: 0;
+  text-align: left;
+  text-transform: none;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.brand .umbrella img {
+  width: 160px;
+  vertical-align: text-bottom;
+  padding-bottom: 0.5px;
+}
+
 @media (max-width: 979px) {
 	.bddk-ribbon {
     display: none;
