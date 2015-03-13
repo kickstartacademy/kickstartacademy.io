@@ -137,6 +137,7 @@ helpers do
     ustwo    = Venue.new('usTwo', '62 Shoreditch High Street, London, E1 6JJ, United Kingdom', 51.5228274,-0.0778368)
     anteo    = Venue.new('Anteo', '1230 Peachtree Street NE, Atlanta, GA 30309', 33.788424, -84.383851)
     bitcrowd = Venue.new('BitCrowd', 'Sanderstraße 28, 12047 Berlin, Germany', 52.49237, 13.423832)
+    saucehq  = Venue.new('Sauce Labs', '539 Bryant Street #303, San Francisco, CA 94107, USA', 37.780122, -122.396915)
 
     seb     = Coach.new( 'Seb Rose',          'seb',        '/images/seb-sm-bw.png' )
     rob     = Coach.new( 'Rob Chatley',       'rob',        '/images/rob.png'       )
@@ -155,7 +156,7 @@ helpers do
         Time.parse('21 April 2015'),
         Time.parse('23 April 2015'),
         Tito.new('sanfrancisco2015'),
-        nil, #location
+        saucehq,
         [julien, pat],
         %{<p>Get a headstart with <a href="/courses/bdd-kickstart">Behaviour-Driven Development</a>, the collaborative process that's changing the face of software development.</p>
           <p>In three days, we'll teach you everything you need to be off and running with Behaviour-Driven Development.</p>
