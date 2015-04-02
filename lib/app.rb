@@ -157,7 +157,7 @@ helpers do
         Time.parse('23 April 2015'),
         Tito.new('sanfrancisco2015'),
         saucehq,
-        [julien, pat],
+        [julien],
         %{<p>Get a headstart with <a href="/courses/bdd-kickstart">Behaviour-Driven Development</a>, the collaborative process that's changing the face of software development.</p>
           <p>In three days, we'll teach you everything you need to be off and running with Behaviour-Driven Development.</p>
         <p>We'll start by teaching you the fundamental principles of BDD, and how it fits into the wider world of agile. We'll show you how to run specification workshops to explore new functionality as a collaborative activity, and show you how to express those specifications as executable Cucumber tests.</p>
